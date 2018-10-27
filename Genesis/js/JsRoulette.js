@@ -1,4 +1,33 @@
 
+/**
+* función que muestra la pantalla de carga y luego la culta por la principal
+**/
+function loadSection(){
+    document.getElementById('carga').style.display = "none";
+    document.getElementById('index').style.display = "block";
+  } 
+ 
+ 
+ /**
+* Función para mostar una sola sección en especifico.
+* @param sectionName: nombre de la seccion que se va a mostrar
+**/
+function displaySection(sectionName){
+
+    event.preventDefault(); //Disable default function
+    sections = document.getElementsByTagName('section');
+    for (var i = 0; i < sections.length; i++) {
+  
+      if(sections[i].id == sectionName){
+        sections[i].style.display = "block";
+      }
+      else{
+        sections[i].style.display = "none";
+      }
+    }
+  }
+ 
+ /*
 var options = ["$100", "$10", "$25", "$250", "$30", "$1000", "$1", "$200", "$45", "$500", "$5", "$20", "Lose", "$1000000", "Lose", "$350", "$5", "$99"];
                 var startAngle = 0;
                 var arc = Math.PI / (options.length / 2);
@@ -148,3 +177,5 @@ var options = ["$100", "$10", "$25", "$250", "$30", "$1000", "$1", "$200", "$45"
                 }
 
                 drawRouletteWheel();
+  */
+

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-
+        <link rel="stylesheet" href="css/style.css">
         
         <title></title>
         
@@ -11,59 +11,34 @@
         <!--
             <input type="button" value="spin" style="float:left;" id='spin' />
             <canvas id="canvas" width="500" height="500"></canvas>   
-            <script src="js/JsRoulette.js"></script>    
+            
         -->
+        <script src="js/JsRoulette.js"></script>    
 
         <!-- Carga -->
-        <section id="carga">
-            <img id="imagen_de_carga" alt="full screen background image" src="img/carga.png"/ style="max-width: 50%; max-height: 50%; overflow: hidden;">
+        <section id="Splash">
+            <img id="imgLoad" alt="full screen background image" src="img/carga.png"/ style="max-width: 50%; max-height: 50%; overflow: hidden;">
           </section>
 
           <!-- Index -->
-          <section id="index">
-              <div class="app-container">
-                  <div class="img-backgound">
-                        <img class="img-responsive" id="image-background" src="img/index/fondo-landing.png" alt="" style="max-width: 50%; max-height: 50%; overflow: hidden;">
-                  </div>
+          <section id="Start">
+            <img id="imgLanding" src="img/index/fondo-landing.png" alt="">
 
-                  <!-- contenedor fondo -->
-                  <div class="container-fluid">
-                     
-                    <!-- contedor de botones -->
-                    <div class="row btn-container">
-
-                        <!-- boton jugar -->
-                        <div class="button-play-div">
-                            <a href="" onclick="displaySection('juego')" class="ml-25">
-                                <img src="img/index/boton-jugar.png" alt="" style="width: 40%; height: 100%; overflow: hidden;" >
-                            </a>
-                        </div>
-
-                        <!-- boton Sintomas -->
-                        <div class="button-play-div">
-                            <a href="" onclick="displaySection('juego')" class="ml-25">
-                                <img src="img/index/boton-sintomas.png" alt="" style="width: 40%; height: 100%; overflow: hidden;" >
-                            </a>
-                        </div>
-
-                        <!-- boton Fundacion -->
-                        <div class="button-play-div">
-                            <a href="" onclick="displaySection('juego')" class="ml-25">
-                                <img src="img/index/boton-fundacion.png" alt="" style="width: 40%; height: 100%; overflow: hidden;" >
-                            </a>
-                        </div>
-
-                        <!-- boton Sintomas -->
-                        <div class="button-play-div">
-                            <a href="" onclick="displaySection('juego')" class="ml-25">
-                                <img src="img/index/boton-creditos.png" alt="" style="width: 40%; height: 100%; overflow: hidden;" >
-                            </a>
-                        </div>
-
-                    </div>
-                  </div>
-
-              </div>
+            <a href="" onclick="displaySection('')" class="ml-25">
+                <img id="btnPlayLandindg" src="img/index/boton-jugar.png" alt="">
+            </a> 
+            
+            <a href="" onclick="displaySection('')" class="ml-25">
+                <img id="btnSintomsLanding" src="img/index/boton-sintomas.png" alt="">
+            </a>
+            
+            <a href="" onclick="displaySection('')" class="ml-25">
+                <img id="btnFundationLanding"src="img/index/boton-fundacion.png" alt="">
+            </a>
+            
+            <a href="" onclick="displaySection('')" class="ml-25">
+                <img id="btnCreditsLanding" src="img/index/boton-creditos.png" alt="">
+            </a>
             
           </section>
 

@@ -79,7 +79,7 @@
     margin-right: auto;
     margin-top: 20px;
 }
-.imgLevel{
+.Level{
     border-radius: 600px;
     height: 154px;
 }
@@ -109,6 +109,51 @@
     color: white;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#btnLevel1{
+    position: relative;
+    margin-left: 150px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1033px;
+   
+}
+
+#btnLevel2{
+    position: relative;
+    margin-left: 150px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1033px;
+   
+}
+
+#btnLevel3{
+    position: relative;
+    margin-left: 150px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1033px;
+   
+}
+
+#btnLevel4{
+    position: relative;
+    margin-left: 150px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1033px;
+   
+}
+
+#btnLevel5{
+    position: relative;
+    margin-left: 150px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1033px;
+   
 }
 
 

@@ -122,37 +122,46 @@
 
 #btnLevel2{
     position: relative;
-    margin-left: 150px;
+    margin-left: 500px;
     margin-right: auto;
     display: block;
-    margin-top: -1033px;
+    margin-top: 26px;
    
 }
 
 #btnLevel3{
     position: relative;
-    margin-left: 150px;
+    margin-left: 214px;
     margin-right: auto;
     display: block;
-    margin-top: -1033px;
+    margin-top: -71px;
    
 }
 
 #btnLevel4{
     position: relative;
-    margin-left: 150px;
+    margin-left: 442px;
     margin-right: auto;
     display: block;
-    margin-top: -1033px;
+    margin-top: 80px;
    
 }
 
 #btnLevel5{
     position: relative;
-    margin-left: 150px;
+    margin-left: 164px;
     margin-right: auto;
     display: block;
-    margin-top: -1033px;
+    margin-top: 111px;
+   
+}
+
+#btnLevelatras{
+    position: relative;
+    margin-left: 108px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1150px;
    
 }
 

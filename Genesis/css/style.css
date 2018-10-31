@@ -169,4 +169,21 @@
    
 }
 
+#btnLevel1atras{
+    position: relative;
+    margin-left: 80px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1191px;
+   
+}
+
+#btnLevelpausa{
+    position: relative;
+    margin-left: 600px;
+    margin-right: auto;
+    display: block;
+    margin-top: -60px;
+   
+}
 

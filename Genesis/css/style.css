@@ -13,14 +13,20 @@
     top: 50%;
     left: 50%;
 }
-
-
 #Splash{
-    display:"block";
+    display: block;
 }
+
+section{
+    display: none;
+}
+
 #imgLoad{
-    height: max-content;
     
+    max-width: 100% !important;
+}
+.gameImage{
+    height: max-content;
 }
 #btnPlayLandindg{
     position: relative;
@@ -53,18 +59,11 @@
     margin-top: 45px;
 
 }
-#Levels{
-    height: 1519px;
-    width: 720px;
-    background-image: linear-gradient(#000013, #201033);
-}
 
-#lblTitle{
-    color: aliceblue;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: inline-block;
-    margin-left: 62px;
-    font-size: 92px;
+
+#imgLevels{
+    
+    overflow: hidden;    
 
 }
 .divLevel{
@@ -78,15 +77,8 @@
     border-radius: 600px;
     height: 154px;
 }
-.lblLevel{
-    text-align: center;
-    color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-#level7{
-    margin-left: 293px;
-    margin-right: auto;
-}
+
+
 #btnSintoms{
     position: relative;
     margin-left: auto;
@@ -95,15 +87,39 @@
     margin-top: 60px;
 }
 #Help{
-    height: 1519px;
+    height: 1280px;
     width: 720px;
     background-image: linear-gradient(#000013, #201033);
 }
+#btnHelpBack{
+    position: relative;
+    margin-left: 80px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1189px;
+   
+}
 
-#lblText{
-    color: white;
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+#btnSintomsBack{
+    position: relative;
+    margin-left: 80px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1188px;
+   
+}
+#Fundation{
+    height: 1280px;
+    width: 720px;
+    background-image: linear-gradient(#000013, #201033);
+}
+#btnFundationBack{
+    position: relative;
+    margin-left: 108px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1220px;
+   
 }
 
 #btnLevel1{
@@ -151,7 +167,7 @@
    
 }
 
-#btnLevelatras{
+#btnLevelBack{
     position: relative;
     margin-left: 108px;
     margin-right: auto;
@@ -160,7 +176,7 @@
    
 }
 
-#btnCreditosatras{
+#btnCreditsBack{
     position: relative;
     margin-left: 78px;
     margin-right: auto;
@@ -169,7 +185,7 @@
    
 }
 
-#btnLevel1atras{
+.btnBackLevel{
     position: relative;
     margin-left: 80px;
     margin-right: auto;
@@ -178,7 +194,7 @@
    
 }
 
-#btnLevelpausa{
+.btnStopLevel{
     position: relative;
     margin-left: 600px;
     margin-right: auto;
@@ -187,10 +203,60 @@
    
 }
 
+.modalButton{
+    margin-bottom: 589px;
+    margin-left: -110px;
+}
+
+#imgVictory{
+    margin-left: 43px;
+}
+
+#imgTryAgain{
+    margin-left: 43px;
+}
+#imgStop{
+    margin-left: 43px;
+}
+#btnStopSintoms{
+    margin-left: -300px;
+    margin-bottom: 345px;
+}
+#btnStopHome{
+    margin-left: -379px;
+    margin-bottom: 507px;
+}
+
+#btnStopHelp{
+    margin-left: -243px;
+    margin-bottom: 200px;
+
+}
+#btnTryTry{
+    margin-left: -366px;
+    margin-bottom: 50px;
+}
+
+#btnTryVictory{
+    margin-left: -366px;
+    margin-bottom: 50px;
+}
+
+#ModalVictory{
+    position: relative;
+    z-index: 99;
+}
+
+#ModalTryAgain{
+    position: relative;
+    z-index: 99;
+}
 #div1{
     height: 1281px;
     width: 722px;
     margin-right: 0px;
     margin-left: 0px;
     margin-top: 0px;
+    display: contents;
 }
+

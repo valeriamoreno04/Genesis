@@ -11,8 +11,8 @@ var cont;
 var iconos;
 var obejetivosAnim;
 var coordenadasOriginales;
+var botones = [];
 
-window.onload = init;
 
 function init(){
 	inicializarVariables();
@@ -143,7 +143,8 @@ function crearSintomas(evt){
         coordenadasOriginales[i]=new Object();
         coordenadasOriginales[i].left = parseInt(iconos[i].style.left,10);
         coordenadasOriginales[i].top = parseInt(iconos[i].style.top,10);
-    }    
+    } 
+    
 }
 
 function formarEnfermedad(indice, clase){
@@ -155,6 +156,7 @@ function formarEnfermedad(indice, clase){
         //debugger;
         //console.log(indice);        
         sintomas.push(indice);
+        botones.push(document.getElementsByClassName("sintoma"+indice)[0]);
         if(cont==0){            
             TweenMax.to(clase, 1, {left:279, top:615, scale:0.7});
             cont++;
@@ -165,6 +167,8 @@ function formarEnfermedad(indice, clase){
     }
     else{
         sintomas.push(indice);
+        botones.push(document.getElementsByClassName("sintoma"+indice)[0]);
+        //debugger;
         TweenMax.to(clase, 1, {left:362, top:551, scale:0.7});
         for(var i=0;i<enfermedades.length;i++){
             //debugger;
@@ -177,6 +181,8 @@ function formarEnfermedad(indice, clase){
                (enfermedades[i].sintoma3==sintomas[0]||
                enfermedades[i].sintoma3==sintomas[1]||
                enfermedades[i].sintoma3==sintomas[2])){
+                   
+
                 var imgEnfermedad = document.createElement("img");    
                 imgEnfermedad.setAttribute("src", enfermedades[i].icono);
                 imgEnfermedad.setAttribute("class","enfermedad");
@@ -186,17 +192,29 @@ function formarEnfermedad(indice, clase){
                 imgEnfermedad.style.top = ((altoContainer/2 - 21) - parseInt(imgEnfermedad.style.width, 10)/2) + 'px';
                 imgEnfermedad.style.left = ((anchoContainer/2 + 6) - parseInt(imgEnfermedad.style.height, 10)/2) + 'px';
                 element.appendChild(imgEnfermedad);
-                TweenMax.to(".enfermedad", 1, {scale:2});
-                TweenMax.to(".enfermedad", 1, {left:412, top:1055, scale:1.15});
+                
+                setTimeout(function(){
+                
+                TweenMax.to(".enfermedad", 1, {scale:2,delay:1});
+                TweenMax.to(".enfermedad", 1, {left:412, top:1057, scale:1.15, delay:2});
+                for(var j=0;j<3;j++){
+                    botones[j].style.display="none";
+                }
+               },1500);
+                //debugger;
+
+                
+                
             }
             else{
+                //Reorganizar imgs
                 //debugger;
                 var left;
                 var top;
                 for(var i=0;i<obejetivosAnim.length;i++){
                     left = coordenadasOriginales[obejetivosAnim[i].indice-1].left;
                     top = coordenadasOriginales[obejetivosAnim[i].indice-1].top;
-                    TweenMax.to(obejetivosAnim[i].clase, 1, {left:left, top:top, scale:1});
+                    TweenMax.to(obejetivosAnim[i].clase, 1, {left:left, top:top, scale:1, delay:1});
                 }
             }
         }

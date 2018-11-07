@@ -51,6 +51,9 @@ function start(){
 
   //Inicializar el boton de fundacion  
     var btnFundationBack=document.getElementById("btnFundationBack");
+
+  //Inicializar el boton de ir al sitio web de la Fundacion 
+  var btnFundationWeb=document.getElementById("btnFundationWeb");
   
   //Inicializar el boton home de los Modales
     //Victory

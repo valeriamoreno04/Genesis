@@ -157,6 +157,12 @@ function start(){
     btnFundationBack.addEventListener("click", function(){
       transition("Fundation", "Start");
     });
+
+  //Agregar evento al boton Web de la fundacion
+  document.getElementById("btnFundationWeb").onclick = function(){
+    location.href = "http://fundacionfuper.org";
+
+  };
   
   //Agregar evento a el boton de sintomas
 

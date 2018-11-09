@@ -28,7 +28,16 @@ function inicializarVariables(){
         btnEnfermedadClose.push(document.getElementById('btnModalEnfermedad'+(i+1)));
         modalEnfermedad.push(document.getElementById('modalEnfermedad'+(i+1)));
     }
-    
+
+    for(let i = 0; i < 13; i++){
+        btnEnfermedad[i].addEventListener("click",function(){
+            openModal(modalEnfermedad[i].id);
+        });
+
+        btnEnfermedadClose[i].addEventListener("click", function(){
+            closeModal(modalEnfermedad[i].id);
+        });
+    }
 
     btnLvl1 = document.getElementById("btnLevel1");
     sintomas = [];

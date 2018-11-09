@@ -12,7 +12,7 @@ var iconos;
 var obejetivosAnim;
 var coordenadasOriginales;
 var botones = [];
-
+var btnEnfermedad = [];
 
 function init(){
 	inicializarVariables();
@@ -20,6 +20,11 @@ function init(){
 }
 
 function inicializarVariables(){
+    
+    for(let i = 0; i < 13; i++){
+        btnEnfermedad.push(document.getElementById('btnEnfermedad'+(i+1)));
+    }
+       
     btnLvl1 = document.getElementById("btnLevel1");
     sintomas = [];
     element = document.querySelector("#div1");

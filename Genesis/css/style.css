@@ -22,7 +22,6 @@ section{
 }
 
 #imgLoad{
-    
     max-width: 100% !important;
 }
 .gameImage{
@@ -267,5 +266,26 @@ section{
     margin-left: 0px;
     margin-top: 0px;
     display: contents;
+}
+
+.img-background{
+    height: max-content;
+}
+.img-icon{
+    position: relative;
+}
+
+#btnEnfermedad1{
+    margin-left: 51px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1346px;
+}
+
+#btnEnfermedad2{
+    margin-left: 279px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
 }
 

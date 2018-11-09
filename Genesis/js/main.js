@@ -144,7 +144,6 @@ function crearSintomas(evt){
         coordenadasOriginales[i].left = parseInt(iconos[i].style.left,10);
         coordenadasOriginales[i].top = parseInt(iconos[i].style.top,10);
     } 
-    
 }
 
 function formarEnfermedad(indice, clase){
@@ -202,9 +201,6 @@ function formarEnfermedad(indice, clase){
                 }
                },1500);
                 //debugger;
-
-                
-                
             }
             else{
                 //Reorganizar imgs

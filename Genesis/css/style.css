@@ -372,3 +372,25 @@ section{
     display: block;
     margin-top: -158px;
 }
+
+.modalEnfermedad{
+    position: relative;
+    margin-right: auto;
+    margin-left: 50px;
+    margin-top: 91px;
+}
+
+.btnModalEnfermedad{
+    margin-left: 481px;
+    margin-right: auto;
+    display: block;
+    margin-top: -923px;
+}
+
+#modalEnfermedad13{
+    margin-top: 380px !important;
+}
+
+#modalEnfermedad14{
+    margin-top: 380px !important;
+}

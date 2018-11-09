@@ -17,11 +17,16 @@
     display: block;
 }
 
+#ModalStop {
+    z-index: 1;
+    position: relative;
+}
 section{
     display: none;
 }
 
 #imgLoad{
+    
     max-width: 100% !important;
 }
 .gameImage{
@@ -104,7 +109,7 @@ section{
     margin-left: 76px;
     margin-right: auto;
     display: block;
-    margin-top: -1365px;
+    margin-top: -1369px;
    
 }
 #Fundation{
@@ -245,8 +250,8 @@ section{
     margin-bottom: 50px;
 }
 
-#btnTryVictory{
-    margin-left: -366px;
+#btnNextLevel{
+    margin-left: -450px;
     margin-bottom: 50px;
 }
 
@@ -259,6 +264,11 @@ section{
     position: relative;
     z-index: 99;
 }
+#btnContinue{
+    margin-left: -339px;
+    margin-bottom: 64px;
+    
+}
 #div1{
     height: 1281px;
     width: 722px;
@@ -267,7 +277,6 @@ section{
     margin-top: 0px;
     display: contents;
 }
-
 .img-background{
     height: max-content;
 }

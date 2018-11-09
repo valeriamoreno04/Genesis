@@ -23,13 +23,13 @@ function init(){
 
 function inicializarVariables(){
     
-    for(let i = 0; i < 14; i++){
+    for(let i = 0; i < 13; i++){
         btnEnfermedad.push(document.getElementById('btnEnfermedad'+(i+1)));
         btnEnfermedadClose.push(document.getElementById('btnModalEnfermedad'+(i+1)));
         modalEnfermedad.push(document.getElementById('modalEnfermedad'+(i+1)));
     }
 
-    for(let i = 0; i < 14; i++){
+    for(let i = 0; i < 13; i++){
         btnEnfermedad[i].addEventListener("click",function(){
             openModal(modalEnfermedad[i].id);
         });

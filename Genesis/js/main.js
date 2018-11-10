@@ -28,8 +28,8 @@ function inicializarVariables(){
     obejetivosAnim = new Array();
     coordenadasOriginales = new Array();
     
-    enfermedades = new Array();
-    enfermedades[0] = new Object();   
+    enfermedades = [];
+    enfermedades[0] = {};   
     enfermedades[0].sintoma1 = 5;
     enfermedades[0].sintoma2 = 7;
     enfermedades[0].sintoma3 = 8;

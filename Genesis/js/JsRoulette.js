@@ -1,3 +1,4 @@
+
 window.onload= start;
 var levelTime=0;
 

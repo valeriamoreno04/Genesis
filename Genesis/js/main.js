@@ -12,7 +12,9 @@ var iconos;
 var obejetivosAnim;
 var coordenadasOriginales;
 var botones = [];
-
+var btnEnfermedad = [];
+var btnEnfermedadClose = [];
+var modalEnfermedad = [];
 
 function init(){
 	inicializarVariables();
@@ -20,6 +22,23 @@ function init(){
 }
 
 function inicializarVariables(){
+    
+    for(let i = 0; i < 13; i++){
+        btnEnfermedad.push(document.getElementById('btnEnfermedad'+(i+1)));
+        btnEnfermedadClose.push(document.getElementById('btnModalEnfermedad'+(i+1)));
+        modalEnfermedad.push(document.getElementById('modalEnfermedad'+(i+1)));
+    }
+
+    for(let i = 0; i < 13; i++){
+        btnEnfermedad[i].addEventListener("click",function(){
+            openModal(modalEnfermedad[i].id);
+        });
+
+        btnEnfermedadClose[i].addEventListener("click", function(){
+            closeModal(modalEnfermedad[i].id);
+        });
+    }
+
     btnLvl1 = document.getElementById("btnLevel1");
     sintomas = [];
     element = document.querySelector("#div1");
@@ -144,7 +163,6 @@ function crearSintomas(evt){
         coordenadasOriginales[i].left = parseInt(iconos[i].style.left,10);
         coordenadasOriginales[i].top = parseInt(iconos[i].style.top,10);
     } 
-    
 }
 
 function formarEnfermedad(indice, clase){
@@ -202,9 +220,6 @@ function formarEnfermedad(indice, clase){
                 }
                },1500);
                 //debugger;
-
-                
-                
             }
             else{
                 //Reorganizar imgs

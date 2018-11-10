@@ -17,6 +17,10 @@
     display: block;
 }
 
+#ModalStop {
+    z-index: 1;
+    position: relative;
+}
 section{
     display: none;
 }
@@ -105,7 +109,7 @@ section{
     margin-left: 76px;
     margin-right: auto;
     display: block;
-    margin-top: -1493px;
+    margin-top: -1369px;
    
 }
 #Fundation{
@@ -127,7 +131,7 @@ section{
     margin-left: 248px;
     margin-right: auto;
     display: block;
-    margin-top: 990px;
+    margin-top: 994px;;
    
 }
 
@@ -246,8 +250,8 @@ section{
     margin-bottom: 50px;
 }
 
-#btnTryVictory{
-    margin-left: -366px;
+#btnNextLevel{
+    margin-left: -450px;
     margin-bottom: 50px;
 }
 
@@ -260,6 +264,11 @@ section{
     position: relative;
     z-index: 99;
 }
+#btnContinue{
+    margin-left: -339px;
+    margin-bottom: 64px;
+    
+}
 #div1{
     height: 1281px;
     width: 722px;
@@ -268,4 +277,129 @@ section{
     margin-top: 0px;
     display: contents;
 }
+.img-background{
+    height: max-content;
+}
+.img-icon{
+    position: relative;
+}
 
+#btnEnfermedad1{
+    margin-left: 51px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1346px;
+}
+
+#btnEnfermedad2{
+    margin-left: 279px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+#btnEnfermedad3{
+    margin-left: 500px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+#btnEnfermedad4{
+    margin-left: 51px;
+    margin-right: auto;
+    display: block;
+    margin-top: 102px;
+}
+
+#btnEnfermedad5{
+    margin-left: 279px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+#btnEnfermedad6{
+    margin-left: 500px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+#btnEnfermedad7{
+    margin-left: 51px;
+    margin-right: auto;
+    display: block;
+    margin-top: 102px;
+}
+
+#btnEnfermedad8{
+    margin-left: 279px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+#btnEnfermedad9{
+    margin-left: 500px;
+    margin-right: auto;
+    display: block;
+    margin-top: -152px;
+}
+
+#btnEnfermedad10{
+    margin-left: 51px;
+    margin-right: auto;
+    display: block;
+    margin-top: 102px;
+}
+
+#btnEnfermedad11{
+    margin-left: 279px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+#btnEnfermedad12{
+    margin-left: 500px;
+    margin-right: auto;
+    display: block;
+    margin-top: -152px;
+}
+
+#btnEnfermedad13{
+    margin-left: 159px;
+    margin-right: auto;
+    display: block;
+    margin-top: 102px;
+}
+
+#btnEnfermedad14{
+    margin-left: 402px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+.modalEnfermedad{
+    position: relative;
+    margin-right: auto;
+    margin-left: 50px;
+    margin-top: 91px;
+}
+
+.btnModalEnfermedad{
+    margin-left: 481px;
+    margin-right: auto;
+    display: block;
+    margin-top: -923px;
+}
+
+#modalEnfermedad13{
+    margin-top: 380px !important;
+}
+
+#modalEnfermedad14{
+    margin-top: 380px !important;
+}

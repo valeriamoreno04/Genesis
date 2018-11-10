@@ -1,4 +1,5 @@
 window.onload= start;
+var levelTime=0;
 
 function start(){
 
@@ -20,6 +21,7 @@ function start(){
     var btnLevel3=document.getElementById("btnLevel3");
     var btnLevel4=document.getElementById("btnLevel4");
     var btnLevel5=document.getElementById("btnLevel5");
+    
     
   //Inicializar los botones los niveles
   //Nivel 1
@@ -51,21 +53,26 @@ function start(){
 
   //Inicializar el boton de fundacion  
     var btnFundationBack=document.getElementById("btnFundationBack");
-
+  
   //Inicializar el boton de ir al sitio web de la Fundacion 
   var btnFundationWeb=document.getElementById("btnFundationWeb");
   
   //Inicializar el boton home de los Modales
+
     //Victory
     var btnVictoryBack=document.getElementById("btnVictoryBack");
-    var btnTryVictory=document.getElementById("btnTryVictory");
+    var btnNextLevel=document.getElementById("btnNextLevel");
+
     //TryAgain
     var btnTryAgainBack=document.getElementById("btnTryAgainBack");
     var btnTryTry=document.getElementById("btnTryTry");
+
     //Stop
-    // var btnStopHelp=document.getElementById("btnStopHelp");
-    // var btnStopSintoms=document.getElementById("btnStopSintoms");
-    var btnStopHome=document.getElementById("btnStopHome")
+    var btnStopHelp=document.getElementById("btnStopHelp");
+    var btnStopSintoms=document.getElementById("btnStopSintoms");
+    var btnStopHome=document.getElementById("btnStopHome");
+    var btnContinue=document.getElementById("btnContinue");
+
     //Help
     var btnHelpBack=document.getElementById("btnHelpBack");
 
@@ -89,27 +96,33 @@ function start(){
   //Agregar los evento a los botones del menu de niveles
 
     btnLevelBack.addEventListener("click", function(){
-      transition("Levels", "Start")
+      transition("Levels", "Start");
+      levelTime=0;
     });
 
     btnLevel1.addEventListener("click", function(){
-      transition("Levels", "Level1")
+      transition("Levels", "Level1");
+      levelTime=1;
     });
 
     btnLevel2.addEventListener("click", function(){
       transition("Levels", "Level2");
+      levelTime=2;
     });
 
     btnLevel3.addEventListener("click", function(){
       transition("Levels", "Level3");
+      levelTime=3;
     });
 
     btnLevel4.addEventListener("click", function(){
       transition("Levels", "Level4");
+      levelTime=4;
     });
 
     btnLevel5.addEventListener("click", function(){
       transition("Levels", "Level5");
+      levelTime=5;
     });
 
   //Agregar eventos a los botones de cada nivel
@@ -131,19 +144,19 @@ function start(){
     });
 
     btnLevel1Stop.addEventListener("click",function(){
-      openModal("ModalTryAgain");
+      openModalPause("ModalTryAgain",1);
     });
     btnLevel2Stop.addEventListener("click",function(){
-        openModal("ModalVictory");
+        openModalPause("ModalVictory",2);
     });
     btnLevel3Stop.addEventListener("click",function(){
-      openModal("ModalStop");
+      openModalPause("ModalStop",3);
+    });
+    btnLevel4Stop.addEventListener("click",function(){
+      openModalPause("ModalStop",4);
     });
     btnLevel5Stop.addEventListener("click",function(){
-      openModal("ModalStop");
-    });
-    btnLevel5Stop.addEventListener("click",function(){
-      openModal("ModalStop");
+      openModalPause("ModalStop",5);
     });
 
   //Agregar evento a el boton de creditos
@@ -157,54 +170,62 @@ function start(){
     btnFundationBack.addEventListener("click", function(){
       transition("Fundation", "Start");
     });
-
+  
   //Agregar evento al boton Web de la fundacion
-  document.getElementById("btnFundationWeb").onclick = function(){
-    location.href = "http://fundacionfuper.org";
+    btnFundationWeb.onclick = function(){
+    window.open('http://fundacionfuper.org','_blank');
 
   };
-  
+
   //Agregar evento a el boton de sintomas
 
   btnSintomsBack.addEventListener("click", function(){
-    transition("Sintoms", "Start");
+    openPauseSH("Sintoms", "ModalStop");
   });
 
   
   //Agregar evento a los botones de los modales
   //Victory
   btnVictoryBack.addEventListener("click", function(){
-      closeModal("ModalVictory");
+      closePause("Start","Level"+levelTime,"ModalVictory");
+      
   });
-  btnTryVictory.addEventListener("click", function(){
-      closeModal("ModalVictory");
+  
+  btnNextLevel.addEventListener("click",function(){
+    closePause("Level"+(levelTime+1),"Level"+levelTime,"ModalVictory");
   });
 
   //Try Again
   btnTryAgainBack.addEventListener("click", function(){
-      closeModal("ModalTryAgain");
+      closePause("Start","Level"+levelTime,"ModalTryAgain");
   });   
   btnTryTry.addEventListener("click", function(){
-      closeModal("ModalTryAgain");
-  }); 
+    init();
+    closeModal("ModalTryAgain");
+}); 
 
   //Stop
   btnStopHome.addEventListener("click", function(){
-      closeModal("ModalVictory");
+    closePause("Start","Level"+levelTime,"ModalStop");
+    
   });
 
-  // btnStopHelp.addEventListener("click",function(){
-      
-  // });
+  btnStopHelp.addEventListener("click",function(){
+    closePause("Help","Level"+levelTime,"ModalStop");
+  });
 
-  // btnStopSintoms.addEventListener("click",function(){
-      
-  // });
+  btnStopSintoms.addEventListener("click",function(){
+    closePause("Sintoms","Level"+levelTime,"ModalStop");
+  });
+
+  btnContinue.addEventListener("click", function(){
+    closeModal("ModalStop");
+}); 
 
   //Agregar evento a el boton de Help
-
+ 
   btnHelpBack.addEventListener("click", function(){
-      transition("Help", "ModalStop");
+      openPauseSH("Help", "ModalStop");
   });
 
 }
@@ -214,7 +235,7 @@ function loadSection () {
   setTimeout(function() {
     document.getElementById("Splash").style.display = "none";
     document.getElementById("Start").style.display = "block";
-  }, 3000);
+  }, 5000);
 }
 
 //Cambia los display para la navegabilidad
@@ -226,9 +247,41 @@ function transition(id_invisible, id_visible) {
 
 function closeModal(id_invisible) {
    document.getElementById(id_invisible).style.display = "none";
+   levelTime=0;
 }
 
 function openModal(id_visible) {
   
   document.getElementById(id_visible).style.display = "block";
+}
+
+// Aca hay problema
+// Cierra  ayuda o sintoma y abre el modal y el nivel 
+function openModalPause(id_visible,level) {
+  
+  document.getElementById(id_visible).style.display = "block";
+  levelTime=level;
+}
+
+// No funciona
+// Cierra el modal, el nivel y abre ayuda o sintoma
+function closePause(id_clase, id_nivel, id_modal){
+   document.getElementById(id_clase).style.display="block";
+   document.getElementById(id_nivel).style.display="none";
+   document.getElementById(id_modal).style.display="none";
+
+}
+
+// Aca hay problema
+// Cierra  ayuda o sintoma y abre el modal y el nivel
+function openPauseSH(id_clase,id_modal){
+  if(levelTime==0){
+    document.getElementById("Start").style.display="block";
+    document.getElementById(id_clase).style.display="none";
+  }else{
+    document.getElementById(id_clase).style.display="none";
+    document.getElementById("Level"+levelTime).style.display="block";
+    document.getElementById(id_modal).style.display="block";
+    
+  }
 }

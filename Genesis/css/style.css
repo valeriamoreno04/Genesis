@@ -1,5 +1,4 @@
 
-
 .app-container{
     position: relative;
 }
@@ -107,10 +106,10 @@ section{
 
 #btnSintomsBack{
     position: relative;
-    margin-left: 65px;
+    margin-left: 76px;
     margin-right: auto;
     display: block;
-    margin-top: -884px;
+    margin-top: -1369px;
    
 }
 #Fundation{
@@ -132,7 +131,7 @@ section{
     margin-left: 248px;
     margin-right: auto;
     display: block;
-    margin-top: 837px;
+    margin-top: 994px;;
    
 }
 
@@ -286,17 +285,17 @@ section{
 }
 
 #btnEnfermedad1{
-    margin-left: 57px;
+    margin-left: 51px;
     margin-right: auto;
     display: block;
-    margin-top: -1291px;
+    margin-top: -1346px;
 }
 
 #btnEnfermedad2{
-    margin-left: 273px;
+    margin-left: 279px;
     margin-right: auto;
     display: block;
-    margin-top: -156px;
+    margin-top: -158px;
 }
 
 #btnEnfermedad3{

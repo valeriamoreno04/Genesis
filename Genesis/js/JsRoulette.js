@@ -1,4 +1,3 @@
-
 window.onload= start;
 var levelTime=0;
 
@@ -174,7 +173,7 @@ function start(){
   
   //Agregar evento al boton Web de la fundacion
     btnFundationWeb.onclick = function(){
-    location.href = "http://fundacionfuper.org";
+    window.open('http://fundacionfuper.org','_blank');
 
   };
 
@@ -188,7 +187,7 @@ function start(){
   //Agregar evento a los botones de los modales
   //Victory
   btnVictoryBack.addEventListener("click", function(){
-      closePause("Levels","Level"+levelTime,"ModalVictory");
+      closePause("Start","Level"+levelTime,"ModalVictory");
       
   });
   
@@ -198,7 +197,7 @@ function start(){
 
   //Try Again
   btnTryAgainBack.addEventListener("click", function(){
-      closePause("Levels","Level"+levelTime,"ModalTryAgain");
+      closePause("Start","Level"+levelTime,"ModalTryAgain");
   });   
   btnTryTry.addEventListener("click", function(){
     init();
@@ -207,7 +206,7 @@ function start(){
 
   //Stop
   btnStopHome.addEventListener("click", function(){
-    closePause("Levels","Level"+levelTime,"ModalStop");
+    closePause("Start","Level"+levelTime,"ModalStop");
     
   });
 
@@ -236,7 +235,7 @@ function loadSection () {
   setTimeout(function() {
     document.getElementById("Splash").style.display = "none";
     document.getElementById("Start").style.display = "block";
-  }, 3000);
+  }, 5000);
 }
 
 //Cambia los display para la navegabilidad

@@ -199,10 +199,9 @@ function start(){
   btnTryAgainBack.addEventListener("click", function(){
       closePause("Start","Level"+levelTime,"ModalTryAgain");
   });   
-  btnTryTry.addEventListener("click", function(){
-    init();
-    closeModal("ModalTryAgain");
-}); 
+  btnTryTry.addEventListener("click", function(){    
+      closeModal("ModalTryAgain");
+  }); 
 
   //Stop
   btnStopHome.addEventListener("click", function(){
@@ -235,7 +234,7 @@ function loadSection () {
   setTimeout(function() {
     document.getElementById("Splash").style.display = "none";
     document.getElementById("Start").style.display = "block";
-  }, 5000);
+  }, 1000);
 }
 
 //Cambia los display para la navegabilidad

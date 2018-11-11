@@ -1,14 +1,45 @@
 ﻿<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
 <html>
 
 <head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css">
     <title>Génesis App</title>
 </head>
 
 <body>
-
     <!-- Carga -->
     <section id="Splash">
         <img id="imgLoad" alt="full screen background image" src="img/carga.gif">
@@ -16,7 +47,7 @@
 
     <!-- Menu -->
     <section id="Start">
-        <img id="imgLanding" class="gameImage" src="img/index/fondo-landing.png" alt="full screen background image">
+        <img id="imgLanding" class="gameImage" src="img/index/fondo-landing.gif" alt="full screen background image">
         <img id="btnPlayLandindg" src="img/index/boton-jugar.png" alt="Boton jugar">
         <img id="btnSintomsLanding" src="img/index/boton-sintomas.png" alt="Boton Sintomas">
         <img id="btnFundationLanding" src="img/index/boton-fundacion.png" alt="Boton fundacion">
@@ -97,28 +128,34 @@
         <img src="img/enfermedades/iconoenfermedad-duchennmpato.png" alt="Boton enfermedad Duchenn" id="btnEnfermedad2">
 
         <!-- Enfermedad #3 Inmunodeficiencia Primaria-->
-        <img src="img/enfermedades/iconoenfermedad-inmunodeficiencia.png" alt="Boton enfermedadInmunodeficiencia Primaria" id="btnEnfermedad3">
+        <img src="img/enfermedades/iconoenfermedad-inmunodeficiencia.png" alt="Boton enfermedadInmunodeficiencia Primaria"
+            id="btnEnfermedad3">
 
         <!-- Enfermedad #4 Sindrome de Klippel Feil-->
         <img src="img/enfermedades/iconoenfermedad-cuellocorto.png" alt="Boton enfermedad Klippel Feil" id="btnEnfermedad4">
 
         <!-- Enfermedad #5 Narcolepsia Cataplejia-->
-        <img src="img/enfermedades/iconoenfermedad-narcolepsiacataplejia.png" alt="Boton enfermedadNarcolepsia enfermedad Cataplejia" id="btnEnfermedad5">
+        <img src="img/enfermedades/iconoenfermedad-narcolepsiacataplejia.png" alt="Boton enfermedadNarcolepsia enfermedad Cataplejia"
+            id="btnEnfermedad5">
 
         <!-- Enfermedad #6 Paraparesia espastica tropical-->
         <img src="img/enfermedades/iconoenfermedad-medula.png" alt="Boton enfermedad Paraparesia espastica tropical" id="btnEnfermedad6">
 
         <!-- Enfermedad #7 Atrofia muscular espinal tipo II-->
-        <img src="img/enfermedades/iconoenfermedad-hipotonia.png" alt="Boton enfermedad Atrofia muscular espinal tipo II" id="btnEnfermedad7">
+        <img src="img/enfermedades/iconoenfermedad-hipotonia.png" alt="Boton enfermedad Atrofia muscular espinal tipo II"
+            id="btnEnfermedad7">
 
         <!-- Enfermedad #8 Distrofia muscular de Cinturas-->
-        <img src="img/enfermedades/iconoenfermedad-debilidadcintura.png" alt="Boton enfermedad Distrofia muscular de Cinturas" id="btnEnfermedad8">
+        <img src="img/enfermedades/iconoenfermedad-debilidadcintura.png" alt="Boton enfermedad Distrofia muscular de Cinturas"
+            id="btnEnfermedad8">
 
         <!-- Enfermedad #9 Polimistosis dermatomistosis-->
-        <img src="img/enfermedades/iconoenfermedad-debilidadpulmonar.png" alt="Boton enfermedad Polimistosis dermatomistosis" id="btnEnfermedad9">
+        <img src="img/enfermedades/iconoenfermedad-debilidadpulmonar.png" alt="Boton enfermedad Polimistosis dermatomistosis"
+            id="btnEnfermedad9">
 
         <!-- Enfermedad #10 Morquio Tipo IV A (MPS)-->
-        <img src="img/enfermedades/iconoenfermedad-deformidadhuesos.png" alt="Boton enfermedad Morquio Tipo IV A (MPS)" id="btnEnfermedad10">
+        <img src="img/enfermedades/iconoenfermedad-deformidadhuesos.png" alt="Boton enfermedad Morquio Tipo IV A (MPS)"
+            id="btnEnfermedad10">
 
         <!-- Enfermedad #11 Miastenia Gravis-->
         <img src="img/enfermedades/iconoenfermedad-cabezacaida.png" alt="Boton enfermedad Miastenia Gravis" id="btnEnfermedad11">
@@ -130,7 +167,8 @@
         <img src="img/enfermedades/iconoenfermedad-anillo.png" alt="Boton enfermedad Acalasia" id="btnEnfermedad13">
 
         <!-- Enfermedad #14 Agnesia del cuerpo calloso-->
-        <img src="img/enfermedades/iconoenfermedad-hemisferioscerebros.png" alt="Boton enfermedad Agnesia del cuerpo calloso" id="btnEnfermedad14">
+        <img src="img/enfermedades/iconoenfermedad-hemisferioscerebros.png" alt="Boton enfermedad Agnesia del cuerpo calloso"
+            id="btnEnfermedad14">
 
         <!-- Regresar -->
         <img id="btnSintomsBack" src="img/creditos/boton-atras.png" alt="Boton regresar al menu principal">
@@ -259,6 +297,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="js/JsRoulette.js"></script>
     <script src="js/main.js"></script>
+    <!-- <script type="text/javascript" src="cordova.js"></script> Archivo no existe-->
+    <!-- <script type="text/javascript" src="js/index.js"></script> Descomentar en cordova-->
 </body>
 
 </html>

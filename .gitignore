@@ -1,6 +1,7 @@
 
 Genesis/.DS_Store
 *.apk
+*.zip
 *node_modules/
-platforms/
-res/
+*platforms/
+*res/

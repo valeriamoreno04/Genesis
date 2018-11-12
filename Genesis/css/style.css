@@ -269,7 +269,8 @@ section{
     margin-bottom: 64px;
     
 }
-#div1{
+
+.div1{
     height: 1281px;
     width: 722px;
     margin-right: 0px;
@@ -277,6 +278,7 @@ section{
     margin-top: 0px;
     display: contents;
 }
+
 .img-background{
     height: max-content;
 }

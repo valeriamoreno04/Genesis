@@ -20,13 +20,50 @@ var botones = [];
 var btnEnfermedad = [];
 var btnEnfermedadClose = [];
 var modalEnfermedad = [];
+var nivelesProgreso = [];
 
 function init(){
-	inicializarVariables();
-	inicializarEventos();	
+
+    nivelesProgreso = {
+        1:false,
+        2:false,
+        3:false,
+        4:false,
+        5:false
+    };
+    
+    inicializarVariables();
+    inicializarEventos();
+    
+}
+
+function progeso(nivel){
+    nivelesProgreso[nivel] = true;
+    localStorage.clear(); //Se quitan los datos anteriores
+    localStorage.setItem("data", JSON.stringify(nivelesProgreso));//Se guardan los nuevos datos
+    if(nivel == 0){ //Desbloquea el nivel 2
+        btnLvl2.addEventListener("click",crearNivel2);
+        btnLvl2.style.opacity=1;
+    }
+    else if(nivel == 1){ //Desbloquea el nivel 3
+        btnLvl3.addEventListener("click",crearNivel3);
+        btnLvl3.style.opacity=1;
+    }
+    else if(nivel == 4){ //Desbloquea el nivel 3
+        btnLvl4.addEventListener("click",crearNivel4);
+        btnLvl4.style.opacity=1;
+    }
+    else if(nivel == 5){ //Desbloquea el nivel 3
+        btnLvl5.addEventListener("click",crearNivel5);
+        btnLvl5.style.opacity=1;
+    }
 }
 
 function inicializarVariables(){
+
+
+    localStorage.setItem("data", JSON.stringify(nivelesProgreso));
+
     for(let i = 0; i < 13; i++){
         btnEnfermedad.push(document.getElementById('btnEnfermedad'+(i+1)));
         btnEnfermedadClose.push(document.getElementById('btnModalEnfermedad'+(i+1)));
@@ -84,10 +121,6 @@ function inicializarVariables(){
 
 function inicializarEventos(){
     btnLvl1.addEventListener("click",crearNivel1);
-    btnLvl2.addEventListener("click",crearNivel2);
-    btnLvl3.addEventListener("click",crearNivel3);
-    btnLvl4.addEventListener("click",crearNivel4);
-    btnLvl5.addEventListener("click",crearNivel5);
 }
 
 function formarEnfermedad(indice, id, nivel){
@@ -165,6 +198,13 @@ function formarEnfermedad(indice, id, nivel){
 
             coincide = false;
             numEnfermedad++;
+
+            if(nivel != 0 && numEnfermedad == 3){
+                progeso(nivel);
+            }
+            else if(nivel == 0 && numEnfermedad == 2){
+                progeso(nivel);
+            }
         }
         else{
             //Reorganizar imgs            

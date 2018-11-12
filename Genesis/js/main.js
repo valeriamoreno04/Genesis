@@ -14,7 +14,6 @@ var cont;
 var obejetivosAnim;
 var coincide;
 var enfermedad;
-var numEnfermedad;
 var temp;
 var botones = [];
 var btnEnfermedad = [];
@@ -63,7 +62,6 @@ function inicializarVariables(){
 
     sintomas = [];
     cont = 0;
-    numEnfermedad = 0;
     obejetivosAnim = [];
 
     niveles = [];
@@ -125,8 +123,7 @@ function formarEnfermedad(indice, id, nivel){
                     break;
             }            
         }
-        if(coincide){    
-            //debugger;        
+        if(coincide){                   
             var imgEnfermedad = document.createElement("img");            
             imgEnfermedad.setAttribute("src", niveles[nivel].enfermedades[enfermedad].icono);            
             imgEnfermedad.setAttribute("id",niveles[nivel].enfermedades[enfermedad].id);            
@@ -137,11 +134,11 @@ function formarEnfermedad(indice, id, nivel){
             imgEnfermedad.style.left = ((anchoContainer/2 + 6) - parseInt(imgEnfermedad.style.height, 10)/2) + 'px';
             document.getElementById("div" + (nivel+1)).appendChild(imgEnfermedad);
             if(nivel!=0){
-                if(numEnfermedad==0){
+                if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                     TweenMax.to(imgEnfermedad, 1, {left:123, top:1062, scale:1.15, delay:2});
                 }
-                else if(numEnfermedad==1){   
+                else if(niveles[nivel].numEnfAcertadas==1){
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                         TweenMax.to(imgEnfermedad, 1, {left:335, top:1062, scale:1.15, delay:2});
                     }
@@ -151,11 +148,11 @@ function formarEnfermedad(indice, id, nivel){
                     }
             }
             else{
-                if(numEnfermedad==0){
+                if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                     TweenMax.to(imgEnfermedad, 1, {left:200, top:1060, scale:1.15, delay:2});
                 }
-                else if(numEnfermedad==1){   
+                else if(niveles[nivel].numEnfAcertadas==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                         TweenMax.to(imgEnfermedad, 1, {left:412, top:1062, scale:1.15, delay:2});
                     }
@@ -164,7 +161,7 @@ function formarEnfermedad(indice, id, nivel){
             setTimeout(eliminarIconos.bind(null, obejetivosAnim), 1500);
 
             coincide = false;
-            numEnfermedad++;
+            niveles[nivel].numEnfAcertadas++;
         }
         else{
             //Reorganizar imgs            
@@ -206,7 +203,7 @@ function asignarCoordenadas(img, container){
 //nivel 1
 function crearNivel1(){    
     if(!generado1){
-        numEnfermedad=0;
+        niveles[0].numEnfAcertadas = 0;
 
         niveles[0].enfermedades[0] = {};
         niveles[0].enfermedades[0].sintoma1 = 5;
@@ -319,7 +316,7 @@ function crearNivel1(){
 //nivel 2
 function crearNivel2(){
     if(!generado2){
-        numEnfermedad=0;
+        niveles[1].numEnfAcertadas = 0;
 
         niveles[1].enfermedades[0] = {};    
         niveles[1].enfermedades[0].sintoma1 = 9;
@@ -438,7 +435,7 @@ function crearNivel2(){
 //NIVEL 3
 function crearNivel3(){
     if(!generado3){
-        numEnfermedad=0;
+        niveles[2].numEnfAcertadas = 0;
 
         niveles[2].enfermedades[0] = {};    
         niveles[2].enfermedades[0].sintoma1 = 9;
@@ -553,7 +550,7 @@ function crearNivel3(){
 //nivel 4
 function crearNivel4(){
     if(!generado4){
-        numEnfermedad=0;
+        niveles[3].numEnfAcertadas = 0;
 
         niveles[3].enfermedades[0] = {};    
         niveles[3].enfermedades[0].sintoma1 = 10;
@@ -669,7 +666,7 @@ function crearNivel4(){
 //NIVEL 5
 function crearNivel5(){
     if(!generado5){
-        numEnfermedad=0;
+        niveles[4].numEnfAcertadas = 0;
 
         niveles[4].enfermedades[0] = {};    
         niveles[4].enfermedades[0].sintoma1 = 2;

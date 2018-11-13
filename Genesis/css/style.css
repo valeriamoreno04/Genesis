@@ -1,4 +1,6 @@
-
+body{
+    max-width: 100% !important;
+}
 .app-container{
     position: relative;
 }
@@ -150,6 +152,7 @@ section{
     margin-right: auto;
     display: block;
     margin-top: 26px;
+    opacity: 0.5;
    
 }
 
@@ -159,6 +162,7 @@ section{
     margin-right: auto;
     display: block;
     margin-top: -71px;
+    opacity: 0.5;
    
 }
 
@@ -168,6 +172,7 @@ section{
     margin-right: auto;
     display: block;
     margin-top: 80px;
+    opacity: 0.5;
    
 }
 
@@ -177,6 +182,7 @@ section{
     margin-right: auto;
     display: block;
     margin-top: 111px;
+    opacity: 0.5;
    
 }
 
@@ -290,7 +296,7 @@ section{
     margin-left: 51px;
     margin-right: auto;
     display: block;
-    margin-top: -1346px;
+    margin-top: -1300px;
 }
 
 #btnEnfermedad2{

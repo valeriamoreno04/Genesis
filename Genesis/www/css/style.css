@@ -2,8 +2,10 @@ body{
     max-width: 100% !important;
 }
 .app-container{
+    height: 100vh;
     position: relative;
-    text-align:center;
+    text-align: center;
+    width: 100%;
 }
 
 .img-backgound{
@@ -37,10 +39,10 @@ section{
 }
 #btnPlayLandindg{
     position: absolute;
-    top: 31em;
-    left: 13em;
-    width: 22em;
-    height: 7em;
+    top: 38%;
+    left: 30%;
+    width: 47%;
+    height: 9%;
     /*     
     margin-left: 213px;
     margin-right: auto;
@@ -51,10 +53,10 @@ section{
 
 #btnSintomsLanding{
     position: absolute;
-    top: 40em;
-    left: 15em;
-    width: 20em;
-    height: 9em;
+    top: 49%;
+    left: 33%;
+    width: 40%;
+    height: 10%;
     /* position: relative;
     margin-left: 246px;
     margin-right: auto;
@@ -63,10 +65,10 @@ section{
 }
 #btnFundationLanding{
     position: absolute;
-    top: 50em;
-    left: 15em;
-    width: 18em;
-    height: 7em;
+    top: 61%;
+    left: 33%;
+    width: 38%;
+    height: 8%;
     /* position: relative;
     margin-left: 241px;
     margin-right: auto;
@@ -75,10 +77,10 @@ section{
 }
 #btnCreditsLanding{
     position: absolute;
-    top: 59em;
-    left: 15em;
-    width: 18em;
-    height: 6em;
+    top: 71%;
+    left: 33%;
+    width: 38%;
+    height: 8%;
     /* position: relative;
     margin-left: 237px;
     margin-right: auto;
@@ -158,60 +160,94 @@ section{
 }
 
 #btnLevel1{
-    position: relative;
+    position: absolute;
+    top: 21%;
+    left: 22%;
+    width: 26%;
+    height: 12%;
+    /* position: relative;
     margin-left: 150px;
     margin-right: auto;
     display: block;
-    margin-top: -1033px;
+    margin-top: -1033px; */
    
 }
 
 #btnLevel2{
-    position: relative;
+    position: absolute;
+    top: 35%;
+    left: 75%;
+    width: 26%;
+    height: 12%;
+    opacity: 0.5;
+    /* position: relative;
     margin-left: 500px;
     margin-right: auto;
     display: block;
     margin-top: 26px;
-    opacity: 0.5;
+    opacity: 0.5; */
    
 }
 
 #btnLevel3{
-    position: relative;
+    position: absolute;
+    top: 43%;
+    left: 35%;
+    width: 26%;
+    height: 12%;
+    opacity: 0.5;
+    /* position: relative;
     margin-left: 214px;
     margin-right: auto;
     display: block;
     margin-top: -71px;
-    opacity: 0.5;
+    opacity: 0.5; */
    
 }
 
 #btnLevel4{
-    position: relative;
+    position: absolute;
+    top: 62%;
+    left: 67%;
+    width: 26%;
+    height: 12%;
+    opacity: 0.5;
+    /* position: relative;
     margin-left: 442px;
     margin-right: auto;
     display: block;
     margin-top: 80px;
-    opacity: 0.5;
+    opacity: 0.5; */
    
 }
 
 #btnLevel5{
-    position: relative;
+    position: absolute;
+    top: 84%;
+    left: 25%;
+    width: 27%;
+    height: 13%;
+    opacity: 0.5;
+    /* position: relative;
     margin-left: 164px;
     margin-right: auto;
     display: block;
     margin-top: 111px;
-    opacity: 0.5;
+    opacity: 0.5; */
    
 }
 
 #btnLevelBack{
-    position: relative;
+    position: absolute;
+    top: 5%;
+    left: 12%;
+    width: 15%;
+    height: 7%;
+    /* position: relative;
     margin-left: 108px;
     margin-right: auto;
     display: block;
-    margin-top: -1150px;
+    margin-top: -1150px; */
    
 }
 
@@ -313,6 +349,11 @@ section{
 }
 
 #btnEnfermedad1{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 51px;
     margin-right: auto;
     display: block;
@@ -320,6 +361,11 @@ section{
 }
 
 #btnEnfermedad2{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 279px;
     margin-right: auto;
     display: block;
@@ -327,6 +373,11 @@ section{
 }
 
 #btnEnfermedad3{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 500px;
     margin-right: auto;
     display: block;
@@ -334,6 +385,11 @@ section{
 }
 
 #btnEnfermedad4{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 51px;
     margin-right: auto;
     display: block;
@@ -341,6 +397,11 @@ section{
 }
 
 #btnEnfermedad5{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 279px;
     margin-right: auto;
     display: block;
@@ -348,6 +409,11 @@ section{
 }
 
 #btnEnfermedad6{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 500px;
     margin-right: auto;
     display: block;
@@ -355,6 +421,11 @@ section{
 }
 
 #btnEnfermedad7{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 51px;
     margin-right: auto;
     display: block;
@@ -362,6 +433,11 @@ section{
 }
 
 #btnEnfermedad8{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 279px;
     margin-right: auto;
     display: block;
@@ -369,6 +445,11 @@ section{
 }
 
 #btnEnfermedad9{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 500px;
     margin-right: auto;
     display: block;
@@ -376,6 +457,11 @@ section{
 }
 
 #btnEnfermedad10{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 51px;
     margin-right: auto;
     display: block;
@@ -383,6 +469,11 @@ section{
 }
 
 #btnEnfermedad11{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 279px;
     margin-right: auto;
     display: block;
@@ -390,6 +481,11 @@ section{
 }
 
 #btnEnfermedad12{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 500px;
     margin-right: auto;
     display: block;
@@ -397,6 +493,11 @@ section{
 }
 
 #btnEnfermedad13{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 159px;
     margin-right: auto;
     display: block;
@@ -404,6 +505,11 @@ section{
 }
 
 #btnEnfermedad14{
+    /* position: absolute;
+    top: 21%;
+    left: 12%;
+    width: 20%;
+    height: 10%; */
     margin-left: 402px;
     margin-right: auto;
     display: block;

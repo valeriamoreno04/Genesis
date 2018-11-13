@@ -267,11 +267,17 @@ section{
 }
 
 #btnCreditsBack{
+    position: absolute;
+    top: 5%;
+    left: 12%;
+    width: 15%;
+    height: 7%;
+/*     
     position: relative;
     margin-left: 78px;
     margin-right: auto;
     display: block;
-    margin-top: -1195px;
+    margin-top: -1195px; */
    
 }
 

@@ -14,18 +14,56 @@ var cont;
 var obejetivosAnim;
 var coincide;
 var enfermedad;
+var numEnfermedad;
 var temp;
 var botones = [];
 var btnEnfermedad = [];
 var btnEnfermedadClose = [];
 var modalEnfermedad = [];
+var nivelesProgreso = [];
 
 function init(){
-	inicializarVariables();
-	inicializarEventos();	
+
+    nivelesProgreso = {
+        1:false,
+        2:false,
+        3:false,
+        4:false,
+        5:false
+    };
+    
+    inicializarVariables();
+    inicializarEventos();
+    
+}
+
+function progeso(nivel){
+    nivelesProgreso[nivel] = true;
+    localStorage.clear(); //Se quitan los datos anteriores
+    localStorage.setItem("data", JSON.stringify(nivelesProgreso));//Se guardan los nuevos datos
+    if(nivel == 0){ //Desbloquea el nivel 2
+        btnLvl2.addEventListener("click",crearNivel2);
+        btnLvl2.style.opacity=1;
+    }
+    else if(nivel == 1){ //Desbloquea el nivel 3
+        btnLvl3.addEventListener("click",crearNivel3);
+        btnLvl3.style.opacity=1;
+    }
+    else if(nivel == 4){ //Desbloquea el nivel 3
+        btnLvl4.addEventListener("click",crearNivel4);
+        btnLvl4.style.opacity=1;
+    }
+    else if(nivel == 5){ //Desbloquea el nivel 3
+        btnLvl5.addEventListener("click",crearNivel5);
+        btnLvl5.style.opacity=1;
+    }
 }
 
 function inicializarVariables(){
+
+
+    localStorage.setItem("data", JSON.stringify(nivelesProgreso));
+
     for(let i = 0; i < 13; i++){
         btnEnfermedad.push(document.getElementById('btnEnfermedad'+(i+1)));
         btnEnfermedadClose.push(document.getElementById('btnModalEnfermedad'+(i+1)));
@@ -62,6 +100,7 @@ function inicializarVariables(){
 
     sintomas = [];
     cont = 0;
+    numEnfermedad = 0;
     obejetivosAnim = [];
 
     niveles = [];
@@ -82,10 +121,6 @@ function inicializarVariables(){
 
 function inicializarEventos(){
     btnLvl1.addEventListener("click",crearNivel1);
-    btnLvl2.addEventListener("click",crearNivel2);
-    btnLvl3.addEventListener("click",crearNivel3);
-    btnLvl4.addEventListener("click",crearNivel4);
-    btnLvl5.addEventListener("click",crearNivel5);
 }
 
 function formarEnfermedad(indice, id, nivel){
@@ -123,7 +158,8 @@ function formarEnfermedad(indice, id, nivel){
                     break;
             }            
         }
-        if(coincide){                   
+        if(coincide){    
+            //debugger;        
             var imgEnfermedad = document.createElement("img");            
             imgEnfermedad.setAttribute("src", niveles[nivel].enfermedades[enfermedad].icono);            
             imgEnfermedad.setAttribute("id",niveles[nivel].enfermedades[enfermedad].id);            
@@ -134,11 +170,11 @@ function formarEnfermedad(indice, id, nivel){
             imgEnfermedad.style.left = ((anchoContainer/2 + 6) - parseInt(imgEnfermedad.style.height, 10)/2) + 'px';
             document.getElementById("div" + (nivel+1)).appendChild(imgEnfermedad);
             if(nivel!=0){
-                if(niveles[nivel].numEnfAcertadas==0){
+                if(numEnfermedad==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                     TweenMax.to(imgEnfermedad, 1, {left:123, top:1062, scale:1.15, delay:2});
                 }
-                else if(niveles[nivel].numEnfAcertadas==1){
+                else if(numEnfermedad==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                         TweenMax.to(imgEnfermedad, 1, {left:335, top:1062, scale:1.15, delay:2});
                     }
@@ -148,11 +184,11 @@ function formarEnfermedad(indice, id, nivel){
                     }
             }
             else{
-                if(niveles[nivel].numEnfAcertadas==0){
+                if(numEnfermedad==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                     TweenMax.to(imgEnfermedad, 1, {left:200, top:1060, scale:1.15, delay:2});
                 }
-                else if(niveles[nivel].numEnfAcertadas==1){   
+                else if(numEnfermedad==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                         TweenMax.to(imgEnfermedad, 1, {left:412, top:1062, scale:1.15, delay:2});
                     }
@@ -161,7 +197,14 @@ function formarEnfermedad(indice, id, nivel){
             setTimeout(eliminarIconos.bind(null, obejetivosAnim), 1500);
 
             coincide = false;
-            niveles[nivel].numEnfAcertadas++;
+            numEnfermedad++;
+
+            if(nivel != 0 && numEnfermedad == 3){
+                progeso(nivel);
+            }
+            else if(nivel == 0 && numEnfermedad == 2){
+                progeso(nivel);
+            }
         }
         else{
             //Reorganizar imgs            
@@ -203,7 +246,7 @@ function asignarCoordenadas(img, container){
 //nivel 1
 function crearNivel1(){    
     if(!generado1){
-        niveles[0].numEnfAcertadas = 0;
+        numEnfermedad=0;
 
         niveles[0].enfermedades[0] = {};
         niveles[0].enfermedades[0].sintoma1 = 5;
@@ -316,7 +359,7 @@ function crearNivel1(){
 //nivel 2
 function crearNivel2(){
     if(!generado2){
-        niveles[1].numEnfAcertadas = 0;
+        numEnfermedad=0;
 
         niveles[1].enfermedades[0] = {};    
         niveles[1].enfermedades[0].sintoma1 = 9;
@@ -435,7 +478,7 @@ function crearNivel2(){
 //NIVEL 3
 function crearNivel3(){
     if(!generado3){
-        niveles[2].numEnfAcertadas = 0;
+        numEnfermedad=0;
 
         niveles[2].enfermedades[0] = {};    
         niveles[2].enfermedades[0].sintoma1 = 9;
@@ -550,7 +593,7 @@ function crearNivel3(){
 //nivel 4
 function crearNivel4(){
     if(!generado4){
-        niveles[3].numEnfAcertadas = 0;
+        numEnfermedad=0;
 
         niveles[3].enfermedades[0] = {};    
         niveles[3].enfermedades[0].sintoma1 = 10;
@@ -666,7 +709,7 @@ function crearNivel4(){
 //NIVEL 5
 function crearNivel5(){
     if(!generado5){
-        niveles[4].numEnfAcertadas = 0;
+        numEnfermedad=0;
 
         niveles[4].enfermedades[0] = {};    
         niveles[4].enfermedades[0].sintoma1 = 2;

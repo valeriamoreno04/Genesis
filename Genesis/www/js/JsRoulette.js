@@ -1,5 +1,5 @@
 window.onload= start;
-var levelTime=0;
+var levelTime=1;
 
 function start(){
 
@@ -200,8 +200,10 @@ function start(){
     closePause("Start","Level"+levelTime,"ModalTryAgain");
 });   
 btnTryTry.addEventListener("click", function(){    
-    closeModal("ModalTryAgain");
-    reiniciarNivel(levelTime);
+
+    closeModalTry("ModalTryAgain");
+
+    reiniciarNivel(levelTime-1);
 });  
 
   //Stop
@@ -327,6 +329,9 @@ function openModalVictory(id_visible,level) {
   document.getElementById(id_visible).style.display = "block";
   levelTime=level;
   
+}
+function closeModalTry(id_invisible) {
+  document.getElementById(id_invisible).style.display = "none";
 }
 
 function ganar (indNivel, contador){

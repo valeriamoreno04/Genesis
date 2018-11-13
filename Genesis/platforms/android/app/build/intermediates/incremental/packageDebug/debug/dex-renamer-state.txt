@@ -1,4 +1,4 @@
-#Mon Nov 12 00:01:33 COT 2018
-base.0=C\:\\Users\\andre\\Documents\\cordova\\genesis\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-path.0=classes.dex
+#Tue Nov 13 09:32:01 COT 2018
+base.0=C\:\\Users\\cathy\\Desktop\\Genesis\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 renamed.0=classes.dex
+file.0=C\:\\Users\\cathy\\Desktop\\Genesis\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

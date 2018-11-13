@@ -1,6 +1,9 @@
-
+body{
+    max-width: 100% !important;
+}
 .app-container{
     position: relative;
+    text-align:center;
 }
 
 .img-backgound{
@@ -33,35 +36,54 @@ section{
     height: max-content;
 }
 #btnPlayLandindg{
-    position: relative;
+    position: absolute;
+    top: 31em;
+    left: 15em;
+    width: 22em;
+    height: 7em;
+    /*     
     margin-left: 213px;
     margin-right: auto;
     display: block;
     margin-top: -799px;
-   
+    */
 }
 
 #btnSintomsLanding{
-    position: relative;
+    position: absolute;
+    top: 40em;
+    left: 15em;
+    width: 20em;
+    height: 9em;
+    /* position: relative;
     margin-left: 246px;
     margin-right: auto;
     display: block;
-    margin-top: 27px;
+    margin-top: 27px; */
 }
 #btnFundationLanding{
-    position: relative;
+    position: absolute;
+    top: 50em;
+    left: 15em;
+    width: 18em;
+    height: 7em;
+    /* position: relative;
     margin-left: 241px;
     margin-right: auto;
     display: block;
-    margin-top: 37px;
+    margin-top: 37px; */
 }
 #btnCreditsLanding{
-    position: relative;
+    position: absolute;
+    top: 59em;
+    left: 15em;
+    width: 18em;
+    height: 6em;
+    /* position: relative;
     margin-left: 237px;
     margin-right: auto;
     display: block;
-    margin-top: 45px;
-
+    margin-top: 45px; */
 }
 
 
@@ -150,6 +172,7 @@ section{
     margin-right: auto;
     display: block;
     margin-top: 26px;
+    opacity: 0.5;
    
 }
 
@@ -159,6 +182,7 @@ section{
     margin-right: auto;
     display: block;
     margin-top: -71px;
+    opacity: 0.5;
    
 }
 
@@ -168,6 +192,7 @@ section{
     margin-right: auto;
     display: block;
     margin-top: 80px;
+    opacity: 0.5;
    
 }
 
@@ -177,6 +202,7 @@ section{
     margin-right: auto;
     display: block;
     margin-top: 111px;
+    opacity: 0.5;
    
 }
 
@@ -290,7 +316,7 @@ section{
     margin-left: 51px;
     margin-right: auto;
     display: block;
-    margin-top: -1346px;
+    margin-top: -1300px;
 }
 
 #btnEnfermedad2{

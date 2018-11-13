@@ -144,10 +144,10 @@ function start(){
     });
 
     btnLevel1Stop.addEventListener("click",function(){
-      openModalPause("ModalTryAgain",1);
+      openModalPause("ModalStop",1);      
     });
     btnLevel2Stop.addEventListener("click",function(){
-        openModalPause("ModalVictory",2);
+      openModalPause("ModalStop",2);
     });
     btnLevel3Stop.addEventListener("click",function(){
       openModalPause("ModalStop",3);
@@ -192,16 +192,17 @@ function start(){
   });
   
   btnNextLevel.addEventListener("click",function(){
-    closePause("Level"+(levelTime+1),"Level"+levelTime,"ModalVictory");
+    closeVictory("Level"+(levelTime+1),"Level"+levelTime,"ModalVictory");
   });
 
   //Try Again
   btnTryAgainBack.addEventListener("click", function(){
-      closePause("Start","Level"+levelTime,"ModalTryAgain");
-  });   
-  btnTryTry.addEventListener("click", function(){    
-      closeModal("ModalTryAgain");
-  }); 
+    closePause("Start","Level"+levelTime,"ModalTryAgain");
+});   
+btnTryTry.addEventListener("click", function(){    
+    closeModal("ModalTryAgain");
+    reiniciarNivel(levelTime);
+});  
 
   //Stop
   btnStopHome.addEventListener("click", function(){
@@ -283,4 +284,67 @@ function openPauseSH(id_clase,id_modal){
     document.getElementById(id_modal).style.display="block";
     
   }
+}
+
+function closeVictory(id_clase, id_nivel, id_modal){
+  
+  document.getElementById(id_nivel).style.display="none";
+  document.getElementById(id_modal).style.display="none";
+  document.getElementById(id_clase).style.display="block";
+  
+  switch(levelTime){
+    case 1:
+      generado2=false;
+      crearNivel2();
+      levelTime=2;
+    break;
+    case 2:
+      generado3=false;
+      crearNivel3();  
+      levelTime=3;    
+    break;
+    case 3:
+      generado4=false;
+      crearNivel4();  
+      levelTime=4;  
+    break;
+    case 4:
+      crearNivel5();
+      generado5=false;
+      levelTime=5;
+
+    break;
+    case 5:
+      
+
+    break;
+  }
+  
+}
+
+function openModalVictory(id_visible,level) {
+  
+  document.getElementById(id_visible).style.display = "block";
+  levelTime=level;
+  
+}
+
+function ganar (indNivel, contador){
+                           
+  switch(indNivel){
+      case 0:
+          if(contador>=2){
+            openModalVictory("ModalVictory",levelTime);
+          }
+      break;
+      default:
+          if(contador>=3){
+            openModalVictory("ModalVictory",levelTime);
+            if(levelTime==5){
+              document.getElementById("btnNextLevel").style.display="none";
+            }
+          }
+      break;
+  }
+
 }

@@ -11,16 +11,16 @@ var step;
 var altoContainer;
 var anchoContainer;
 var cont;
-var obejetivosAnim;
+var objetivosAnim;
 var coincide;
 var enfermedad;
-var numEnfermedad;
 var temp;
 var botones = [];
 var btnEnfermedad = [];
 var btnEnfermedadClose = [];
 var modalEnfermedad = [];
 var nivelesProgreso = [];
+var contador=0;
 
 function init(){
 
@@ -64,13 +64,13 @@ function inicializarVariables(){
 
     localStorage.setItem("data", JSON.stringify(nivelesProgreso));
 
-    for(let i = 0; i < 13; i++){
+    for(let i = 0; i < 14; i++){
         btnEnfermedad.push(document.getElementById('btnEnfermedad'+(i+1)));
         btnEnfermedadClose.push(document.getElementById('btnModalEnfermedad'+(i+1)));
         modalEnfermedad.push(document.getElementById('modalEnfermedad'+(i+1)));
     }
 
-    for(let i = 0; i < 13; i++){
+    for(let i = 0; i < 14; i++){
         btnEnfermedad[i].addEventListener("click",function(){
             openModal(modalEnfermedad[i].id);
         });
@@ -100,14 +100,17 @@ function inicializarVariables(){
 
     sintomas = [];
     cont = 0;
-    numEnfermedad = 0;
-    obejetivosAnim = [];
+    objetivosAnim = [];
 
     niveles = [];
     for(var i=0;i<5;i++){
         niveles[i] = {};
         niveles[i].enfermedades = [];
-        niveles[i].sintomas = [];        
+        niveles[i].sintomas = [];
+        niveles[i].vidas = [];
+        niveles[i].contVidas = 0;        
+        niveles[i].enfermedesCreadas = [];
+        niveles[i].vidasDiv = null;
         for(var j=0;j<10;j++)
             niveles[i].sintomas[j] = {};
     }
@@ -127,8 +130,8 @@ function formarEnfermedad(indice, id, nivel){
     temp = {};
     temp.id = '#' + id;
     temp.indice = indice;
-    temp.dom = document.getElementById(id);    
-    obejetivosAnim.push(temp);
+    temp.dom = document.getElementById(id);
+    objetivosAnim.push(temp);
     if(sintomas[1]==undefined){               
         sintomas.push(indice);        
         if(cont==0){            
@@ -158,51 +161,59 @@ function formarEnfermedad(indice, id, nivel){
                     break;
             }            
         }
-        if(coincide){    
-            //debugger;        
+        if(coincide){
             var imgEnfermedad = document.createElement("img");            
             imgEnfermedad.setAttribute("src", niveles[nivel].enfermedades[enfermedad].icono);            
             imgEnfermedad.setAttribute("id",niveles[nivel].enfermedades[enfermedad].id);            
             imgEnfermedad.style.position = 'absolute';
             imgEnfermedad.style.width = '125px';
             imgEnfermedad.style.height = '125px';
-            imgEnfermedad.style.top = ((altoContainer/2 - 17) - parseInt(imgEnfermedad.style.width, 10)/2) + 'px';
-            imgEnfermedad.style.left = ((anchoContainer/2 + 6) - parseInt(imgEnfermedad.style.height, 10)/2) + 'px';
+            imgEnfermedad.style.top = ((altoContainer/2 - 17) - parseInt(imgEnfermedad.style.height, 10)/2) + 'px';
+            imgEnfermedad.style.left = ((anchoContainer/2 + 6) - parseInt(imgEnfermedad.style.width, 10)/2) + 'px';
+            niveles[nivel].enfermedesCreadas.push(imgEnfermedad);
             document.getElementById("div" + (nivel+1)).appendChild(imgEnfermedad);
+            //debugger;
             if(nivel!=0){
-                if(numEnfermedad==0){
+                if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                     TweenMax.to(imgEnfermedad, 1, {left:123, top:1062, scale:1.15, delay:2});
+                    contador+=1;
                 }
-                else if(numEnfermedad==1){   
+                else if(niveles[nivel].numEnfAcertadas==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                         TweenMax.to(imgEnfermedad, 1, {left:335, top:1062, scale:1.15, delay:2});
+                        contador+=1;
                     }
                     else{
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                         TweenMax.to(imgEnfermedad, 1, {left:541, top:1062, scale:1.15, delay:2});
+                        contador+=1;
+                        ganar(1,contador);
                     }
             }
             else{
-                if(numEnfermedad==0){
+                if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                     TweenMax.to(imgEnfermedad, 1, {left:200, top:1060, scale:1.15, delay:2});
+                    contador+=1;
                 }
-                else if(numEnfermedad==1){   
+                else if(niveles[nivel].numEnfAcertadas==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                         TweenMax.to(imgEnfermedad, 1, {left:412, top:1062, scale:1.15, delay:2});
+                        contador+=1;
+                        ganar(0,contador);
                     }
             }
                 
-            setTimeout(eliminarIconos.bind(null, obejetivosAnim), 1500);
+            setTimeout(eliminarIconos.bind(null, objetivosAnim), 1500);
 
             coincide = false;
-            numEnfermedad++;
+            niveles[nivel].numEnfAcertadas++;
 
-            if(nivel != 0 && numEnfermedad == 3){
+            if(nivel != 0 && niveles[nivel].numEnfAcertadas == 3){
                 progeso(nivel);
             }
-            else if(nivel == 0 && numEnfermedad == 2){
+            else if(nivel == 0 && niveles[nivel].numEnfAcertadas == 2){
                 progeso(nivel);
             }
         }
@@ -210,22 +221,141 @@ function formarEnfermedad(indice, id, nivel){
             //Reorganizar imgs            
             var left;
             var top;
-            for(var i=0;i<obejetivosAnim.length;i++){                
-                left = niveles[nivel].sintomas[obejetivosAnim[i].indice-1].x;
-                top = niveles[nivel].sintomas[obejetivosAnim[i].indice-1].y;
-                TweenMax.to(obejetivosAnim[i].id, 1, {left:left, top:top, scale:1, delay:1});
+            for(var i=0;i<objetivosAnim.length;i++){                
+                left = niveles[nivel].sintomas[objetivosAnim[i].indice-1].x;
+                top = niveles[nivel].sintomas[objetivosAnim[i].indice-1].y;
+                TweenMax.to(objetivosAnim[i].id, 1, {left:left, top:top, scale:1, delay:1});
             }
+            perder(nivel);
         }
-        obejetivosAnim = [];
+        objetivosAnim = [];
         sintomas = [];
         cont = 0;        
         botones = [];
     }
 }
 
-function eliminarIconos(array){ 
-    for(var j=0;j<3;j++)
-        array[j].dom.style.display="none";
+function eliminarIconos(array){    
+    for(var i=0;i<3;i++){
+        array[i].dom.style.display="none";
+    }        
+}
+
+function perder(nivel){
+    switch(nivel){
+        case 0:
+            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');            
+            if(niveles[nivel].contVidas == 5){
+                niveles[nivel].contVidas = 0;
+                openModalPause("ModalTryAgain",1);
+                contador=0;
+            }
+            break;
+        case 1:
+            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
+            if(niveles[nivel].contVidas == 4){
+                niveles[nivel].contVidas = 0;
+                openModalPause("ModalTryAgain",2);
+                contador=0;
+            }
+            break;
+        case 2:
+            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
+            if(niveles[nivel].contVidas == 3){
+                niveles[nivel].contVidas = 0;
+                openModalPause("ModalTryAgain",1);
+                contador=0;
+
+            }
+            break;
+        case 3:
+            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
+            if(niveles[nivel].contVidas == 3){
+                niveles[nivel].contVidas = 0;
+                openModalPause("ModalTryAgain",3);
+                contador=0;
+            }
+            break;
+        case 4:
+            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
+            if(niveles[nivel].contVidas == 3){
+                niveles[nivel].contVidas = 0;
+                openModalPause("ModalTryAgain",4);
+            }
+            break;
+        default:           
+    }
+}
+
+function reiniciarNivel(nivel){
+    var cont = 0;
+    for(var i=0;i<10;i++){
+        niveles[nivel].sintomas[i].imagen.parentNode.removeChild(niveles[nivel].sintomas[i].imagen);
+    }
+    switch(nivel){
+        case 0:            
+            while(niveles[nivel].enfermedesCreadas[cont] != null){
+                if(niveles[nivel].enfermedesCreadas[cont] != null){
+                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
+                    cont++;
+                }
+            }
+            niveles[nivel].enfermedesCreadas = [];
+            niveles[nivel].vidasDiv.parentNode.removeChild(niveles[nivel].vidasDiv);
+            generado1 = false;
+            
+            crearNivel1();
+            break;
+        case 1:
+            while(niveles[nivel].enfermedesCreadas[cont] != null){
+                if(niveles[nivel].enfermedesCreadas[cont] != null){
+                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
+                    cont++;
+                }
+            }
+            niveles[nivel].enfermedesCreadas = [];
+            niveles[nivel].vidasDiv.parentNode.removeChild(niveles[nivel].vidasDiv);
+            generado2 = false;
+            crearNivel2();
+            break;
+        case 2:
+            while(niveles[nivel].enfermedesCreadas[cont] != null){
+                if(niveles[nivel].enfermedesCreadas[cont] != null){
+                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
+                    cont++;
+                }
+            }
+            niveles[nivel].enfermedesCreadas = [];
+            niveles[nivel].vidasDiv.parentNode.removeChild(niveles[nivel].vidasDiv);
+            generado3 = false;
+            crearNivel3();
+            break;
+        case 3:
+            while(niveles[nivel].enfermedesCreadas[cont] != null){
+                if(niveles[nivel].enfermedesCreadas[cont] != null){
+                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
+                    cont++;
+                }
+            }
+            niveles[nivel].enfermedesCreadas = [];
+            niveles[nivel].vidasDiv.parentNode.removeChild(niveles[nivel].vidasDiv);
+            generado4 = false;
+            crearNivel4();
+            break;
+        case 4:
+            while(niveles[nivel].enfermedesCreadas[cont] != null){
+                if(niveles[nivel].enfermedesCreadas[cont] != null){
+                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
+                    cont++;
+                }
+            }
+            niveles[nivel].enfermedesCreadas = [];
+            niveles[nivel].vidasDiv.parentNode.removeChild(niveles[nivel].vidasDiv);
+            generado5 = false;
+            crearNivel5();
+            break;
+        default:           
+    }
 }
 
 function asignarCoordenadas(img, container){
@@ -243,10 +373,73 @@ function asignarCoordenadas(img, container){
     }    
 }
 
+function generarVidas(nivel, container){
+    niveles[nivel].vidas =[];
+    var vidasDiv = document.createElement("div");    
+    vidasDiv.style.position = 'absolute';
+    vidasDiv.style.width = '201px'
+    vidasDiv.style.height = '40px'
+    vidasDiv.style.top = (240 - parseInt(vidasDiv.style.height, 10)/2) + 'px';
+    vidasDiv.style.left = ((anchoContainer/2 + 6) - parseInt(vidasDiv.style.width, 10)/2) + 'px';
+    vidasDiv.setAttribute("id","vidasDiv"+nivel);    
+    //debugger;
+    switch(nivel){
+        case 0:
+            for(var i=0;i<5;i++){
+                var vida = document.createElement('img');
+                vida.setAttribute('src','img/juego/vida.png');
+                vida.style.marginLeft = '2px'
+                niveles[nivel].vidas.push(vida);
+                vidasDiv.appendChild(vida);
+            }
+            break;
+        case 1:
+            for(var i=0;i<4;i++){
+                var vida = document.createElement('img');
+                vida.setAttribute('src','img/juego/vida.png');                
+                vida.style.marginLeft = '10px'
+                niveles[nivel].vidas.push(vida);
+                vidasDiv.appendChild(vida);
+            }
+            break;
+        case 2:
+            for(var i=0;i<3;i++){
+                var vida = document.createElement('img');
+                vida.setAttribute('src','img/juego/vida.png');                
+                vida.style.marginLeft = '20px'
+                niveles[nivel].vidas.push(vida);
+                vidasDiv.appendChild(vida);
+            }
+            break;
+        case 3:
+            for(var i=0;i<3;i++){
+                var vida = document.createElement('img');
+                vida.setAttribute('src','img/juego/vida.png');                
+                vida.style.marginLeft = '20px'
+                niveles[nivel].vidas.push(vida);
+                vidasDiv.appendChild(vida);
+            }
+            break;
+        case 4:
+            for(var i=0;i<3;i++){
+                var vida = document.createElement('img');
+                vida.setAttribute('src','img/juego/vida.png');
+                vida.style.marginLeft = '20px'
+                niveles[nivel].vidas.push(vida);
+                vidasDiv.appendChild(vida);
+            }
+            break;
+        default:
+    }
+    niveles[nivel].vidasDiv = vidasDiv;
+    container.appendChild(niveles[nivel].vidasDiv);
+}
+
 //nivel 1
 function crearNivel1(){    
     if(!generado1){
-        numEnfermedad=0;
+        niveles[0].numEnfAcertadas = 0;
+        generarVidas(0,container1)
 
         niveles[0].enfermedades[0] = {};
         niveles[0].enfermedades[0].sintoma1 = 5;
@@ -359,7 +552,8 @@ function crearNivel1(){
 //nivel 2
 function crearNivel2(){
     if(!generado2){
-        numEnfermedad=0;
+        niveles[1].numEnfAcertadas = 0;
+        generarVidas(1,container2)
 
         niveles[1].enfermedades[0] = {};    
         niveles[1].enfermedades[0].sintoma1 = 9;
@@ -478,7 +672,8 @@ function crearNivel2(){
 //NIVEL 3
 function crearNivel3(){
     if(!generado3){
-        numEnfermedad=0;
+        niveles[2].numEnfAcertadas = 0;
+        generarVidas(2,container3)
 
         niveles[2].enfermedades[0] = {};    
         niveles[2].enfermedades[0].sintoma1 = 9;
@@ -593,7 +788,8 @@ function crearNivel3(){
 //nivel 4
 function crearNivel4(){
     if(!generado4){
-        numEnfermedad=0;
+        niveles[3].numEnfAcertadas = 0;
+        generarVidas(3,container4)
 
         niveles[3].enfermedades[0] = {};    
         niveles[3].enfermedades[0].sintoma1 = 10;
@@ -709,7 +905,8 @@ function crearNivel4(){
 //NIVEL 5
 function crearNivel5(){
     if(!generado5){
-        numEnfermedad=0;
+        niveles[4].numEnfAcertadas = 0;
+        generarVidas(4,container5)
 
         niveles[4].enfermedades[0] = {};    
         niveles[4].enfermedades[0].sintoma1 = 2;

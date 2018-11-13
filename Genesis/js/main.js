@@ -171,6 +171,7 @@ function formarEnfermedad(indice, id, nivel){
             imgEnfermedad.style.left = ((anchoContainer/2 + 6) - parseInt(imgEnfermedad.style.width, 10)/2) + 'px';
             niveles[nivel].enfermedesCreadas.push(imgEnfermedad);
             document.getElementById("div" + (nivel+1)).appendChild(imgEnfermedad);
+            //debugger;
             if(nivel!=0){
                 if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});

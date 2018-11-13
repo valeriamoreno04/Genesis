@@ -1,0 +1,413 @@
+body{
+    max-width: 100% !important;
+}
+.app-container{
+    position: relative;
+}
+
+.img-backgound{
+    position: relative;
+    z-index: 50;
+}
+
+.container-fluid{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+#Splash{
+    display: block;
+}
+
+#ModalStop {
+    z-index: 1;
+    position: relative;
+}
+section{
+    display: none;
+}
+
+#imgLoad{
+    
+    max-width: 100% !important;
+}
+.gameImage{
+    height: max-content;
+}
+#btnPlayLandindg{
+    position: relative;
+    margin-left: 213px;
+    margin-right: auto;
+    display: block;
+    margin-top: -799px;
+   
+}
+
+#btnSintomsLanding{
+    position: relative;
+    margin-left: 246px;
+    margin-right: auto;
+    display: block;
+    margin-top: 27px;
+}
+#btnFundationLanding{
+    position: relative;
+    margin-left: 241px;
+    margin-right: auto;
+    display: block;
+    margin-top: 37px;
+}
+#btnCreditsLanding{
+    position: relative;
+    margin-left: 237px;
+    margin-right: auto;
+    display: block;
+    margin-top: 45px;
+
+}
+
+
+#imgLevels{
+    
+    overflow: hidden;    
+
+}
+.divLevel{
+    position: relative;
+    display: inline-block;
+    margin-left: 93px;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.Level{
+    border-radius: 600px;
+    height: 154px;
+}
+
+
+#btnSintoms{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 60px;
+}
+#Help{
+    height: 1280px;
+    width: 720px;
+    background-image: linear-gradient(#000013, #201033);
+}
+#btnHelpBack{
+    position: relative;
+    margin-left: 80px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1189px;
+   
+}
+
+#btnSintomsBack{
+    position: relative;
+    margin-left: 76px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1369px;
+   
+}
+#Fundation{
+    height: 1280px;
+    width: 720px;
+    background-image: linear-gradient(#000013, #201033);
+}
+#btnFundationBack{
+    position: relative;
+    margin-left: 108px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1199px;
+   
+}
+
+#btnFundationWeb{
+    position: relative;
+    margin-left: 248px;
+    margin-right: auto;
+    display: block;
+    margin-top: 994px;;
+   
+}
+
+#btnLevel1{
+    position: relative;
+    margin-left: 150px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1033px;
+   
+}
+
+#btnLevel2{
+    position: relative;
+    margin-left: 500px;
+    margin-right: auto;
+    display: block;
+    margin-top: 26px;
+    opacity: 0.5;
+   
+}
+
+#btnLevel3{
+    position: relative;
+    margin-left: 214px;
+    margin-right: auto;
+    display: block;
+    margin-top: -71px;
+    opacity: 0.5;
+   
+}
+
+#btnLevel4{
+    position: relative;
+    margin-left: 442px;
+    margin-right: auto;
+    display: block;
+    margin-top: 80px;
+    opacity: 0.5;
+   
+}
+
+#btnLevel5{
+    position: relative;
+    margin-left: 164px;
+    margin-right: auto;
+    display: block;
+    margin-top: 111px;
+    opacity: 0.5;
+   
+}
+
+#btnLevelBack{
+    position: relative;
+    margin-left: 108px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1150px;
+   
+}
+
+#btnCreditsBack{
+    position: relative;
+    margin-left: 78px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1195px;
+   
+}
+
+.btnBackLevel{
+    position: relative;
+    margin-left: 80px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1191px;
+   
+}
+
+.btnStopLevel{
+    position: relative;
+    margin-left: 600px;
+    margin-right: auto;
+    display: block;
+    margin-top: -60px;
+   
+}
+
+.modalButton{
+    margin-bottom: 589px;
+    margin-left: -110px;
+}
+
+#imgVictory{
+    margin-left: 43px;
+}
+
+#imgTryAgain{
+    margin-left: 43px;
+}
+#imgStop{
+    margin-left: 43px;
+}
+#btnStopSintoms{
+    margin-left: -300px;
+    margin-bottom: 345px;
+}
+#btnStopHome{
+    margin-left: -379px;
+    margin-bottom: 507px;
+}
+
+#btnStopHelp{
+    margin-left: -243px;
+    margin-bottom: 200px;
+
+}
+#btnTryTry{
+    margin-left: -366px;
+    margin-bottom: 50px;
+}
+
+#btnNextLevel{
+    margin-left: -450px;
+    margin-bottom: 50px;
+}
+
+#ModalVictory{
+    position: relative;
+    z-index: 99;
+}
+
+#ModalTryAgain{
+    position: relative;
+    z-index: 99;
+}
+#btnContinue{
+    margin-left: -339px;
+    margin-bottom: 64px;
+    
+}
+
+.div1{
+    height: 1281px;
+    width: 722px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    display: contents;
+}
+
+.img-background{
+    height: max-content;
+}
+.img-icon{
+    position: relative;
+}
+
+#btnEnfermedad1{
+    margin-left: 51px;
+    margin-right: auto;
+    display: block;
+    margin-top: -1300px;
+}
+
+#btnEnfermedad2{
+    margin-left: 279px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+#btnEnfermedad3{
+    margin-left: 500px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+#btnEnfermedad4{
+    margin-left: 51px;
+    margin-right: auto;
+    display: block;
+    margin-top: 102px;
+}
+
+#btnEnfermedad5{
+    margin-left: 279px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+#btnEnfermedad6{
+    margin-left: 500px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+#btnEnfermedad7{
+    margin-left: 51px;
+    margin-right: auto;
+    display: block;
+    margin-top: 102px;
+}
+
+#btnEnfermedad8{
+    margin-left: 279px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+#btnEnfermedad9{
+    margin-left: 500px;
+    margin-right: auto;
+    display: block;
+    margin-top: -152px;
+}
+
+#btnEnfermedad10{
+    margin-left: 51px;
+    margin-right: auto;
+    display: block;
+    margin-top: 102px;
+}
+
+#btnEnfermedad11{
+    margin-left: 279px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+#btnEnfermedad12{
+    margin-left: 500px;
+    margin-right: auto;
+    display: block;
+    margin-top: -152px;
+}
+
+#btnEnfermedad13{
+    margin-left: 159px;
+    margin-right: auto;
+    display: block;
+    margin-top: 102px;
+}
+
+#btnEnfermedad14{
+    margin-left: 402px;
+    margin-right: auto;
+    display: block;
+    margin-top: -158px;
+}
+
+.modalEnfermedad{
+    position: relative;
+    margin-right: auto;
+    margin-left: 50px;
+    margin-top: 91px;
+}
+
+.btnModalEnfermedad{
+    margin-left: 481px;
+    margin-right: auto;
+    display: block;
+    margin-top: -923px;
+}
+
+#modalEnfermedad13{
+    margin-top: 380px !important;
+}
+
+#modalEnfermedad14{
+    margin-top: 380px !important;
+}

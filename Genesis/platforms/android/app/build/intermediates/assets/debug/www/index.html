@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <!--<link rel="stylesheet" type="text/css" href="css/index.css">-->
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Génesis App</title>
+</head>
+
+<body>
+    <!-- Carga -->
+    <section id="Splash">
+        <img id="imgLoad" alt="full screen background image" src="img/carga.gif">
+    </section>
+
+    <!-- Menu -->
+    <section id="Start">
+        <img id="imgLanding" class="gameImage" src="img/index/fondo-landing.gif" alt="full screen background image">
+        <img id="btnPlayLandindg" src="img/index/boton-jugar.png" alt="Boton jugar">
+        <img id="btnSintomsLanding" src="img/index/boton-sintomas.png" alt="Boton Sintomas">
+        <img id="btnFundationLanding" src="img/index/boton-fundacion.png" alt="Boton fundacion">
+        <img id="btnCreditsLanding" src="img/index/boton-creditos.png" alt="Boton creditod">
+
+    </section>
+
+    <!-- Jugar -->
+    <section id="Levels">
+        <img id="imgPlay" class="gameImage" src="img/niveles/niveles-bg.png" alt="full screen background image">
+        <img id="btnLevel1" src="img/niveles/icono-lvl1.png" alt="Boton nivel 1">
+        <img id="btnLevel2" src="img/niveles/icono-lvl2.png" alt="Boton nivel 2">
+        <img id="btnLevel3" src="img/niveles/icono-lvl3.png" alt="Boton nivel 3">
+        <img id="btnLevel4" src="img/niveles/icono-lvl4.png" alt="Boton nivel 4">
+        <img id="btnLevel5" src="img/niveles/icono-lvl5.png" alt="Boton nivel 5">
+        <img id="btnLevelBack" src="img/niveles/boton-atras.png" alt="Boton regresar">
+
+    </section>
+
+    <!-- Niveles -->
+    <!-- Nivel 1 -->
+    <section id="Level1">
+        <div id="div1" class="div1">
+            <img id="imgLevels" class="gameImage" src="img/niveles/Nivel1/nivel1.png" alt="">
+            <img class="btnBackLevel" id="btnLevel1Back" src="img/juego/boton-atras.png" alt="">
+            <img class="btnStopLevel" id="btnLevel1Stop" src="img/juego/boton-pausa.png" alt="">
+        </div>
+    </section>
+
+    <!-- Nivel 2 -->
+    <section id="Level2">
+        <div id="div2" class="div1">
+            <img id="imgLevels" class="gameImage" src="img/niveles/Nivel2/nivel2.png" alt="">
+            <img class="btnBackLevel" id="btnLevel2Back" src="img/juego/boton-atras.png" alt="">
+            <img class="btnStopLevel" id="btnLevel2Stop" src="img/juego/boton-pausa.png" alt="">
+        </div>
+    </section>
+
+    <!-- Nivel 3 -->
+    <section id="Level3">
+        <div id="div3" class="div1">
+            <img id="imgLevels" class="gameImage" src="img/niveles/Nivel3/nivel3.png" alt="">
+            <img class="btnBackLevel" id="btnLevel3Back" src="img/juego/boton-atras.png" alt="">
+            <img class="btnStopLevel" id="btnLevel3Stop" src="img/juego/boton-pausa.png" alt="">
+        </div>
+    </section>
+
+    <!-- Nivel 4 -->
+    <section id="Level4">
+        <div id="div4" class="div1">
+            <img id="imgLevels" class="gameImage" src="img/niveles/Nivel4/nivel4.png" alt="">
+            <img class="btnBackLevel" id="btnLevel4Back" src="img/juego/boton-atras.png" alt="">
+            <img class="btnStopLevel" id="btnLevel4Stop" src="img/juego/boton-pausa.png" alt="">
+        </div>
+    </section>
+
+    <!-- Nivel 5 -->
+    <section id="Level5">
+        <div id="div5" class="div1">
+            <img id="imgLevels" class="gameImage" src="img/niveles/Nivel5/nivel5.png" alt="">
+            <img class="btnBackLevel" id="btnLevel5Back" src="img/juego/boton-atras.png" alt="">
+            <img class="btnStopLevel" id="btnLevel5Stop" src="img/juego/boton-pausa.png" alt="">
+        </div>
+    </section>
+
+    <!-- Ayuda -->
+    <section id="Help">
+        <img src="img/Ayuda/ayuda.gif" alt="Fondo animado de la ayuda">
+        <img id="btnHelpBack" src="img/creditos/boton-atras.png" alt="Boton regresar">
+    </section>
+
+    <!-- Sintomas -->
+
+    <!-- Enciclopedia.-->
+    <section id="Sintoms">
+        <img src="img/Enciclopedia/Fondo-enciclopedia.gif" alt="Fondo en pantalla completa" class="img-background">
+
+        <!-- Enfermedad #1 Sonrisa Invertida-->
+        <img src="img/enfermedades/iconoenfermedad-srinvertida.png" alt="Boton enfermedad Sonrisa Invertida" id="btnEnfermedad1">
+
+        <!-- Enfermedad #2 Duchenn-->
+        <img src="img/enfermedades/iconoenfermedad-duchennmpato.png" alt="Boton enfermedad Duchenn" id="btnEnfermedad2">
+
+        <!-- Enfermedad #3 Inmunodeficiencia Primaria-->
+        <img src="img/enfermedades/iconoenfermedad-inmunodeficiencia.png" alt="Boton enfermedadInmunodeficiencia Primaria"
+            id="btnEnfermedad3">
+
+        <!-- Enfermedad #4 Sindrome de Klippel Feil-->
+        <img src="img/enfermedades/iconoenfermedad-cuellocorto.png" alt="Boton enfermedad Klippel Feil" id="btnEnfermedad4">
+
+        <!-- Enfermedad #5 Narcolepsia Cataplejia-->
+        <img src="img/enfermedades/iconoenfermedad-narcolepsiacataplejia.png" alt="Boton enfermedadNarcolepsia enfermedad Cataplejia"
+            id="btnEnfermedad5">
+
+        <!-- Enfermedad #6 Paraparesia espastica tropical-->
+        <img src="img/enfermedades/iconoenfermedad-medula.png" alt="Boton enfermedad Paraparesia espastica tropical" id="btnEnfermedad6">
+
+        <!-- Enfermedad #7 Atrofia muscular espinal tipo II-->
+        <img src="img/enfermedades/iconoenfermedad-hipotonia.png" alt="Boton enfermedad Atrofia muscular espinal tipo II"
+            id="btnEnfermedad7">
+
+        <!-- Enfermedad #8 Distrofia muscular de Cinturas-->
+        <img src="img/enfermedades/iconoenfermedad-debilidadcintura.png" alt="Boton enfermedad Distrofia muscular de Cinturas"
+            id="btnEnfermedad8">
+
+        <!-- Enfermedad #9 Polimistosis dermatomistosis-->
+        <img src="img/enfermedades/iconoenfermedad-debilidadpulmonar.png" alt="Boton enfermedad Polimistosis dermatomistosis"
+            id="btnEnfermedad9">
+
+        <!-- Enfermedad #10 Morquio Tipo IV A (MPS)-->
+        <img src="img/enfermedades/iconoenfermedad-deformidadhuesos.png" alt="Boton enfermedad Morquio Tipo IV A (MPS)"
+            id="btnEnfermedad10">
+
+        <!-- Enfermedad #11 Miastenia Gravis-->
+        <img src="img/enfermedades/iconoenfermedad-cabezacaida.png" alt="Boton enfermedad Miastenia Gravis" id="btnEnfermedad11">
+
+        <!-- Enfermedad #12 Neuromielitis Optica-->
+        <img src="img/enfermedades/iconoenfermedad-ceguera.png" alt="Boton enfermedad Neuromielitis Optica-" id="btnEnfermedad12">
+
+        <!-- Enfermedad #13 Acalasia-->
+        <img src="img/enfermedades/iconoenfermedad-anillo.png" alt="Boton enfermedad Acalasia" id="btnEnfermedad13">
+
+        <!-- Enfermedad #14 Agnesia del cuerpo calloso-->
+        <img src="img/enfermedades/iconoenfermedad-hemisferioscerebros.png" alt="Boton enfermedad Agnesia del cuerpo calloso"
+            id="btnEnfermedad14">
+
+        <!-- Regresar -->
+        <img id="btnSintomsBack" src="img/creditos/boton-atras.png" alt="Boton regresar al menu principal">
+
+        <!-- Modal enfermedad #1 Sonrisa Invertida-->
+        <section id="modalEnfermedad1" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-sonrisainvertida.png" alt="Modal enfermedad Sonrisa Invertida">
+            <img id="btnModalEnfermedad1" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Sonrisa Invertida">
+        </section>
+
+        <!-- Modal enfermedad #2 Duchenn-->
+        <section id="modalEnfermedad2" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-duchenn.png" alt="Modal enfermedad Duchenn">
+            <img id="btnModalEnfermedad2" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Duchenn">
+        </section>
+
+        <!-- Modal enfermedad #3 Inmunodeficiencia Primaria-->
+        <section id="modalEnfermedad3" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-inmunodeficienciaprimaria.png" alt="Modal enfermedad Inmunodeficiencia Primaria">
+            <img id="btnModalEnfermedad3" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Inmunodeficiencia Primaria">
+        </section>
+
+        <!-- Modal enfermedad #4 Sindrome de Klippel Feil-->
+        <section id="modalEnfermedad4" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-sindromedeklippelfeil.png" alt="Modal enfermedad Sindrome de Klippel Feil">
+            <img id="btnModalEnfermedad4" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Sindrome de Klippel Feil">
+        </section>
+
+        <!-- Modal enfermedad #5 Narcolepsia Cataplejia-->
+        <section id="modalEnfermedad5" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-narcolepsiacataplejia.png" alt="Modal enfermedad Narcolepsia Cataplejia">
+            <img id="btnModalEnfermedad5" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Narcolepsia Cataplejia">
+        </section>
+
+        <!-- Modal enfermedad #6 Paraparesia espastica tropical-->
+        <section id="modalEnfermedad6" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-paraparesiaespasticatropical.png" alt="Modal enfermedad Paraparesia espastica tropical">
+            <img id="btnModalEnfermedad6" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Paraparesia espastica tropical">
+        </section>
+
+        <!-- Modal enfermedad #7 Atrofia muscular espinal tipo II-->
+        <section id="modalEnfermedad7" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-atrofiamuscularespinaltipo.png" alt="Modal enfermedad Atrofia muscular espinal tipo II">
+            <img id="btnModalEnfermedad7" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Atrofia muscular espinal tipo II">
+        </section>
+
+        <!-- Modal enfermedad #8 Distrofia muscular de Cinturas-->
+        <section id="modalEnfermedad8" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-distrofiamusculardecinturas.png" alt="Modal enfermedad Distrofia muscular de Cinturas">
+            <img id="btnModalEnfermedad8" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Distrofia muscular de Cinturas">
+        </section>
+
+        <!-- Modal enfermedad #9 Polimistosis dermatomistosis-->
+        <section id="modalEnfermedad9" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-polimiositisdermatomiositis.png" alt="Modal enfermedad Polimistosis dermatomistosis">
+            <img id="btnModalEnfermedad9" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Polimistosis dermatomistosis">
+        </section>
+
+        <!-- Modal enfermedad #10 Morquio Tipo IV A (MPS)-->
+        <section id="modalEnfermedad10" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-morquitipo.png" alt="Modal enfermedad Morquio Tipo IV A (MPS)">
+            <img id="btnModalEnfermedad10" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Morquio Tipo IV A (MPS)">
+        </section>
+
+        <!-- Modal enfermedad #11 Miastenia Gravis-->
+        <section id="modalEnfermedad11" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-miasteniagravis.png" alt="Modal enfermedad Miastenia Gravis">
+            <img id="btnModalEnfermedad11" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Miastenia Gravis">
+        </section>
+
+        <!-- Modal enfermedad #12 Neuromielitis Optica-->
+        <section id="modalEnfermedad12" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-neuromielitisoptica.png" alt="Modal enfermedad Neuromielitis Optica">
+            <img id="btnModalEnfermedad12" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Neuromielitis Optica">
+        </section>
+
+        <!-- Modal enfermedad #13 Acalasia-->
+        <section id="modalEnfermedad13" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-acalasia.png" alt="Modal enfermedad Acalasia">
+            <img id="btnModalEnfermedad13" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Acalasia">
+        </section>
+
+        <!-- Modal enfermedad #14 Agnesia del cuerpo calloso-->
+        <section id="modalEnfermedad14" class="modalEnfermedad">
+            <img src="img/enciclopedia/Enfermedad-agnesiadelcuerpocalloso.png" alt="Modal enfermedad Agnesia del cuerpo calloso">
+            <img id="btnModalEnfermedad14" class="btnModalEnfermedad" src="img/enciclopedia/boton-cerrar.png" alt="Boton cerrar Modal enfermedad Agnesia del cuerpo calloso">
+        </section>
+    </section>
+
+    <!-- Victoria -->
+    <section id="ModalVictory">
+        <img id="imgVictory" src="img/juego/victoria.png" alt="">
+        <img id="btnVictoryBack" class="modalButton" src="img/juego/home.png" alt="">
+        <img id="btnNextLevel" src="img/juego/Boton-siguiente-nivel---Victoria.png" alt="">
+    </section>
+
+    <!-- Intetalo de Nuevo -->
+    <section id="ModalTryAgain">
+        <img id="imgTryAgain" src="img/juego/derrota.png" alt="">
+        <img id="btnTryAgainBack" class="modalButton" src="img/juego/home.png" alt="">
+        <img id="btnTryTry" src="img/juego/reintentar.png" alt="">
+    </section>
+
+    <!-- Fundacion -->
+    <section id="Fundation">
+        <img src="img/fundacion/fondo-fuper.gif" alt="">
+        <img id="btnFundationBack" src="img/creditos/boton-atras.png" alt="">
+        <img id="btnFundationWeb" src="img/fundacion/boton-web.png" alt="">
+    </section>
+
+    <!-- Stop -->
+    <section id="ModalStop">
+        <img id="imgStop" src="img/juego/Pausa/pausa-bg.png" alt="">
+        <img id="btnStopHome" src="img/juego/Pausa/home-pausa.png" alt="">
+        <img id="btnStopHelp" src="img/juego/Pausa/boton-ayuda.png" alt="">
+        <img id="btnStopSintoms" src="img/index/boton-sintomas.png" alt="">
+        <img id="btnContinue" src="img/juego/Boton-continuar.png" alt="">
+    </section>
+
+    <!-- Creditos -->
+    <section id="Credits">
+        <img id="imgCredits" class="gameImage" src="img/creditos/fondo-creditos.gif" alt="">
+        <img id="btnCreditsBack" src="img/creditos/boton-atras.png" alt="">
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="js/JsRoulette.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script type="text/javascript" src="cordova.js"></script> Archivo no existe-->
+    <!-- <script type="text/javascript" src="js/index.js"></script> Descomentar en cordova-->
+</body>
+
+</html>

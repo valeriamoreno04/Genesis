@@ -234,6 +234,113 @@ function eliminarIconos(array){
     }        
 }
 
+function perder(nivel){
+    switch(nivel){
+        case 0:
+            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');            
+            if(niveles[nivel].contVidas == 5){
+                niveles[nivel].contVidas = 0;
+                reiniciarNivel(nivel);
+            }
+            break;
+        case 1:
+            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
+            if(niveles[nivel].contVidas == 4){
+                niveles[nivel].contVidas = 0;
+                reiniciarNivel(nivel);
+            }
+            break;
+        case 2:
+            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
+            if(niveles[nivel].contVidas == 3){
+                niveles[nivel].contVidas = 0;
+                reiniciarNivel(nivel);
+            }
+            break;
+        case 3:
+            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
+            if(niveles[nivel].contVidas == 3){
+                niveles[nivel].contVidas = 0;
+                reiniciarNivel(nivel);
+            }
+            break;
+        case 4:
+            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
+            if(niveles[nivel].contVidas == 3){
+                niveles[nivel].contVidas = 0;
+                reiniciarNivel(nivel);
+            }
+            break;
+        default:           
+    }
+}
+
+function reiniciarNivel(nivel){
+    var cont = 0;
+    for(var i=0;i<10;i++){
+        niveles[nivel].sintomas[i].imagen.parentNode.removeChild(niveles[nivel].sintomas[i].imagen);
+    }
+    switch(nivel){
+        case 0:            
+            while(niveles[nivel].enfermedesCreadas[cont] != null){
+                if(niveles[nivel].enfermedesCreadas[cont] != null){
+                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
+                    cont++;
+                }
+            }
+            niveles[nivel].enfermedesCreadas = [];
+            niveles[nivel].vidasDiv.parentNode.removeChild(niveles[nivel].vidasDiv);
+            generado1 = false;
+            crearNivel1();
+            break;
+        case 1:
+            while(niveles[nivel].enfermedesCreadas[cont] != null){
+                if(niveles[nivel].enfermedesCreadas[cont] != null){
+                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
+                    cont++;
+                }
+            }
+            niveles[nivel].enfermedesCreadas = [];
+            generado2 = false;
+            crearNivel2();
+            break;
+        case 2:
+            while(niveles[nivel].enfermedesCreadas[cont] != null){
+                if(niveles[nivel].enfermedesCreadas[cont] != null){
+                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
+                    cont++;
+                }
+            }
+            niveles[nivel].enfermedesCreadas = [];
+            generado3 = false;
+            crearNivel3();
+            break;
+        case 3:
+            while(niveles[nivel].enfermedesCreadas[cont] != null){
+                if(niveles[nivel].enfermedesCreadas[cont] != null){
+                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
+                    cont++;
+                }
+            }
+            niveles[nivel].enfermedesCreadas = [];
+            generado4 = false;
+            crearNivel4();
+            break;
+        case 4:
+            while(niveles[nivel].enfermedesCreadas[cont] != null){
+                if(niveles[nivel].enfermedesCreadas[cont] != null){
+                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
+                    cont++;
+                }
+            }
+            niveles[nivel].enfermedesCreadas = [];
+            generado5 = false;
+            crearNivel5();
+            break;
+        default:           
+    }
+}
+
 function asignarCoordenadas(img, container){
     var x;
     var y;
@@ -247,48 +354,6 @@ function asignarCoordenadas(img, container){
         container.appendChild(img[i].imagen);
         angulo += step;
     }    
-}
-
-function perder(nivel){
-    switch(nivel){
-        case 0:
-            niveles[nivel].vidas[niveles[nivel].contVidas].setAttribute('src','img/juego/no-vida.png');
-            niveles[nivel].contVidas++;
-            if(niveles[nivel].contVidas==5){
-                niveles[nivel].contVidas = 0;
-                reiniciarNivel(nivel);
-            }
-            break;
-        case 1:
-            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
-            if(niveles[nivel].contVidas==4){
-                niveles[nivel].contVidas=0;
-                reiniciarNivel(nivel);
-            }
-            break;
-        case 2:
-            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
-            if(niveles[nivel].contVidas==3){
-                niveles[nivel].contVidas=0;
-                reiniciarNivel(nivel);
-            }
-            break;
-        case 3:
-            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
-            if(niveles[nivel].contVidas==3){
-                niveles[nivel].contVidas=0;
-                reiniciarNivel(nivel);
-            }
-            break;
-        case 4:
-            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
-            if(niveles[nivel].contVidas==3){
-                niveles[nivel].contVidas=0;
-                reiniciarNivel(nivel);
-            }
-            break;
-        default:           
-    }
 }
 
 function generarVidas(nivel, container){
@@ -349,77 +414,6 @@ function generarVidas(nivel, container){
     }
     niveles[nivel].vidasDiv = vidasDiv;
     container.appendChild(niveles[nivel].vidasDiv);
-}
-
-function reiniciarNivel(nivel){
-    var cont;
-    for(var i=0;i<10;i++){
-        niveles[nivel].sintomas[i].imagen.parentNode.removeChild(niveles[nivel].sintomas[i].imagen);
-    }
-    switch(nivel){
-        case 0:
-            cont = 0;
-            while(niveles[nivel].enfermedesCreadas[cont] != null){
-                if(niveles[nivel].enfermedesCreadas[cont] != null){
-                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
-                    cont++;
-                }
-            }
-            niveles[nivel].enfermedesCreadas = [];
-            niveles[nivel].vidasDiv.parentNode.removeChild(niveles[nivel].vidasDiv);
-            generado1 = false;
-            crearNivel1();
-            break;
-        case 1:
-            cont = 2;
-            while(niveles[nivel].enfermedesCreadas[cont] != null){
-                if(niveles[nivel].enfermedesCreadas[cont] != null){
-                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
-                    cont--;
-                }
-            }
-            niveles[nivel].enfermedesCreadas = [];
-            generado2 = false;
-            crearNivel2();
-            break;
-        case 2:
-            cont = 2;
-            while(niveles[nivel].enfermedesCreadas[cont] != null){
-                if(niveles[nivel].enfermedesCreadas[cont] != null){
-                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
-                    cont--;
-                }
-            }
-            niveles[nivel].enfermedesCreadas = [];
-            generado3 = false;
-            crearNivel3();
-            break;
-        case 3:
-            cont = 2;
-            while(niveles[nivel].enfermedesCreadas[cont] != null){
-                if(niveles[nivel].enfermedesCreadas[cont] != null){
-                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
-                    cont--;
-                }
-            }
-            niveles[nivel].enfermedesCreadas = [];
-            generado4 = false;
-            crearNivel4();
-            break;
-        case 4:
-            cont = 2;
-            while(niveles[nivel].enfermedesCreadas[cont] != null){
-                if(niveles[nivel].enfermedesCreadas[cont] != null){
-                    niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
-                    cont--;
-                }
-            }
-            niveles[nivel].enfermedesCreadas = [];
-            generado5 = false;
-            crearNivel5();
-            break;
-        default:           
-    }
 }
 
 //nivel 1

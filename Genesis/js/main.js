@@ -106,7 +106,6 @@ function inicializarVariables(){
         niveles[i] = {};
         niveles[i].enfermedades = [];
         niveles[i].sintomas = [];
-        niveles[i].numEnfermedad = 0;
         niveles[i].vidas = [];
         niveles[i].contVidas = 0;        
         niveles[i].enfermedesCreadas = [];
@@ -173,11 +172,11 @@ function formarEnfermedad(indice, id, nivel){
             niveles[nivel].enfermedesCreadas.push(imgEnfermedad);
             document.getElementById("div" + (nivel+1)).appendChild(imgEnfermedad);
             if(nivel!=0){
-                if(niveles[nivel].numEnfermedad==0){
+                if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                     TweenMax.to(imgEnfermedad, 1, {left:123, top:1062, scale:1.15, delay:2});
                 }
-                else if(niveles[nivel].numEnfermedad==1){   
+                else if(niveles[nivel].numEnfAcertadas==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                         TweenMax.to(imgEnfermedad, 1, {left:335, top:1062, scale:1.15, delay:2});
                     }
@@ -187,11 +186,11 @@ function formarEnfermedad(indice, id, nivel){
                     }
             }
             else{
-                if(niveles[nivel].numEnfermedad==0){
+                if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                     TweenMax.to(imgEnfermedad, 1, {left:200, top:1060, scale:1.15, delay:2});
                 }
-                else if(niveles[nivel].numEnfermedad==1){   
+                else if(niveles[nivel].numEnfAcertadas==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                         TweenMax.to(imgEnfermedad, 1, {left:412, top:1062, scale:1.15, delay:2});
                     }
@@ -200,12 +199,12 @@ function formarEnfermedad(indice, id, nivel){
             setTimeout(eliminarIconos.bind(null, objetivosAnim), 1500);
 
             coincide = false;
-            niveles[nivel].numEnfermedad++;
+            niveles[nivel].numEnfAcertadas++;
 
-            if(nivel != 0 && numEnfermedad == 3){
+            if(nivel != 0 && niveles[nivel].numEnfAcertadas == 3){
                 progeso(nivel);
             }
-            else if(nivel == 0 && numEnfermedad == 2){
+            else if(nivel == 0 && niveles[nivel].numEnfAcertadas == 2){
                 progeso(nivel);
             }
         }

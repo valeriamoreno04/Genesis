@@ -37,10 +37,10 @@ section{
 }
 #btnPlayLandindg{
     position: absolute;
-    top: 31em;
-    left: 15em;
-    width: 22em;
-    height: 7em;
+    top: 38%;
+    left: 30%;
+    width: 47%;
+    height: 9%
     /*     
     margin-left: 213px;
     margin-right: auto;
@@ -51,10 +51,10 @@ section{
 
 #btnSintomsLanding{
     position: absolute;
-    top: 40em;
-    left: 15em;
-    width: 20em;
-    height: 9em;
+    top: 49%;
+    left: 33%;
+    width: 40%;
+    height: 10%;
     /* position: relative;
     margin-left: 246px;
     margin-right: auto;
@@ -63,10 +63,10 @@ section{
 }
 #btnFundationLanding{
     position: absolute;
-    top: 50em;
-    left: 15em;
-    width: 18em;
-    height: 7em;
+    top: 61%;
+    left: 33%;
+    width: 38%;
+    height: 8%;
     /* position: relative;
     margin-left: 241px;
     margin-right: auto;
@@ -75,10 +75,10 @@ section{
 }
 #btnCreditsLanding{
     position: absolute;
-    top: 59em;
-    left: 15em;
-    width: 18em;
-    height: 6em;
+    top: 71%;
+    left: 33%;
+    width: 38%;
+    height: 8%;
     /* position: relative;
     margin-left: 237px;
     margin-right: auto;

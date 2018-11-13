@@ -107,8 +107,9 @@ function inicializarVariables(){
         niveles[i] = {};
         niveles[i].enfermedades = [];
         niveles[i].sintomas = [];
+        niveles[i].numEnfermedad = 0;
         niveles[i].vidas = [];
-        niveles[i].contVidas = 0;
+        niveles[i].contVidas = 0;        
         niveles[i].enfermedesCreadas = [];
         niveles[i].vidasDiv = null;
         for(var j=0;j<10;j++)
@@ -173,12 +174,13 @@ function formarEnfermedad(indice, id, nivel){
             imgEnfermedad.style.left = ((anchoContainer/2 + 6) - parseInt(imgEnfermedad.style.width, 10)/2) + 'px';
             niveles[nivel].enfermedesCreadas.push(imgEnfermedad);
             document.getElementById("div" + (nivel+1)).appendChild(imgEnfermedad);
+            //debugger;
             if(nivel!=0){
-                if(numEnfermedad==0){
+                if(niveles[nivel].numEnfermedad==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                     TweenMax.to(imgEnfermedad, 1, {left:123, top:1062, scale:1.15, delay:2});
                 }
-                else if(numEnfermedad==1){   
+                else if(niveles[nivel].numEnfermedad==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                         TweenMax.to(imgEnfermedad, 1, {left:335, top:1062, scale:1.15, delay:2});
                     }
@@ -188,11 +190,11 @@ function formarEnfermedad(indice, id, nivel){
                     }
             }
             else{
-                if(numEnfermedad==0){
+                if(niveles[nivel].numEnfermedad==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                     TweenMax.to(imgEnfermedad, 1, {left:200, top:1060, scale:1.15, delay:2});
                 }
-                else if(numEnfermedad==1){   
+                else if(niveles[nivel].numEnfermedad==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
                         TweenMax.to(imgEnfermedad, 1, {left:412, top:1062, scale:1.15, delay:2});
                     }
@@ -201,12 +203,12 @@ function formarEnfermedad(indice, id, nivel){
             setTimeout(eliminarIconos.bind(null, objetivosAnim), 1500);
 
             coincide = false;
-            numEnfermedad++;
+            niveles[nivel].numEnfermedad++;
 
-            if(nivel != 0 && numEnfermedad == 3){
+            if(nivel != 0 && niveles[nivel].numEnfermedad == 3){
                 progeso(nivel);
             }
-            else if(nivel == 0 && numEnfermedad == 2){
+            else if(nivel == 0 && niveles[nivel].numEnfermedad == 2){
                 progeso(nivel);
             }
         }

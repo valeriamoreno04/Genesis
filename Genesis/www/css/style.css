@@ -129,11 +129,16 @@ section{
 }
 
 #btnSintomsBack{
-    position: relative;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 8%;
+    height: 5%;
+    /* position: relative;
     margin-left: 76px;
     margin-right: auto;
     display: block;
-    margin-top: -1369px;
+    margin-top: -1369px; */
    
 }
 #Fundation{
@@ -349,178 +354,184 @@ section{
 }
 
 #btnEnfermedad1{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 51px;
+    position: absolute;
+    top: 14%;
+    left: 11%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 51px;
     margin-right: auto;
     display: block;
-    margin-top: -1300px;
+    margin-top: -1300px; */
 }
 
 #btnEnfermedad2{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 279px;
+    position: absolute;
+    top: 14%;
+    left: 42%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 279px;
     margin-right: auto;
     display: block;
-    margin-top: -158px;
+    margin-top: -158px; */
 }
 
 #btnEnfermedad3{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
+    position: absolute;
+    top: 14%;
+    left: 74%;
+    width: 18%;
+    height: 12%;
+    /* 
     margin-left: 500px;
     margin-right: auto;
     display: block;
-    margin-top: -158px;
+    margin-top: -158px; */
 }
 
 #btnEnfermedad4{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 51px;
+    position: absolute;
+    top: 32%;
+    left: 11%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 51px;
     margin-right: auto;
     display: block;
-    margin-top: 102px;
+    margin-top: 102px; */
 }
 
 #btnEnfermedad5{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 279px;
+    position: absolute;
+    top: 32%;
+    left: 42%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 279px;
     margin-right: auto;
     display: block;
-    margin-top: -158px;
+    margin-top: -158px; */
 }
 
 #btnEnfermedad6{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 500px;
+    position: absolute;
+    top: 32%;
+    left: 72%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 500px;
     margin-right: auto;
     display: block;
-    margin-top: -158px;
+    margin-top: -158px; */
 }
 
 #btnEnfermedad7{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 51px;
+    position: absolute;
+    top: 50%;
+    left: 11%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 51px;
     margin-right: auto;
     display: block;
-    margin-top: 102px;
+    margin-top: 102px; */
 }
 
 #btnEnfermedad8{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 279px;
+    position: absolute;
+    top: 50%;
+    left: 42%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 279px;
     margin-right: auto;
     display: block;
-    margin-top: -158px;
+    margin-top: -158px; */
 }
 
 #btnEnfermedad9{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 500px;
+    position: absolute;
+    top: 50%;
+    left: 72%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 500px;
     margin-right: auto;
     display: block;
-    margin-top: -152px;
+    margin-top: -152px; */
 }
 
 #btnEnfermedad10{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 51px;
+    position: absolute;
+    top: 67%;
+    left: 11%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 51px;
     margin-right: auto;
     display: block;
-    margin-top: 102px;
+    margin-top: 102px; */
 }
 
 #btnEnfermedad11{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 279px;
+    position: absolute;
+    top: 67%;
+    left: 42%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 279px;
     margin-right: auto;
     display: block;
-    margin-top: -158px;
+    margin-top: -158px; */
 }
 
 #btnEnfermedad12{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 500px;
+    position: absolute;
+    top: 67%;
+    left: 72%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 500px;
     margin-right: auto;
     display: block;
-    margin-top: -152px;
+    margin-top: -152px; */
 }
 
 #btnEnfermedad13{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 159px;
+    position: absolute;
+    top: 84%;
+    left: 27%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 159px;
     margin-right: auto;
     display: block;
-    margin-top: 102px;
+    margin-top: 102px; */
 }
 
 #btnEnfermedad14{
-    /* position: absolute;
-    top: 21%;
-    left: 12%;
-    width: 20%;
-    height: 10%; */
-    margin-left: 402px;
+    position: absolute;
+    top: 84%;
+    left: 60%;
+    width: 18%;
+    height: 12%;
+    /* margin-left: 402px;
     margin-right: auto;
     display: block;
-    margin-top: -158px;
+    margin-top: -158px; */
 }
 
 .modalEnfermedad{
-    position: relative;
+    position: absolute;
+    top: 21%;
+    left: 5%;
+    width: 8%;
+    height: 5%;
+    /* position: relative;
     margin-right: auto;
     margin-left: 50px;
-    margin-top: 91px;
+    margin-top: 91px; */
 }
 
 .btnModalEnfermedad{
@@ -528,12 +539,4 @@ section{
     margin-right: auto;
     display: block;
     margin-top: -923px;
-}
-
-#modalEnfermedad13{
-    margin-top: 380px !important;
-}
-
-#modalEnfermedad14{
-    margin-top: 380px !important;
 }

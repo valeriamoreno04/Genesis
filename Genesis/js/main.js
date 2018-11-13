@@ -14,7 +14,6 @@ var cont;
 var objetivosAnim;
 var coincide;
 var enfermedad;
-var numEnfermedad;
 var temp;
 var botones = [];
 var btnEnfermedad = [];
@@ -162,8 +161,7 @@ function formarEnfermedad(indice, id, nivel){
                     break;
             }            
         }
-        if(coincide){    
-            //debugger;        
+        if(coincide){
             var imgEnfermedad = document.createElement("img");            
             imgEnfermedad.setAttribute("src", niveles[nivel].enfermedades[enfermedad].icono);            
             imgEnfermedad.setAttribute("id",niveles[nivel].enfermedades[enfermedad].id);            

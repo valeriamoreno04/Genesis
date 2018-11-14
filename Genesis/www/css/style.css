@@ -366,17 +366,9 @@ section{
 }
 
 .div1{
-<<<<<<< HEAD
-    height: 615px;
-    width: 360px;
-    margin : 0px;
-=======
     height: 640px;
     width: 369px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
->>>>>>> 03776a8c41b4ee3511800f1ee5c222d226ec6bf1
+    margin: 0;
     display: contents;
 }
 

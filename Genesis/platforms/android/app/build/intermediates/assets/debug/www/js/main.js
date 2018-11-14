@@ -244,7 +244,8 @@ function eliminarIconos(array){
 function perder(nivel){
     switch(nivel){
         case 0:
-            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');            
+            niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');  
+            levelTime=1;          
             if(niveles[nivel].contVidas == 5){
                 niveles[nivel].contVidas = 0;
                 openModalPause("ModalTryAgain",1);
@@ -253,6 +254,7 @@ function perder(nivel){
             break;
         case 1:
             niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
+            levelTime=2;
             if(niveles[nivel].contVidas == 4){
                 niveles[nivel].contVidas = 0;
                 openModalPause("ModalTryAgain",2);
@@ -261,26 +263,29 @@ function perder(nivel){
             break;
         case 2:
             niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
+            levelTime=3;
             if(niveles[nivel].contVidas == 3){
                 niveles[nivel].contVidas = 0;
-                openModalPause("ModalTryAgain",1);
+                openModalPause("ModalTryAgain",3);
                 contador=0;
 
             }
             break;
         case 3:
             niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
+            levelTime=4;
             if(niveles[nivel].contVidas == 3){
                 niveles[nivel].contVidas = 0;
-                openModalPause("ModalTryAgain",3);
+                openModalPause("ModalTryAgain",4);
                 contador=0;
             }
             break;
         case 4:
             niveles[nivel].vidas[niveles[nivel].contVidas++].setAttribute('src','img/juego/no-vida.png');
+            levelTime=5;
             if(niveles[nivel].contVidas == 3){
                 niveles[nivel].contVidas = 0;
-                openModalPause("ModalTryAgain",4);
+                openModalPause("ModalTryAgain",5);
             }
             break;
         default:           
@@ -292,17 +297,21 @@ function reiniciarNivel(nivel){
     for(var i=0;i<10;i++){
         niveles[nivel].sintomas[i].imagen.parentNode.removeChild(niveles[nivel].sintomas[i].imagen);
     }
+    
     switch(nivel){
+        
         case 0:            
             while(niveles[nivel].enfermedesCreadas[cont] != null){
                 if(niveles[nivel].enfermedesCreadas[cont] != null){
                     niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
                     cont++;
                 }
+                
             }
             niveles[nivel].enfermedesCreadas = [];
             niveles[nivel].vidasDiv.parentNode.removeChild(niveles[nivel].vidasDiv);
             generado1 = false;
+            levelTime=1;
             crearNivel1();
             break;
         case 1:
@@ -311,9 +320,12 @@ function reiniciarNivel(nivel){
                     niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
                     cont++;
                 }
+                
             }
             niveles[nivel].enfermedesCreadas = [];
+            niveles[nivel].vidasDiv.parentNode.removeChild(niveles[nivel].vidasDiv);
             generado2 = false;
+            levelTime=2;
             crearNivel2();
             break;
         case 2:
@@ -322,9 +334,12 @@ function reiniciarNivel(nivel){
                     niveles[nivel].enfermedesCreadas[cont].parentNode.removeChild(niveles[nivel].enfermedesCreadas[cont]);
                     cont++;
                 }
+                
             }
             niveles[nivel].enfermedesCreadas = [];
+            niveles[nivel].vidasDiv.parentNode.removeChild(niveles[nivel].vidasDiv);
             generado3 = false;
+            levelTime=3;
             crearNivel3();
             break;
         case 3:
@@ -335,7 +350,9 @@ function reiniciarNivel(nivel){
                 }
             }
             niveles[nivel].enfermedesCreadas = [];
+            niveles[nivel].vidasDiv.parentNode.removeChild(niveles[nivel].vidasDiv);
             generado4 = false;
+            levelTime=4;
             crearNivel4();
             break;
         case 4:
@@ -346,7 +363,9 @@ function reiniciarNivel(nivel){
                 }
             }
             niveles[nivel].enfermedesCreadas = [];
+            niveles[nivel].vidasDiv.parentNode.removeChild(niveles[nivel].vidasDiv);
             generado5 = false;
+            levelTime=5;
             crearNivel5();
             break;
         default:           
@@ -369,13 +388,15 @@ function asignarCoordenadas(img, container){
 }
 
 function generarVidas(nivel, container){
+    niveles[nivel].vidas =[];
     var vidasDiv = document.createElement("div");    
     vidasDiv.style.position = 'absolute';
     vidasDiv.style.width = '201px'
     vidasDiv.style.height = '40px'
     vidasDiv.style.top = (240 - parseInt(vidasDiv.style.height, 10)/2) + 'px';
     vidasDiv.style.left = ((anchoContainer/2 + 6) - parseInt(vidasDiv.style.width, 10)/2) + 'px';
-    vidasDiv.setAttribute("id","vidasDivs"+nivel);    
+    vidasDiv.setAttribute("id","vidasDiv"+nivel);    
+    //debugger;
     switch(nivel){
         case 0:
             for(var i=0;i<5;i++){

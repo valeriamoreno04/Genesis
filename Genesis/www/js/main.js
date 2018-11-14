@@ -407,7 +407,7 @@ function generarVidas(nivel, container){
                 var vida = document.createElement('img');
                 vida.setAttribute('src','img/juego/vida.png');
                 vida.style.width = '20px';
-                vida.style.height = '20px';
+                vida.style.height = '16px';
                 vida.style.marginLeft = '2px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);

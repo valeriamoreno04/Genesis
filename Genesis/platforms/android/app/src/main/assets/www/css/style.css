@@ -1,11 +1,13 @@
 body{
     max-width: 100% !important;
+    margin: 0;
 }
 .app-container{
     height: 100vh;
     position: relative;
     text-align: center;
     width: 100%;
+    margin: 0 auto;
 }
 
 .img-backgound{

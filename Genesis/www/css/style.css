@@ -1,11 +1,13 @@
 body{
     max-width: 100% !important;
+    margin: 0;
 }
 .app-container{
     height: 100vh;
     position: relative;
     text-align: center;
     width: 100%;
+    margin: 0 auto;
 }
 
 .img-backgound{
@@ -364,8 +366,8 @@ section{
 }
 
 .div1{
-    height: 1281px;
-    width: 722px;
+    height: 640px;
+    width: 369px;
     margin-right: 0px;
     margin-left: 0px;
     margin-top: 0px;

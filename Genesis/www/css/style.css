@@ -285,8 +285,11 @@ section{
 }
 
 .modalButton{
-    margin-bottom: 589px;
-    margin-left: -110px;
+    position: absolute;
+    top: 3%;
+    left: 75%;
+    /* margin-bottom: 589px;
+    margin-left: -110px; */
 }
 
 #imgVictory{
@@ -294,7 +297,7 @@ section{
 }
 
 #imgTryAgain{
-    margin-left: 43px;
+    margin-left: 125px;
 }
 #imgStop{
     margin-left: 43px;
@@ -323,8 +326,11 @@ section{
 
 }
 #btnTryTry{
-    margin-left: -366px;
-    margin-bottom: 50px;
+    position: absolute;
+    top: 47%;
+    left: 40%;
+    /* margin-left: -366px;
+    margin-bottom: 50px; */
 }
 
 #btnNextLevel{

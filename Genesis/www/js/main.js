@@ -419,7 +419,7 @@ function generarVidas(nivel, container){
                 vida.setAttribute('src','img/juego/vida.png');  
                 vida.style.width = '20px';
                 vida.style.height = '16px';              
-                vida.style.marginLeft = '5px';
+                vida.style.marginLeft = '7px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -430,7 +430,7 @@ function generarVidas(nivel, container){
                 vida.setAttribute('src','img/juego/vida.png');
                 vida.style.width = '20px';
                 vida.style.height = '16px';
-                vida.style.marginLeft = '10px';
+                vida.style.marginLeft = '13px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -441,7 +441,7 @@ function generarVidas(nivel, container){
                 vida.setAttribute('src','img/juego/vida.png');
                 vida.style.width = '20px';
                 vida.style.height = '16px';
-                vida.style.marginLeft = '10px';
+                vida.style.marginLeft = '13px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -452,7 +452,7 @@ function generarVidas(nivel, container){
                 vida.setAttribute('src','img/juego/vida.png');
                 vida.style.width = '20px';
                 vida.style.height = '16px';
-                vida.style.marginLeft = '10px';
+                vida.style.marginLeft = '13px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }

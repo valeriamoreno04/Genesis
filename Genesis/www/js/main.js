@@ -137,16 +137,16 @@ function formarEnfermedad(indice, id, nivel){
     if(sintomas[1]==undefined){               
         sintomas.push(indice);        
         if(cont==0){            
-            TweenMax.to(temp.id, 1, {left:279/2, top:615/2, scale:0.7});
+            TweenMax.to(temp.id, 1, {left:137, top:290, scale:0.7});
             cont++;
         }else if(cont==1){
-            TweenMax.to(temp.id, 1, {left:266/2, top:515/2, scale:0.7});
+            TweenMax.to(temp.id, 1, {left:131, top:240, scale:0.7});
             cont++;
         }        
     }
     else{
         sintomas.push(indice);
-        TweenMax.to(temp.id, 1, {left:362/2, top:551/2, scale:0.7});
+        TweenMax.to(temp.id, 1, {left:179, top:258, scale:0.7});
         for(var i=0;i<niveles[nivel].enfermedades.length;i++){            
             if((niveles[nivel].enfermedades[i].sintoma1==sintomas[0]||
                 niveles[nivel].enfermedades[i].sintoma1==sintomas[1]||
@@ -169,9 +169,9 @@ function formarEnfermedad(indice, id, nivel){
             imgEnfermedad.setAttribute("id",niveles[nivel].enfermedades[enfermedad].id);            
             imgEnfermedad.style.position = 'absolute';
             imgEnfermedad.style.width = '60px';
-            imgEnfermedad.style.height = '60px';
-            imgEnfermedad.style.top = ((altoContainer/2 - 17) - parseInt(imgEnfermedad.style.height, 10)/2) + 'px';
-            imgEnfermedad.style.left = ((anchoContainer/2 + 6) - parseInt(imgEnfermedad.style.width, 10)/2) + 'px';
+            imgEnfermedad.style.height = '60px';            
+            imgEnfermedad.style.left = ((anchoContainer/2) - parseInt(imgEnfermedad.style.width, 10)/2) + 'px';
+            imgEnfermedad.style.top = ((altoContainer/2 - 15) - parseInt(imgEnfermedad.style.height, 10)/2) + 'px';
             niveles[nivel].enfermedesCreadas.push(imgEnfermedad);
             document.getElementById("div" + (nivel+1)).appendChild(imgEnfermedad);
             //debugger;
@@ -180,17 +180,17 @@ function formarEnfermedad(indice, id, nivel){
             if(nivel!=0){
                 if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                    TweenMax.to(imgEnfermedad, 1, {left:123/2, top:1062/2, scale:1.15, delay:2});
+                    TweenMax.to(imgEnfermedad, 1, {left:58, top:505, scale:1.4, delay:2});
                     contador+=1;
                 }
                 else if(niveles[nivel].numEnfAcertadas==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                        TweenMax.to(imgEnfermedad, 1, {left:335/2, top:1062/2, scale:1.15, delay:2});
+                        TweenMax.to(imgEnfermedad, 1, {left:164, top:505, scale:1.4, delay:2});
                         contador+=1;
                     }
                     else{
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                        TweenMax.to(imgEnfermedad, 1, {left:541/2, top:1062/2, scale:1.15, delay:2});
+                        TweenMax.to(imgEnfermedad, 1, {left:267, top:505, scale:1.4, delay:2});
                         contador+=1;
                         ganar(1,contador);
                     }
@@ -198,12 +198,12 @@ function formarEnfermedad(indice, id, nivel){
             else{
                 if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                    TweenMax.to(imgEnfermedad, 1, {left:200/2, top:1060/2, scale:1.15, delay:2});
+                    TweenMax.to(imgEnfermedad, 1, {left:97, top:505, scale:1.4, delay:2});
                     contador+=1;
                 }
                 else if(niveles[nivel].numEnfAcertadas==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                        TweenMax.to(imgEnfermedad, 1, {left:412/2, top:1062/2, scale:1.15, delay:2});
+                        TweenMax.to(imgEnfermedad, 1, {left:202, top:505, scale:1.4, delay:2});
                         contador+=1;
                         ganar(0,contador);
                     }
@@ -381,7 +381,7 @@ function asignarCoordenadas(img, container){
     var y;
     for(var i=0;i<img.length;i++){        
         x = Math.round(anchoContainer/2 + radio * Math.cos(angulo) - parseInt(img[i].imagen.style.width, 10)/2);
-        y = Math.round(((altoContainer/2)-25) + radio * Math.sin(angulo) - parseInt(img[i].imagen.style.height, 10)/2);    
+        y = Math.round(((altoContainer/2) - 15) + radio * Math.sin(angulo) - parseInt(img[i].imagen.style.height, 10)/2);    
         img[i].x = x;
         img[i].y = y;
         img[i].imagen.style.left = x + 'px';

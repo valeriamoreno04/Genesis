@@ -293,7 +293,7 @@ section{
 .modalButton{
     position: absolute;
     top: 3%;
-    left: 75%;
+    left: 58%;
     /* margin-bottom: 589px;
     margin-left: -110px; */
 }
@@ -334,7 +334,7 @@ section{
 #btnTryTry{
     position: absolute;
     top: 47%;
-    left: 40%;
+    left: 34%;
     /* margin-left: -366px;
     margin-bottom: 50px; */
 }
@@ -358,7 +358,7 @@ section{
 }
 #btnContinue{
     position: absolute;
-    left: 22%;
+    left: 33%;
     top: 48%;
     /* margin-left: -339px;
     margin-bottom: 64px; */

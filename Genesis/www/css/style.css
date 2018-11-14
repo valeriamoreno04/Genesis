@@ -300,17 +300,26 @@ section{
     margin-left: 43px;
 }
 #btnStopSintoms{
-    margin-left: -300px;
-    margin-bottom: 345px;
+    position: absolute;
+    left: 36%;
+    top: 22%;
+    /* margin-left: -300px;
+    margin-bottom: 345px; */
 }
 #btnStopHome{
-    margin-left: -379px;
-    margin-bottom: 507px;
+    position: absolute;
+    left: 43%;
+    top: 10%;
+    /* margin-left: -379px;
+    margin-bottom: 507px; */
 }
 
 #btnStopHelp{
-    margin-left: -243px;
-    margin-bottom: 200px;
+    position: absolute;
+    left: 33%;
+    top: 33%;
+    /* margin-left: -243px;
+    margin-bottom: 200px; */
 
 }
 #btnTryTry{
@@ -333,8 +342,11 @@ section{
     z-index: 99;
 }
 #btnContinue{
-    margin-left: -339px;
-    margin-bottom: 64px;
+    position: absolute;
+    left: 22%;
+    top: 48%;
+    /* margin-left: -339px;
+    margin-bottom: 64px; */
     
 }
 

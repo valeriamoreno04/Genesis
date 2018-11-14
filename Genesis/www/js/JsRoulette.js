@@ -192,7 +192,7 @@ function start(){
   });
   
   btnNextLevel.addEventListener("click",function(){
-    debugger;
+    //debugger;
     closeVictory("Level"+(levelTime+1),"Level"+levelTime,"ModalVictory");
   });
 

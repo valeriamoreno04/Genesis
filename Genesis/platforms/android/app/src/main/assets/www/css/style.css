@@ -39,21 +39,15 @@ section{
 }
 #btnPlayLandindg{
     position: absolute;
-    top: 38%;
-    left: 30%;
+    top: 39%;
+    left: 31%;
     width: 47%;
     height: 9%;
-    /*     
-    margin-left: 213px;
-    margin-right: auto;
-    display: block;
-    margin-top: -799px;
-    */
 }
 
 #btnSintomsLanding{
     position: absolute;
-    top: 49%;
+    top: 50%;
     left: 33%;
     width: 40%;
     height: 10%;
@@ -65,7 +59,7 @@ section{
 }
 #btnFundationLanding{
     position: absolute;
-    top: 61%;
+    top: 63%;
     left: 33%;
     width: 38%;
     height: 8%;
@@ -77,7 +71,7 @@ section{
 }
 #btnCreditsLanding{
     position: absolute;
-    top: 71%;
+    top: 74%;
     left: 33%;
     width: 38%;
     height: 8%;
@@ -120,11 +114,15 @@ section{
     background-image: linear-gradient(#000013, #201033);
 }
 #btnHelpBack{
+    position: absolute;
+    top: 8%;
+    left: 11%;
+    /*     
     position: relative;
     margin-left: 80px;
     margin-right: auto;
     display: block;
-    margin-top: -1189px;
+    margin-top: -1189px; */
    
 }
 
@@ -146,10 +144,10 @@ section{
 }
 #btnFundationBack{
     position: absolute;
-    top: 5%;
-    left: 12%;
-    width: 15%;
-    height: 7%;
+    top: 7%;
+    left: 15%;
+    width: 8%;
+    height: auto;
     /* position: relative;
     margin-left: 108px;
     margin-right: auto;
@@ -252,10 +250,10 @@ section{
 
 #btnLevelBack{
     position: absolute;
-    top: 5%;
-    left: 12%;
-    width: 15%;
-    height: 7%;
+    top: 7%;
+    left: 14%;
+    width: 10%;
+    height: auto;
     /* position: relative;
     margin-left: 108px;
     margin-right: auto;
@@ -266,17 +264,10 @@ section{
 
 #btnCreditsBack{
     position: absolute;
-    top: 5%;
-    left: 12%;
-    width: 15%;
-    height: 7%;
-/*     
-    position: relative;
-    margin-left: 78px;
-    margin-right: auto;
-    display: block;
-    margin-top: -1195px; */
-   
+    top: 8%;
+    left: 11%;
+    width: 8%;
+    height: auto;
 }
 
 .btnBackLevel{
@@ -298,42 +289,60 @@ section{
 }
 
 .modalButton{
-    margin-bottom: 589px;
-    margin-left: -110px;
+    position: absolute;
+    top: 3%;
+    left: 75%;
+    /* margin-bottom: 589px;
+    margin-left: -110px; */
 }
 
 #imgVictory{
-    margin-left: 43px;
+    margin-left: 125px;
 }
 
 #imgTryAgain{
-    margin-left: 43px;
+    margin-left: 125px;
 }
 #imgStop{
     margin-left: 43px;
 }
 #btnStopSintoms{
-    margin-left: -300px;
-    margin-bottom: 345px;
+    position: absolute;
+    left: 36%;
+    top: 22%;
+    /* margin-left: -300px;
+    margin-bottom: 345px; */
 }
 #btnStopHome{
-    margin-left: -379px;
-    margin-bottom: 507px;
+    position: absolute;
+    left: 43%;
+    top: 10%;
+    /* margin-left: -379px;
+    margin-bottom: 507px; */
 }
 
 #btnStopHelp{
-    margin-left: -243px;
-    margin-bottom: 200px;
+    position: absolute;
+    left: 33%;
+    top: 33%;
+    /* margin-left: -243px;
+    margin-bottom: 200px; */
 
 }
 #btnTryTry{
-    margin-left: -366px;
-    margin-bottom: 50px;
+    position: absolute;
+    top: 47%;
+    left: 40%;
+    /* margin-left: -366px;
+    margin-bottom: 50px; */
 }
 
 #btnNextLevel{
-    margin-left: -450px;
-    margin-bottom: 50px;
+    position: absolute;
+    top: 47%;
+    left: 31%;
+    /* margin-left: -450px;
+    margin-bottom: 50px; */
 }
 
 #ModalVictory{
@@ -346,8 +355,11 @@ section{
     z-index: 99;
 }
 #btnContinue{
-    margin-left: -339px;
-    margin-bottom: 64px;
+    position: absolute;
+    left: 22%;
+    top: 48%;
+    /* margin-left: -339px;
+    margin-bottom: 64px; */
     
 }
 

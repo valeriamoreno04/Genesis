@@ -271,26 +271,20 @@ section{
 }
 
 .btnBackLevel{
-    position: absolute;
-    top: 7%;
-    left: 11%;
-    /* position: relative;
+    position: relative;
     margin-left: 80px;
     margin-right: auto;
     display: block;
-    margin-top: -1191px; */
+    margin-top: -1191px;
    
 }
 
 .btnStopLevel{
-    position: absolute;
-    top: 7%;
-    left: 85%;
-    /* position: relative;
+    position: relative;
     margin-left: 600px;
     margin-right: auto;
     display: block;
-    margin-top: -60px; */
+    margin-top: -60px;
    
 }
 
@@ -370,13 +364,12 @@ section{
 }
 
 .div1{
-
-    /* height: 1281px;
+    height: 1281px;
     width: 722px;
     margin-right: 0px;
     margin-left: 0px;
     margin-top: 0px;
-    display: contents; */
+    display: contents;
 }
 
 .img-background{

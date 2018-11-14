@@ -273,20 +273,28 @@ section{
 }
 
 .btnBackLevel{
-    position: relative;
+    position: absolute;
+    top: 7%;
+    left: 11%;
+    height: 6%;
+    /* position: relative;
     margin-left: 80px;
     margin-right: auto;
     display: block;
-    margin-top: -1191px;
+    margin-top: -1191px; */
    
 }
 
 .btnStopLevel{
-    position: relative;
+    position: absolute;
+    top: 7%;
+    left: 86%;
+    height: 6%;
+    /* position: relative;
     margin-left: 600px;
     margin-right: auto;
     display: block;
-    margin-top: -60px;
+    margin-top: -60px; */
    
 }
 

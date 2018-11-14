@@ -60,8 +60,6 @@ function progeso(nivel){
 }
 
 function inicializarVariables(){
-
-
     localStorage.setItem("data", JSON.stringify(nivelesProgreso));
 
     for(let i = 0; i < 14; i++){
@@ -79,31 +77,41 @@ function inicializarVariables(){
             closeModal(modalEnfermedad[i].id);
         });
     }
+
+    /*Obtengo los botones de la pantalla niveles */
     btnLvl1 = document.getElementById("btnLevel1");
     btnLvl2 = document.getElementById("btnLevel2");
     btnLvl3 = document.getElementById("btnLevel3");
     btnLvl4 = document.getElementById("btnLevel4");
     btnLvl5 = document.getElementById("btnLevel5");    
     
+    /*Obtengo el largo y ancho del viewport */
     element = document.querySelector(".div1");
     element.style.width = window.innerWidth + 'px';
     element.style.height = window.innerHeight + 'px';
+
+    /*Obtengo los containers de la pantalla de cada nivel */
     container1 = document.getElementById("div1");
     container2 = document.getElementById("div2");
     container3 = document.getElementById("div3");
     container4 = document.getElementById("div4");
     container5 = document.getElementById("div5");
 
+    /*Banderas usadas para generar los elementos de un nivel solo una vez */
     generado1 = false;
     generado2 = false;
     generado3 = false;
     generado4 = false;
     generado5 = false;
 
+    /*Vector de sintomas a comparar (redundante, corregir) */
     sintomas = [];
     cont = 0;
+    /*Vector de sintomas a comparar */
     objetivosAnim = [];
 
+    /*Incializacion del vector niveles
+      niveles: vector de objetos con los elementos de cada nivel */
     niveles = [];
     for(var i=0;i<5;i++){
         niveles[i] = {};
@@ -113,10 +121,13 @@ function inicializarVariables(){
         niveles[i].contVidas = 0;        
         niveles[i].enfermedesCreadas = [];
         niveles[i].vidasDiv = null;
+        /*Cada nivel tiene 10 sintomas, niveles[i].sintomas: vector de objetos
+          con una imagen, coordenadas originales XY de cada imagen(se usan para animar) */
         for(var j=0;j<10;j++)
             niveles[i].sintomas[j] = {};
     }
     
+    /*Variables usadas para el posicionamiento circular de los sintomas */
     radio = 125;    
     anchoContainer = parseInt(getComputedStyle(element).width, 10);
     altoContainer = parseInt(getComputedStyle(element).height, 10);
@@ -128,12 +139,14 @@ function inicializarEventos(){
     btnLvl1.addEventListener("click",crearNivel1);
 }
 
+/*Función que se encarga de la lógica y animaciones */
 function formarEnfermedad(indice, id, nivel){
     temp = {};
     temp.id = '#' + id;
     temp.indice = indice;
     temp.dom = document.getElementById(id);
     objetivosAnim.push(temp);
+    /*Animaciones de sintomas */
     if(sintomas[1]==undefined){               
         sintomas.push(indice);        
         if(cont==0){            
@@ -163,6 +176,8 @@ function formarEnfermedad(indice, id, nivel){
                     break;
             }            
         }
+        /*Este if crea la imagen de la enfermedad si los sintomas coinciden
+          y luego la anima */
         if(coincide){
             var imgEnfermedad = document.createElement("img");            
             imgEnfermedad.setAttribute("src", niveles[nivel].enfermedades[enfermedad].icono);            
@@ -174,9 +189,9 @@ function formarEnfermedad(indice, id, nivel){
             imgEnfermedad.style.top = ((altoContainer/2 - 15) - parseInt(imgEnfermedad.style.height, 10)/2) + 'px';
             niveles[nivel].enfermedesCreadas.push(imgEnfermedad);
             document.getElementById("div" + (nivel+1)).appendChild(imgEnfermedad);
-            //debugger;
-            var x;
-            var y;
+            /*Variables para responsive(por implementar) */;
+            //var x;
+            //var y;
             if(nivel!=0){
                 if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
@@ -208,7 +223,7 @@ function formarEnfermedad(indice, id, nivel){
                         ganar(0,contador);
                     }
             }
-                
+            
             setTimeout(eliminarIconos.bind(null, objetivosAnim), 1500);
 
             coincide = false;
@@ -222,7 +237,7 @@ function formarEnfermedad(indice, id, nivel){
             }
         }
         else{
-            //Reorganizar imgs            
+            /*Animación reorganizar sintomas en caso equivocación */            
             var left;
             var top;
             for(var i=0;i<objetivosAnim.length;i++){                
@@ -239,12 +254,16 @@ function formarEnfermedad(indice, id, nivel){
     }
 }
 
+/*Display none de los sintomas correctos una vez reposicionados por 
+formarEnfermedad(indiceSintoma, idSintoma, #nivel-1 (de 0 a 4)) */
 function eliminarIconos(array){    
     for(var i=0;i<3;i++){
         array[i].dom.style.display="none";
     }        
 }
 
+/*Función que reduce número de vidas en caso de equivocación. Reinicia el nivel sí
+  se agotan las vidas */
 function perder(nivel){
     switch(nivel){
         case 0:
@@ -296,6 +315,7 @@ function perder(nivel){
     }
 }
 
+/*Elimina los elementos de el nivel especificado. Hace llamado a los metodos crearNivel#() */
 function reiniciarNivel(nivel){
     var cont = 0;
     for(var i=0;i<10;i++){
@@ -376,6 +396,8 @@ function reiniciarNivel(nivel){
     }
 }
 
+/*Función que posiciona los sintomas circularmente y almacena las coordenadas en 
+  niveles[].sintomas (img) */
 function asignarCoordenadas(img, container){
     var x;
     var y;
@@ -391,6 +413,7 @@ function asignarCoordenadas(img, container){
     }    
 }
 
+/*Función que genera imagenes de las vidas por nivel... */
 function generarVidas(nivel, container){
     niveles[nivel].vidas =[];
     var vidasDiv = document.createElement("div");    
@@ -399,8 +422,7 @@ function generarVidas(nivel, container){
     vidasDiv.style.height = '20px'
     vidasDiv.style.top = ((altoContainer/4 - 45) - parseInt(vidasDiv.style.height, 10)/2) + 'px';
     vidasDiv.style.left = ((anchoContainer/2) - parseInt(vidasDiv.style.width, 10)/2) + 'px';
-    vidasDiv.setAttribute("id","vidasDiv"+nivel);    
-    //debugger;
+    vidasDiv.setAttribute("id","vidasDiv"+nivel);
     switch(nivel){
         case 0:
             for(var i=0;i<5;i++){
@@ -463,7 +485,9 @@ function generarVidas(nivel, container){
     container.appendChild(niveles[nivel].vidasDiv);
 }
 
-//nivel 1
+/*Funciones que crean los elementos de cada nivel. Llaman al metodo 
+  asignarCoordenadas(object[], DOMvar) */
+//NIVEL 1
 function crearNivel1(){    
     if(!generado1){
         niveles[0].numEnfAcertadas = 0;
@@ -577,7 +601,7 @@ function crearNivel1(){
     }
 }
 
-//nivel 2
+//NIVEL 2
 function crearNivel2(){
     if(!generado2){
         niveles[1].numEnfAcertadas = 0;

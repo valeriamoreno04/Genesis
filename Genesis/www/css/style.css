@@ -1,11 +1,13 @@
 body{
     max-width: 100% !important;
+    margin: 0;
 }
 .app-container{
     height: 100vh;
     position: relative;
     text-align: center;
     width: 100%;
+    margin: 0 auto;
 }
 
 .img-backgound{
@@ -291,7 +293,7 @@ section{
 .modalButton{
     position: absolute;
     top: 3%;
-    left: 75%;
+    left: 58%;
     /* margin-bottom: 589px;
     margin-left: -110px; */
 }
@@ -332,7 +334,7 @@ section{
 #btnTryTry{
     position: absolute;
     top: 47%;
-    left: 40%;
+    left: 34%;
     /* margin-left: -366px;
     margin-bottom: 50px; */
 }
@@ -356,7 +358,7 @@ section{
 }
 #btnContinue{
     position: absolute;
-    left: 22%;
+    left: 33%;
     top: 48%;
     /* margin-left: -339px;
     margin-bottom: 64px; */
@@ -364,9 +366,17 @@ section{
 }
 
 .div1{
+<<<<<<< HEAD
     height: 615px;
     width: 360px;
     margin : 0px;
+=======
+    height: 640px;
+    width: 369px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+>>>>>>> 03776a8c41b4ee3511800f1ee5c222d226ec6bf1
     display: contents;
 }
 

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Nov 13 22:33:17 COT 2018
+#Tue Nov 13 22:50:16 COT 2018
 2.path=www/img/enciclopedia/Enfermedad-sonrisainvertida.png
 14.set=ASSET
 107.baseType=DIRECTORY

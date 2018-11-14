@@ -117,8 +117,9 @@ section{
 }
 #btnHelpBack{
     position: absolute;
-    top: 8%;
-    left: 11%;
+    top: 7.5%;
+    left: 5.5%;
+    width: 4%;
     /*     
     position: relative;
     margin-left: 80px;
@@ -273,76 +274,90 @@ section{
 }
 
 .btnBackLevel{
-    position: relative;
+    position: absolute;
+    top: 7%;
+    left: 11%;
+    height: 6%;
+    /* position: relative;
     margin-left: 80px;
     margin-right: auto;
     display: block;
-    margin-top: -1191px;
+    margin-top: -1191px; */
    
 }
 
 .btnStopLevel{
-    position: relative;
+    position: absolute;
+    top: 7%;
+    left: 85%;
+    height: 6%;
+    /* position: relative;
     margin-left: 600px;
     margin-right: auto;
     display: block;
-    margin-top: -60px;
+    margin-top: -60px; */
    
 }
 
 .modalButton{
     position: absolute;
-    top: 3%;
-    left: 75%;
+    top: -80%;
+    left: 85%;
+    width: 10%;
     /* margin-bottom: 589px;
     margin-left: -110px; */
 }
 
 #imgVictory{
-    margin-left: 125px;
+    margin-left: 10px;
 }
 
 #imgTryAgain{
-    margin-left: 125px;
+    margin-left: 8px;
 }
 #imgStop{
     margin-left: 43px;
 }
 #btnStopSintoms{
     position: absolute;
-    left: 36%;
-    top: 22%;
+    left: 31%;
+    top: -65%;
+    width: 45%;
     /* margin-left: -300px;
     margin-bottom: 345px; */
 }
 #btnStopHome{
     position: absolute;
     left: 43%;
-    top: 10%;
+    top: -75%;
+    width: 17%;
     /* margin-left: -379px;
     margin-bottom: 507px; */
 }
 
 #btnStopHelp{
     position: absolute;
-    left: 33%;
-    top: 33%;
+    left: 29%;
+    top: -53%;
+    width: 50%;
     /* margin-left: -243px;
     margin-bottom: 200px; */
 
 }
 #btnTryTry{
     position: absolute;
-    top: 47%;
-    left: 40%;
+    top: -39%;
+    left: 34%;
+    width: 33%;
     /* margin-left: -366px;
     margin-bottom: 50px; */
 }
 
 #btnNextLevel{
     position: absolute;
-    top: 47%;
+    top: -40%;
     left: 31%;
+    width: 45%;
     /* margin-left: -450px;
     margin-bottom: 50px; */
 }
@@ -359,18 +374,17 @@ section{
 #btnContinue{
     position: absolute;
     left: 22%;
-    top: 48%;
+    top: -39%;
+    width: 63%
     /* margin-left: -339px;
     margin-bottom: 64px; */
     
 }
 
 .div1{
-    height: 1281px;
-    width: 722px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
+    height: 640px;
+    width: 369px;
+    margin: 0;
     display: contents;
 }
 
@@ -386,7 +400,7 @@ section{
     top: 14%;
     left: 11%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 51px;
     margin-right: auto;
     display: block;
@@ -398,7 +412,7 @@ section{
     top: 14%;
     left: 42%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 279px;
     margin-right: auto;
     display: block;
@@ -410,7 +424,7 @@ section{
     top: 14%;
     left: 74%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* 
     margin-left: 500px;
     margin-right: auto;
@@ -423,7 +437,7 @@ section{
     top: 32%;
     left: 11%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 51px;
     margin-right: auto;
     display: block;
@@ -435,7 +449,7 @@ section{
     top: 32%;
     left: 42%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 279px;
     margin-right: auto;
     display: block;
@@ -447,7 +461,7 @@ section{
     top: 32%;
     left: 72%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 500px;
     margin-right: auto;
     display: block;
@@ -459,7 +473,7 @@ section{
     top: 50%;
     left: 11%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 51px;
     margin-right: auto;
     display: block;
@@ -471,7 +485,7 @@ section{
     top: 50%;
     left: 42%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 279px;
     margin-right: auto;
     display: block;
@@ -483,7 +497,7 @@ section{
     top: 50%;
     left: 72%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 500px;
     margin-right: auto;
     display: block;
@@ -495,7 +509,7 @@ section{
     top: 67%;
     left: 11%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 51px;
     margin-right: auto;
     display: block;
@@ -507,7 +521,7 @@ section{
     top: 67%;
     left: 42%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 279px;
     margin-right: auto;
     display: block;
@@ -519,7 +533,7 @@ section{
     top: 67%;
     left: 72%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 500px;
     margin-right: auto;
     display: block;
@@ -531,7 +545,7 @@ section{
     top: 84%;
     left: 27%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 159px;
     margin-right: auto;
     display: block;
@@ -543,7 +557,7 @@ section{
     top: 84%;
     left: 60%;
     width: 18%;
-    height: 12%;
+    height: 10%;
     /* margin-left: 402px;
     margin-right: auto;
     display: block;
@@ -553,18 +567,24 @@ section{
 .modalEnfermedad{
     position: absolute;
     top: 21%;
-    left: 5%;
-    width: 8%;
-    height: 5%;
+    left: 0%;
     /* position: relative;
     margin-right: auto;
     margin-left: 50px;
     margin-top: 91px; */
 }
 
+.modalEnfermedad div img{
+    width: 80%;
+}
+
 .btnModalEnfermedad{
-    margin-left: 481px;
+    position: absolute;
+    width: 8% !important;
+    left: 74%;
+    top: 3%;
+    /* margin-left: 481px;
     margin-right: auto;
     display: block;
-    margin-top: -923px;
+    margin-top: -923px; */
 }

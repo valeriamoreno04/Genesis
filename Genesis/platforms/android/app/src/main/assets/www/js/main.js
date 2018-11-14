@@ -86,13 +86,8 @@ function inicializarVariables(){
     btnLvl5 = document.getElementById("btnLevel5");    
     
     element = document.querySelector(".div1");
-    element.style.width = window.innerWidth + 'px';    
+    element.style.width = window.innerWidth + 'px';
     element.style.height = window.innerHeight + 'px';
-    var p = document.createElement("p");
-    p.innerHTML = window.innerWidth + 'px' + window.innerHeight + 'px';
-    p.style.color = 'red';
-    debugger;
-    document.getElementsByTagName("body")[0].appendChild(p);
     container1 = document.getElementById("div1");
     container2 = document.getElementById("div2");
     container3 = document.getElementById("div3");
@@ -130,7 +125,7 @@ function inicializarVariables(){
 }
 
 function inicializarEventos(){
-    //btnLvl1.addEventListener("click",crearNivel1);
+    btnLvl1.addEventListener("click",crearNivel1);
 }
 
 function formarEnfermedad(indice, id, nivel){
@@ -138,24 +133,20 @@ function formarEnfermedad(indice, id, nivel){
     temp.id = '#' + id;
     temp.indice = indice;
     temp.dom = document.getElementById(id);
-    objetivosAnim.push(temp);    
-    var x;
-    var y;
-    x = anchoContainer/2;
-    y = altoContainer/2;
+    objetivosAnim.push(temp);
     if(sintomas[1]==undefined){               
         sintomas.push(indice);        
         if(cont==0){            
-            TweenMax.to(temp.id, 1, {left:x, top:y, scale:0.7});
+            TweenMax.to(temp.id, 1, {left:137, top:290, scale:0.7});
             cont++;
         }else if(cont==1){
-            TweenMax.to(temp.id, 1, {left:266, top:515, scale:0.7});
+            TweenMax.to(temp.id, 1, {left:131, top:240, scale:0.7});
             cont++;
         }        
     }
     else{
         sintomas.push(indice);
-        TweenMax.to(temp.id, 1, {left:362, top:551, scale:0.7});
+        TweenMax.to(temp.id, 1, {left:179, top:258, scale:0.7});
         for(var i=0;i<niveles[nivel].enfermedades.length;i++){            
             if((niveles[nivel].enfermedades[i].sintoma1==sintomas[0]||
                 niveles[nivel].enfermedades[i].sintoma1==sintomas[1]||
@@ -178,26 +169,28 @@ function formarEnfermedad(indice, id, nivel){
             imgEnfermedad.setAttribute("id",niveles[nivel].enfermedades[enfermedad].id);            
             imgEnfermedad.style.position = 'absolute';
             imgEnfermedad.style.width = '60px';
-            imgEnfermedad.style.height = '60px';
-            imgEnfermedad.style.top = ((altoContainer/2 - 17) - parseInt(imgEnfermedad.style.height, 10)/2) + 'px';
-            imgEnfermedad.style.left = ((anchoContainer/2 + 6) - parseInt(imgEnfermedad.style.width, 10)/2) + 'px';
+            imgEnfermedad.style.height = '60px';            
+            imgEnfermedad.style.left = ((anchoContainer/2) - parseInt(imgEnfermedad.style.width, 10)/2) + 'px';
+            imgEnfermedad.style.top = ((altoContainer/2 - 15) - parseInt(imgEnfermedad.style.height, 10)/2) + 'px';
             niveles[nivel].enfermedesCreadas.push(imgEnfermedad);
             document.getElementById("div" + (nivel+1)).appendChild(imgEnfermedad);
             //debugger;
+            var x;
+            var y;
             if(nivel!=0){
                 if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                    TweenMax.to(imgEnfermedad, 1, {left:123, top:1062, scale:1.15, delay:2});
+                    TweenMax.to(imgEnfermedad, 1, {left:58, top:505, scale:1.4, delay:2});
                     contador+=1;
                 }
                 else if(niveles[nivel].numEnfAcertadas==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                        TweenMax.to(imgEnfermedad, 1, {left:335, top:1062, scale:1.15, delay:2});
+                        TweenMax.to(imgEnfermedad, 1, {left:164, top:505, scale:1.4, delay:2});
                         contador+=1;
                     }
                     else{
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                        TweenMax.to(imgEnfermedad, 1, {left:541, top:1062, scale:1.15, delay:2});
+                        TweenMax.to(imgEnfermedad, 1, {left:267, top:505, scale:1.4, delay:2});
                         contador+=1;
                         ganar(1,contador);
                     }
@@ -205,12 +198,12 @@ function formarEnfermedad(indice, id, nivel){
             else{
                 if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                    TweenMax.to(imgEnfermedad, 1, {left:200, top:1060, scale:1.15, delay:2});
+                    TweenMax.to(imgEnfermedad, 1, {left:97, top:505, scale:1.4, delay:2});
                     contador+=1;
                 }
                 else if(niveles[nivel].numEnfAcertadas==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                        TweenMax.to(imgEnfermedad, 1, {left:412, top:1062, scale:1.15, delay:2});
+                        TweenMax.to(imgEnfermedad, 1, {left:202, top:505, scale:1.4, delay:2});
                         contador+=1;
                         ganar(0,contador);
                     }
@@ -388,7 +381,7 @@ function asignarCoordenadas(img, container){
     var y;
     for(var i=0;i<img.length;i++){        
         x = Math.round(anchoContainer/2 + radio * Math.cos(angulo) - parseInt(img[i].imagen.style.width, 10)/2);
-        y = Math.round(((altoContainer/2)-25) + radio * Math.sin(angulo) - parseInt(img[i].imagen.style.height, 10)/2);    
+        y = Math.round(((altoContainer/2) - 15) + radio * Math.sin(angulo) - parseInt(img[i].imagen.style.height, 10)/2);    
         img[i].x = x;
         img[i].y = y;
         img[i].imagen.style.left = x + 'px';
@@ -402,10 +395,10 @@ function generarVidas(nivel, container){
     niveles[nivel].vidas =[];
     var vidasDiv = document.createElement("div");    
     vidasDiv.style.position = 'absolute';
-    vidasDiv.style.width = '201px'
-    vidasDiv.style.height = '40px'
-    vidasDiv.style.top = (240 - parseInt(vidasDiv.style.height, 10)/2) + 'px';
-    vidasDiv.style.left = ((anchoContainer/2 + 6) - parseInt(vidasDiv.style.width, 10)/2) + 'px';
+    vidasDiv.style.width = '110px'
+    vidasDiv.style.height = '20px'
+    vidasDiv.style.top = ((altoContainer/4 - 45) - parseInt(vidasDiv.style.height, 10)/2) + 'px';
+    vidasDiv.style.left = ((anchoContainer/2) - parseInt(vidasDiv.style.width, 10)/2) + 'px';
     vidasDiv.setAttribute("id","vidasDiv"+nivel);    
     //debugger;
     switch(nivel){
@@ -413,7 +406,9 @@ function generarVidas(nivel, container){
             for(var i=0;i<5;i++){
                 var vida = document.createElement('img');
                 vida.setAttribute('src','img/juego/vida.png');
-                vida.style.marginLeft = '2px'
+                vida.style.width = '20px';
+                vida.style.height = '16px';
+                vida.style.marginLeft = '2px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -421,8 +416,10 @@ function generarVidas(nivel, container){
         case 1:
             for(var i=0;i<4;i++){
                 var vida = document.createElement('img');
-                vida.setAttribute('src','img/juego/vida.png');                
-                vida.style.marginLeft = '10px'
+                vida.setAttribute('src','img/juego/vida.png');  
+                vida.style.width = '20px';
+                vida.style.height = '16px';              
+                vida.style.marginLeft = '7px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -430,8 +427,10 @@ function generarVidas(nivel, container){
         case 2:
             for(var i=0;i<3;i++){
                 var vida = document.createElement('img');
-                vida.setAttribute('src','img/juego/vida.png');                
-                vida.style.marginLeft = '20px'
+                vida.setAttribute('src','img/juego/vida.png');
+                vida.style.width = '20px';
+                vida.style.height = '16px';
+                vida.style.marginLeft = '13px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -439,8 +438,10 @@ function generarVidas(nivel, container){
         case 3:
             for(var i=0;i<3;i++){
                 var vida = document.createElement('img');
-                vida.setAttribute('src','img/juego/vida.png');                
-                vida.style.marginLeft = '20px'
+                vida.setAttribute('src','img/juego/vida.png');
+                vida.style.width = '20px';
+                vida.style.height = '16px';
+                vida.style.marginLeft = '13px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -449,7 +450,9 @@ function generarVidas(nivel, container){
             for(var i=0;i<3;i++){
                 var vida = document.createElement('img');
                 vida.setAttribute('src','img/juego/vida.png');
-                vida.style.marginLeft = '20px'
+                vida.style.width = '20px';
+                vida.style.height = '16px';
+                vida.style.marginLeft = '13px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }

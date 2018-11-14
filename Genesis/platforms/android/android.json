@@ -19,7 +19,7 @@
   },
   "installed_plugins": {
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "co.edu.upb.Genesis"
+      "PACKAGE_NAME": "com.upb.appsmoviles"
     }
   },
   "dependent_plugins": {},

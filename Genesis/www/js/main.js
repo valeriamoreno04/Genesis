@@ -133,15 +133,11 @@ function formarEnfermedad(indice, id, nivel){
     temp.id = '#' + id;
     temp.indice = indice;
     temp.dom = document.getElementById(id);
-    objetivosAnim.push(temp);    
-    var x;
-    var y;
-    x = anchoContainer/2;
-    y = altoContainer/2;
+    objetivosAnim.push(temp);
     if(sintomas[1]==undefined){               
         sintomas.push(indice);        
         if(cont==0){            
-            TweenMax.to(temp.id, 1, {left:x, top:y, scale:0.7});
+            TweenMax.to(temp.id, 1, {left:279/2, top:615/2, scale:0.7});
             cont++;
         }else if(cont==1){
             TweenMax.to(temp.id, 1, {left:266, top:515, scale:0.7});
@@ -179,6 +175,8 @@ function formarEnfermedad(indice, id, nivel){
             niveles[nivel].enfermedesCreadas.push(imgEnfermedad);
             document.getElementById("div" + (nivel+1)).appendChild(imgEnfermedad);
             //debugger;
+            var x;
+            var y;
             if(nivel!=0){
                 if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});

@@ -117,7 +117,7 @@ function inicializarVariables(){
             niveles[i].sintomas[j] = {};
     }
     
-    radio = 250;    
+    radio = 125;    
     anchoContainer = parseInt(getComputedStyle(element).width, 10);
     altoContainer = parseInt(getComputedStyle(element).height, 10);
     angulo = 0;
@@ -140,13 +140,13 @@ function formarEnfermedad(indice, id, nivel){
             TweenMax.to(temp.id, 1, {left:279/2, top:615/2, scale:0.7});
             cont++;
         }else if(cont==1){
-            TweenMax.to(temp.id, 1, {left:266, top:515, scale:0.7});
+            TweenMax.to(temp.id, 1, {left:266/2, top:515/2, scale:0.7});
             cont++;
         }        
     }
     else{
         sintomas.push(indice);
-        TweenMax.to(temp.id, 1, {left:362, top:551, scale:0.7});
+        TweenMax.to(temp.id, 1, {left:362/2, top:551/2, scale:0.7});
         for(var i=0;i<niveles[nivel].enfermedades.length;i++){            
             if((niveles[nivel].enfermedades[i].sintoma1==sintomas[0]||
                 niveles[nivel].enfermedades[i].sintoma1==sintomas[1]||
@@ -168,8 +168,8 @@ function formarEnfermedad(indice, id, nivel){
             imgEnfermedad.setAttribute("src", niveles[nivel].enfermedades[enfermedad].icono);            
             imgEnfermedad.setAttribute("id",niveles[nivel].enfermedades[enfermedad].id);            
             imgEnfermedad.style.position = 'absolute';
-            imgEnfermedad.style.width = '125px';
-            imgEnfermedad.style.height = '125px';
+            imgEnfermedad.style.width = '60px';
+            imgEnfermedad.style.height = '60px';
             imgEnfermedad.style.top = ((altoContainer/2 - 17) - parseInt(imgEnfermedad.style.height, 10)/2) + 'px';
             imgEnfermedad.style.left = ((anchoContainer/2 + 6) - parseInt(imgEnfermedad.style.width, 10)/2) + 'px';
             niveles[nivel].enfermedesCreadas.push(imgEnfermedad);
@@ -180,17 +180,17 @@ function formarEnfermedad(indice, id, nivel){
             if(nivel!=0){
                 if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                    TweenMax.to(imgEnfermedad, 1, {left:123, top:1062, scale:1.15, delay:2});
+                    TweenMax.to(imgEnfermedad, 1, {left:123/2, top:1062/2, scale:1.15, delay:2});
                     contador+=1;
                 }
                 else if(niveles[nivel].numEnfAcertadas==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                        TweenMax.to(imgEnfermedad, 1, {left:335, top:1062, scale:1.15, delay:2});
+                        TweenMax.to(imgEnfermedad, 1, {left:335/2, top:1062/2, scale:1.15, delay:2});
                         contador+=1;
                     }
                     else{
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                        TweenMax.to(imgEnfermedad, 1, {left:541, top:1062, scale:1.15, delay:2});
+                        TweenMax.to(imgEnfermedad, 1, {left:541/2, top:1062/2, scale:1.15, delay:2});
                         contador+=1;
                         ganar(1,contador);
                     }
@@ -198,12 +198,12 @@ function formarEnfermedad(indice, id, nivel){
             else{
                 if(niveles[nivel].numEnfAcertadas==0){
                     TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                    TweenMax.to(imgEnfermedad, 1, {left:200, top:1060, scale:1.15, delay:2});
+                    TweenMax.to(imgEnfermedad, 1, {left:200/2, top:1060/2, scale:1.15, delay:2});
                     contador+=1;
                 }
                 else if(niveles[nivel].numEnfAcertadas==1){   
                         TweenMax.to(imgEnfermedad, 1, {scale:2,delay:1});
-                        TweenMax.to(imgEnfermedad, 1, {left:412, top:1062, scale:1.15, delay:2});
+                        TweenMax.to(imgEnfermedad, 1, {left:412/2, top:1062/2, scale:1.15, delay:2});
                         contador+=1;
                         ganar(0,contador);
                     }
@@ -395,10 +395,10 @@ function generarVidas(nivel, container){
     niveles[nivel].vidas =[];
     var vidasDiv = document.createElement("div");    
     vidasDiv.style.position = 'absolute';
-    vidasDiv.style.width = '201px'
-    vidasDiv.style.height = '40px'
-    vidasDiv.style.top = (240 - parseInt(vidasDiv.style.height, 10)/2) + 'px';
-    vidasDiv.style.left = ((anchoContainer/2 + 6) - parseInt(vidasDiv.style.width, 10)/2) + 'px';
+    vidasDiv.style.width = '110px'
+    vidasDiv.style.height = '20px'
+    vidasDiv.style.top = ((altoContainer/4 - 80) - parseInt(vidasDiv.style.height, 10)/2) + 'px';
+    vidasDiv.style.left = ((anchoContainer/2) - parseInt(vidasDiv.style.width, 10)/2) + 'px';
     vidasDiv.setAttribute("id","vidasDiv"+nivel);    
     //debugger;
     switch(nivel){
@@ -406,7 +406,9 @@ function generarVidas(nivel, container){
             for(var i=0;i<5;i++){
                 var vida = document.createElement('img');
                 vida.setAttribute('src','img/juego/vida.png');
-                vida.style.marginLeft = '2px'
+                vida.style.width = '20px';
+                vida.style.height = '20px';
+                vida.style.marginLeft = '2px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -414,8 +416,10 @@ function generarVidas(nivel, container){
         case 1:
             for(var i=0;i<4;i++){
                 var vida = document.createElement('img');
-                vida.setAttribute('src','img/juego/vida.png');                
-                vida.style.marginLeft = '10px'
+                vida.setAttribute('src','img/juego/vida.png');  
+                vida.style.width = '20px';
+                vida.style.height = '20px';              
+                vida.style.marginLeft = '10px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -423,8 +427,10 @@ function generarVidas(nivel, container){
         case 2:
             for(var i=0;i<3;i++){
                 var vida = document.createElement('img');
-                vida.setAttribute('src','img/juego/vida.png');                
-                vida.style.marginLeft = '20px'
+                vida.setAttribute('src','img/juego/vida.png');
+                vida.style.width = '20px';
+                vida.style.height = '20px';
+                vida.style.marginLeft = '20px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -432,8 +438,10 @@ function generarVidas(nivel, container){
         case 3:
             for(var i=0;i<3;i++){
                 var vida = document.createElement('img');
-                vida.setAttribute('src','img/juego/vida.png');                
-                vida.style.marginLeft = '20px'
+                vida.setAttribute('src','img/juego/vida.png');
+                vida.style.width = '20px';
+                vida.style.height = '20px';
+                vida.style.marginLeft = '20px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -442,7 +450,9 @@ function generarVidas(nivel, container){
             for(var i=0;i<3;i++){
                 var vida = document.createElement('img');
                 vida.setAttribute('src','img/juego/vida.png');
-                vida.style.marginLeft = '20px'
+                vida.style.width = '20px';
+                vida.style.height = '20px';
+                vida.style.marginLeft = '20px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -477,8 +487,8 @@ function crearNivel1(){
         img1.setAttribute("id","s1n1");
         img1.setAttribute("onClick","formarEnfermedad(1,'s1n1', 0)");
         img1.style.position = 'absolute';  
-        img1.style.width = '125px';
-        img1.style.height = '125px';
+        img1.style.width = '60px';
+        img1.style.height = '60px';
         niveles[0].sintomas[0].imagen = img1;
 
         var img2 = document.createElement("img");    
@@ -486,8 +496,8 @@ function crearNivel1(){
         img2.setAttribute("id","s2n1");
         img2.setAttribute("onClick","formarEnfermedad(2,'s2n1',0)");
         img2.style.position = 'absolute';    
-        img2.style.width = '125px';
-        img2.style.height = '125px';
+        img2.style.width = '60px';
+        img2.style.height = '60px';
         niveles[0].sintomas[1].imagen = img2;
 
         var img3 = document.createElement("img");    
@@ -495,8 +505,8 @@ function crearNivel1(){
         img3.setAttribute("id","s3n1");
         img3.setAttribute("onClick","formarEnfermedad(3,'s3n1',0)");
         img3.style.position = 'absolute';    
-        img3.style.width = '125px';
-        img3.style.height = '125px';
+        img3.style.width = '60px';
+        img3.style.height = '60px';
         niveles[0].sintomas[2].imagen = img3;
 
         var img4 = document.createElement("img");    
@@ -504,8 +514,8 @@ function crearNivel1(){
         img4.setAttribute("id","s4n1");
         img4.setAttribute("onClick","formarEnfermedad(4,'s4n1',0)");
         img4.style.position = 'absolute';    
-        img4.style.width = '125px';
-        img4.style.height = '125px';
+        img4.style.width = '60px';
+        img4.style.height = '60px';
         niveles[0].sintomas[3].imagen = img4;
 
         var img5 = document.createElement("img");   
@@ -513,8 +523,8 @@ function crearNivel1(){
         img5.setAttribute("id","s5n1");
         img5.setAttribute("onClick","formarEnfermedad(5,'s5n1',0)");
         img5.style.position = 'absolute';    
-        img5.style.width = '125px';
-        img5.style.height = '125px';
+        img5.style.width = '60px';
+        img5.style.height = '60px';
         niveles[0].sintomas[4].imagen = img5;
 
         var img6 = document.createElement("img");    
@@ -522,8 +532,8 @@ function crearNivel1(){
         img6.setAttribute("id","s6n1");
         img6.setAttribute("onClick","formarEnfermedad(6,'s6n1',0)");
         img6.style.position = 'absolute';    
-        img6.style.width = '125px';
-        img6.style.height = '125px';
+        img6.style.width = '60px';
+        img6.style.height = '60px';
         niveles[0].sintomas[5].imagen = img6;
 
         var img7 = document.createElement("img");
@@ -531,8 +541,8 @@ function crearNivel1(){
         img7.setAttribute("id","s7n1");
         img7.setAttribute("onClick","formarEnfermedad(7,'s7n1',0)");
         img7.style.position = 'absolute';    
-        img7.style.width = '125px';
-        img7.style.height = '125px';
+        img7.style.width = '60px';
+        img7.style.height = '60px';
         niveles[0].sintomas[6].imagen = img7;
 
         var img8 = document.createElement("img");
@@ -540,8 +550,8 @@ function crearNivel1(){
         img8.setAttribute("id","s8n1");
         img8.setAttribute("onClick","formarEnfermedad(8,'s8n1',0)");
         img8.style.position = 'absolute';    
-        img8.style.width = '125px';
-        img8.style.height = '125px';
+        img8.style.width = '60px';
+        img8.style.height = '60px';
         niveles[0].sintomas[7].imagen = img8;
 
         var img9 = document.createElement("img");    
@@ -549,8 +559,8 @@ function crearNivel1(){
         img9.setAttribute("id","s9n1");
         img9.setAttribute("onClick","formarEnfermedad(9,'s9n1',0)");
         img9.style.position = 'absolute';    
-        img9.style.width = '125px';
-        img9.style.height = '125px';
+        img9.style.width = '60px';
+        img9.style.height = '60px';
         niveles[0].sintomas[8].imagen = img9;
 
         var img10 = document.createElement("img");    
@@ -558,8 +568,8 @@ function crearNivel1(){
         img10.setAttribute("id","s10n1");
         img10.setAttribute("onClick","formarEnfermedad(10,'s10n1',0)");
         img10.style.position = 'absolute';    
-        img10.style.width = '125px';
-        img10.style.height = '125px';
+        img10.style.width = '60px';
+        img10.style.height = '60px';
         niveles[0].sintomas[9].imagen = img10;
         
         asignarCoordenadas(niveles[0].sintomas, container1);
@@ -597,8 +607,8 @@ function crearNivel2(){
         img1.setAttribute("id","s1n2");
         img1.setAttribute("onClick","formarEnfermedad(1,'s1n2',1)");
         img1.style.position = 'absolute';
-        img1.style.width = '125px';
-        img1.style.height = '125px';
+        img1.style.width = '60px';
+        img1.style.height = '60px';
         niveles[1].sintomas[0].imagen = img1;
 
         var img2 = document.createElement("img");    
@@ -606,8 +616,8 @@ function crearNivel2(){
         img2.setAttribute("id","s2n2");
         img2.setAttribute("onClick","formarEnfermedad(2,'s2n2',1)");
         img2.style.position = 'absolute';    
-        img2.style.width = '125px';
-        img2.style.height = '125px';
+        img2.style.width = '60px';
+        img2.style.height = '60px';
         niveles[1].sintomas[1].imagen = img2;
 
         var img3 = document.createElement("img");    
@@ -615,8 +625,8 @@ function crearNivel2(){
         img3.setAttribute("id","s3n2");
         img3.setAttribute("onClick","formarEnfermedad(3,'s3n2',1)");
         img3.style.position = 'absolute';    
-        img3.style.width = '125px';
-        img3.style.height = '125px';
+        img3.style.width = '60px';
+        img3.style.height = '60px';
         niveles[1].sintomas[2].imagen = img3;
 
         var img4 = document.createElement("img");    
@@ -624,8 +634,8 @@ function crearNivel2(){
         img4.setAttribute("id","s4n2");
         img4.setAttribute("onClick","formarEnfermedad(4,'s4n2',1)");
         img4.style.position = 'absolute';    
-        img4.style.width = '125px';
-        img4.style.height = '125px';
+        img4.style.width = '60px';
+        img4.style.height = '60px';
         niveles[1].sintomas[3].imagen = img4;
 
         var img5 = document.createElement("img");   
@@ -633,8 +643,8 @@ function crearNivel2(){
         img5.setAttribute("id","s5n2");
         img5.setAttribute("onClick","formarEnfermedad(5,'s5n2',1)");
         img5.style.position = 'absolute';    
-        img5.style.width = '125px';
-        img5.style.height = '125px';
+        img5.style.width = '60px';
+        img5.style.height = '60px';
         niveles[1].sintomas[4].imagen = img5;
 
         var img6 = document.createElement("img");    
@@ -642,8 +652,8 @@ function crearNivel2(){
         img6.setAttribute("id","s6n2");
         img6.setAttribute("onClick","formarEnfermedad(6,'s6n2',1)");
         img6.style.position = 'absolute';    
-        img6.style.width = '125px';
-        img6.style.height = '125px';
+        img6.style.width = '60px';
+        img6.style.height = '60px';
         niveles[1].sintomas[5].imagen = img6;
 
         var img7 = document.createElement("img");
@@ -651,8 +661,8 @@ function crearNivel2(){
         img7.setAttribute("id","s7n2");
         img7.setAttribute("onClick","formarEnfermedad(7,'s7n2',1)");
         img7.style.position = 'absolute';    
-        img7.style.width = '125px';
-        img7.style.height = '125px';
+        img7.style.width = '60px';
+        img7.style.height = '60px';
         niveles[1].sintomas[6].imagen = img7;
 
         var img8 = document.createElement("img");
@@ -660,8 +670,8 @@ function crearNivel2(){
         img8.setAttribute("id","s8n2");
         img8.setAttribute("onClick","formarEnfermedad(8,'s8n2',1)");
         img8.style.position = 'absolute';    
-        img8.style.width = '125px';
-        img8.style.height = '125px';
+        img8.style.width = '60px';
+        img8.style.height = '60px';
         niveles[1].sintomas[7].imagen = img8;
 
         var img9 = document.createElement("img");    
@@ -669,8 +679,8 @@ function crearNivel2(){
         img9.setAttribute("id","s9n2");
         img9.setAttribute("onClick","formarEnfermedad(9,'s9n2',1)");
         img9.style.position = 'absolute';    
-        img9.style.width = '125px';
-        img9.style.height = '125px';
+        img9.style.width = '60px';
+        img9.style.height = '60px';
         niveles[1].sintomas[8].imagen = img9;
 
         var img10 = document.createElement("img");    
@@ -678,8 +688,8 @@ function crearNivel2(){
         img10.setAttribute("id","s10n2");
         img10.setAttribute("onClick","formarEnfermedad(10,'s10n2',1)");
         img10.style.position = 'absolute';    
-        img10.style.width = '125px';
-        img10.style.height = '125px';
+        img10.style.width = '60px';
+        img10.style.height = '60px';
         niveles[1].sintomas[9].imagen = img10;
         
         asignarCoordenadas(niveles[1].sintomas, container2);
@@ -714,8 +724,8 @@ function crearNivel3(){
         img1.setAttribute("id","s1n3");
         img1.setAttribute("onClick","formarEnfermedad(1,'s1n3',2)");
         img1.style.position = 'absolute';  
-        img1.style.width = '125px';
-        img1.style.height = '125px';
+        img1.style.width = '60px';
+        img1.style.height = '60px';
         niveles[2].sintomas[0].imagen = img1;
 
         var img2 = document.createElement("img");    
@@ -723,8 +733,8 @@ function crearNivel3(){
         img2.setAttribute("id","s2n3");
         img2.setAttribute("onClick","formarEnfermedad(2,'s2n3',2)");
         img2.style.position = 'absolute';    
-        img2.style.width = '125px';
-        img2.style.height = '125px';
+        img2.style.width = '60px';
+        img2.style.height = '60px';
         niveles[2].sintomas[1].imagen = img2;
 
         var img3 = document.createElement("img");    
@@ -732,8 +742,8 @@ function crearNivel3(){
         img3.setAttribute("id","s3n3");
         img3.setAttribute("onClick","formarEnfermedad(3,'s3n3',2)");
         img3.style.position = 'absolute';
-        img3.style.width = '125px';
-        img3.style.height = '125px';
+        img3.style.width = '60px';
+        img3.style.height = '60px';
         niveles[2].sintomas[2].imagen = img3;
 
         var img4 = document.createElement("img");    
@@ -741,8 +751,8 @@ function crearNivel3(){
         img4.setAttribute("id","s4n3");
         img4.setAttribute("onClick","formarEnfermedad(4,'s4n3',2)");
         img4.style.position = 'absolute';    
-        img4.style.width = '125px';
-        img4.style.height = '125px';
+        img4.style.width = '60px';
+        img4.style.height = '60px';
         niveles[2].sintomas[3].imagen = img4;
 
         var img5 = document.createElement("img");   
@@ -750,8 +760,8 @@ function crearNivel3(){
         img5.setAttribute("id","s5n3");
         img5.setAttribute("onClick","formarEnfermedad(5,'s5n3',2)");
         img5.style.position = 'absolute';
-        img5.style.width = '125px';
-        img5.style.height = '125px';
+        img5.style.width = '60px';
+        img5.style.height = '60px';
         niveles[2].sintomas[4].imagen = img5;
 
         var img6 = document.createElement("img");    
@@ -759,8 +769,8 @@ function crearNivel3(){
         img6.setAttribute("id","s6n3");
         img6.setAttribute("onClick","formarEnfermedad(6,'s6n3',2)");
         img6.style.position = 'absolute';    
-        img6.style.width = '125px';
-        img6.style.height = '125px';
+        img6.style.width = '60px';
+        img6.style.height = '60px';
         niveles[2].sintomas[5].imagen = img6;
 
         var img7 = document.createElement("img");
@@ -768,8 +778,8 @@ function crearNivel3(){
         img7.setAttribute("id","s7n3");
         img7.setAttribute("onClick","formarEnfermedad(7,'s7n3',2)");
         img7.style.position = 'absolute';    
-        img7.style.width = '125px';
-        img7.style.height = '125px';
+        img7.style.width = '60px';
+        img7.style.height = '60px';
         niveles[2].sintomas[6].imagen = img7;
 
         var img8 = document.createElement("img");
@@ -777,8 +787,8 @@ function crearNivel3(){
         img8.setAttribute("id","s8n3");
         img8.setAttribute("onClick","formarEnfermedad(8,'s8n3',2)");
         img8.style.position = 'absolute';    
-        img8.style.width = '125px';
-        img8.style.height = '125px';
+        img8.style.width = '60px';
+        img8.style.height = '60px';
         niveles[2].sintomas[7].imagen = img8;
 
         var img9 = document.createElement("img");    
@@ -786,8 +796,8 @@ function crearNivel3(){
         img9.setAttribute("id","s9n3");
         img9.setAttribute("onClick","formarEnfermedad(9,'s9n3',2)");
         img9.style.position = 'absolute';    
-        img9.style.width = '125px';
-        img9.style.height = '125px';
+        img9.style.width = '60px';
+        img9.style.height = '60px';
         niveles[2].sintomas[8].imagen = img9;
 
         var img10 = document.createElement("img");    
@@ -795,8 +805,8 @@ function crearNivel3(){
         img10.setAttribute("id","s10n3");
         img10.setAttribute("onClick","formarEnfermedad(10,'s10n3',2)");
         img10.style.position = 'absolute';    
-        img10.style.width = '125px';
-        img10.style.height = '125px';
+        img10.style.width = '60px';
+        img10.style.height = '60px';
         niveles[2].sintomas[9].imagen = img10;
         
         asignarCoordenadas(niveles[2].sintomas, container3);
@@ -830,8 +840,8 @@ function crearNivel4(){
         img1.setAttribute("id","s1n4");
         img1.setAttribute("onClick","formarEnfermedad(1,'s1n4',3)");
         img1.style.position = 'absolute';  
-        img1.style.width = '125px';
-        img1.style.height = '125px';
+        img1.style.width = '60px';
+        img1.style.height = '60px';
         niveles[3].sintomas[0].imagen = img1;
 
         var img2 = document.createElement("img");    
@@ -839,8 +849,8 @@ function crearNivel4(){
         img2.setAttribute("id","s2n4");
         img2.setAttribute("onClick","formarEnfermedad(2,'s2n4',3)");
         img2.style.position = 'absolute';    
-        img2.style.width = '125px';
-        img2.style.height = '125px';
+        img2.style.width = '60px';
+        img2.style.height = '60px';
         niveles[3].sintomas[1].imagen = img2;
 
         var img3 = document.createElement("img");    
@@ -848,8 +858,8 @@ function crearNivel4(){
         img3.setAttribute("id","s3n4");
         img3.setAttribute("onClick","formarEnfermedad(3,'s3n4',3)");
         img3.style.position = 'absolute';    
-        img3.style.width = '125px';
-        img3.style.height = '125px';
+        img3.style.width = '60px';
+        img3.style.height = '60px';
         niveles[3].sintomas[2].imagen = img3;
 
         var img4 = document.createElement("img");    
@@ -857,8 +867,8 @@ function crearNivel4(){
         img4.setAttribute("id","s4n4");
         img4.setAttribute("onClick","formarEnfermedad(4,'s4n4',3)");
         img4.style.position = 'absolute';    
-        img4.style.width = '125px';
-        img4.style.height = '125px';
+        img4.style.width = '60px';
+        img4.style.height = '60px';
         niveles[3].sintomas[3].imagen = img4;
 
         var img5 = document.createElement("img");   
@@ -866,8 +876,8 @@ function crearNivel4(){
         img5.setAttribute("id","s5n4");
         img5.setAttribute("onClick","formarEnfermedad(5,'s5n4',3)");
         img5.style.position = 'absolute';    
-        img5.style.width = '125px';
-        img5.style.height = '125px';
+        img5.style.width = '60px';
+        img5.style.height = '60px';
         niveles[3].sintomas[4].imagen = img5;
 
         var img6 = document.createElement("img");    
@@ -875,8 +885,8 @@ function crearNivel4(){
         img6.setAttribute("id","s6n4");
         img6.setAttribute("onClick","formarEnfermedad(6,'s6n4',3)");
         img6.style.position = 'absolute';    
-        img6.style.width = '125px';
-        img6.style.height = '125px';
+        img6.style.width = '60px';
+        img6.style.height = '60px';
         niveles[3].sintomas[5].imagen = img6;
 
         var img7 = document.createElement("img");
@@ -884,8 +894,8 @@ function crearNivel4(){
         img7.setAttribute("id","s7n4");
         img7.setAttribute("onClick","formarEnfermedad(7,'s7n4',3)");
         img7.style.position = 'absolute';    
-        img7.style.width = '125px';
-        img7.style.height = '125px';
+        img7.style.width = '60px';
+        img7.style.height = '60px';
         niveles[3].sintomas[6].imagen = img7;
 
         var img8 = document.createElement("img");
@@ -893,8 +903,8 @@ function crearNivel4(){
         img8.setAttribute("id","s8n4");
         img8.setAttribute("onClick","formarEnfermedad(8,'s8n4',3)");
         img8.style.position = 'absolute';    
-        img8.style.width = '125px';
-        img8.style.height = '125px';
+        img8.style.width = '60px';
+        img8.style.height = '60px';
         niveles[3].sintomas[7].imagen = img8;
 
         var img9 = document.createElement("img");    
@@ -902,8 +912,8 @@ function crearNivel4(){
         img9.setAttribute("id","s9n4");
         img9.setAttribute("onClick","formarEnfermedad(9,'s9n4',3)");
         img9.style.position = 'absolute';    
-        img9.style.width = '125px';
-        img9.style.height = '125px';
+        img9.style.width = '60px';
+        img9.style.height = '60px';
         niveles[3].sintomas[8].imagen = img9;
 
         var img10 = document.createElement("img");    
@@ -911,8 +921,8 @@ function crearNivel4(){
         img10.setAttribute("id","s10n4");
         img10.setAttribute("onClick","formarEnfermedad(10,'s10n4',3)");
         img10.style.position = 'absolute';    
-        img10.style.width = '125px';
-        img10.style.height = '125px';
+        img10.style.width = '60px';
+        img10.style.height = '60px';
         niveles[3].sintomas[9].imagen = img10;
         
         asignarCoordenadas(niveles[3].sintomas, container4);
@@ -947,8 +957,8 @@ function crearNivel5(){
         img1.setAttribute("id","s1n5");
         img1.setAttribute("onClick","formarEnfermedad(1,'s1n5',4)");
         img1.style.position = 'absolute';  
-        img1.style.width = '125px';
-        img1.style.height = '125px';
+        img1.style.width = '60px';
+        img1.style.height = '60px';
         niveles[4].sintomas[0].imagen = img1;
 
         var img2 = document.createElement("img");    
@@ -956,8 +966,8 @@ function crearNivel5(){
         img2.setAttribute("id","s2n5");
         img2.setAttribute("onClick","formarEnfermedad(2,'s2n5',4)");
         img2.style.position = 'absolute';    
-        img2.style.width = '125px';
-        img2.style.height = '125px';
+        img2.style.width = '60px';
+        img2.style.height = '60px';
         niveles[4].sintomas[1].imagen = img2;
 
         var img3 = document.createElement("img");    
@@ -965,8 +975,8 @@ function crearNivel5(){
         img3.setAttribute("id","s3n5");
         img3.setAttribute("onClick","formarEnfermedad(3,'s3n5',4)");
         img3.style.position = 'absolute';    
-        img3.style.width = '125px';
-        img3.style.height = '125px';
+        img3.style.width = '60px';
+        img3.style.height = '60px';
         niveles[4].sintomas[2].imagen = img3;
 
         var img4 = document.createElement("img");    
@@ -974,8 +984,8 @@ function crearNivel5(){
         img4.setAttribute("id","s4n5");
         img4.setAttribute("onClick","formarEnfermedad(4,'s4n5',4)");
         img4.style.position = 'absolute';    
-        img4.style.width = '125px';
-        img4.style.height = '125px';
+        img4.style.width = '60px';
+        img4.style.height = '60px';
         niveles[4].sintomas[3].imagen = img4;
 
         var img5 = document.createElement("img");   
@@ -983,8 +993,8 @@ function crearNivel5(){
         img5.setAttribute("id","s5n5");
         img5.setAttribute("onClick","formarEnfermedad(5,'s5n5',4)");
         img5.style.position = 'absolute';    
-        img5.style.width = '125px';
-        img5.style.height = '125px';
+        img5.style.width = '60px';
+        img5.style.height = '60px';
         niveles[4].sintomas[4].imagen = img5;
 
         var img6 = document.createElement("img");    
@@ -992,8 +1002,8 @@ function crearNivel5(){
         img6.setAttribute("id","s6n5");
         img6.setAttribute("onClick","formarEnfermedad(6,'s6n5',4)");
         img6.style.position = 'absolute';    
-        img6.style.width = '125px';
-        img6.style.height = '125px';
+        img6.style.width = '60px';
+        img6.style.height = '60px';
         niveles[4].sintomas[5].imagen = img6;
 
         var img7 = document.createElement("img");
@@ -1001,8 +1011,8 @@ function crearNivel5(){
         img7.setAttribute("id","s7n5");
         img7.setAttribute("onClick","formarEnfermedad(7,'s7n5',4)");
         img7.style.position = 'absolute';    
-        img7.style.width = '125px';
-        img7.style.height = '125px';
+        img7.style.width = '60px';
+        img7.style.height = '60px';
         niveles[4].sintomas[6].imagen = img7;
 
         var img8 = document.createElement("img");
@@ -1010,8 +1020,8 @@ function crearNivel5(){
         img8.setAttribute("id","s8n5");
         img8.setAttribute("onClick","formarEnfermedad(8,'s8n5',4)");
         img8.style.position = 'absolute';    
-        img8.style.width = '125px';
-        img8.style.height = '125px';
+        img8.style.width = '60px';
+        img8.style.height = '60px';
         niveles[4].sintomas[7].imagen = img8;
 
         var img9 = document.createElement("img");    
@@ -1019,8 +1029,8 @@ function crearNivel5(){
         img9.setAttribute("id","s9n5");
         img9.setAttribute("onClick","formarEnfermedad(9,'s9n5',4)");
         img9.style.position = 'absolute';    
-        img9.style.width = '125px';
-        img9.style.height = '125px';
+        img9.style.width = '60px';
+        img9.style.height = '60px';
         niveles[4].sintomas[8].imagen = img9;
 
         var img10 = document.createElement("img");    
@@ -1028,8 +1038,8 @@ function crearNivel5(){
         img10.setAttribute("id","s10n5");
         img10.setAttribute("onClick","formarEnfermedad(10,'s10n5',4)");
         img10.style.position = 'absolute';    
-        img10.style.width = '125px';
-        img10.style.height = '125px';
+        img10.style.width = '60px';
+        img10.style.height = '60px';
         niveles[4].sintomas[9].imagen = img10;
         
         asignarCoordenadas(niveles[4].sintomas, container5);

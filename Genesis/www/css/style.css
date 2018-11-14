@@ -366,9 +366,7 @@ section{
 .div1{
     height: 615px;
     width: 360px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
+    margin : 0px;
     display: contents;
 }
 

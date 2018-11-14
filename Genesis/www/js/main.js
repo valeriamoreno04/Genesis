@@ -397,7 +397,7 @@ function generarVidas(nivel, container){
     vidasDiv.style.position = 'absolute';
     vidasDiv.style.width = '110px'
     vidasDiv.style.height = '20px'
-    vidasDiv.style.top = ((altoContainer/4 - 80) - parseInt(vidasDiv.style.height, 10)/2) + 'px';
+    vidasDiv.style.top = ((altoContainer/4 - 45) - parseInt(vidasDiv.style.height, 10)/2) + 'px';
     vidasDiv.style.left = ((anchoContainer/2) - parseInt(vidasDiv.style.width, 10)/2) + 'px';
     vidasDiv.setAttribute("id","vidasDiv"+nivel);    
     //debugger;
@@ -418,8 +418,8 @@ function generarVidas(nivel, container){
                 var vida = document.createElement('img');
                 vida.setAttribute('src','img/juego/vida.png');  
                 vida.style.width = '20px';
-                vida.style.height = '20px';              
-                vida.style.marginLeft = '10px';
+                vida.style.height = '16px';              
+                vida.style.marginLeft = '5px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -429,8 +429,8 @@ function generarVidas(nivel, container){
                 var vida = document.createElement('img');
                 vida.setAttribute('src','img/juego/vida.png');
                 vida.style.width = '20px';
-                vida.style.height = '20px';
-                vida.style.marginLeft = '20px';
+                vida.style.height = '16px';
+                vida.style.marginLeft = '10px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -440,8 +440,8 @@ function generarVidas(nivel, container){
                 var vida = document.createElement('img');
                 vida.setAttribute('src','img/juego/vida.png');
                 vida.style.width = '20px';
-                vida.style.height = '20px';
-                vida.style.marginLeft = '20px';
+                vida.style.height = '16px';
+                vida.style.marginLeft = '10px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }
@@ -451,8 +451,8 @@ function generarVidas(nivel, container){
                 var vida = document.createElement('img');
                 vida.setAttribute('src','img/juego/vida.png');
                 vida.style.width = '20px';
-                vida.style.height = '20px';
-                vida.style.marginLeft = '20px';
+                vida.style.height = '16px';
+                vida.style.marginLeft = '10px';
                 niveles[nivel].vidas.push(vida);
                 vidasDiv.appendChild(vida);
             }

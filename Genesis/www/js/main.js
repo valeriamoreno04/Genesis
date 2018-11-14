@@ -86,6 +86,8 @@ function inicializarVariables(){
     btnLvl5 = document.getElementById("btnLevel5");    
     
     element = document.querySelector(".div1");
+    element.style.width = window.innerWidth + 'px';
+    element.style.height = window.innerHeight + 'px';
     container1 = document.getElementById("div1");
     container2 = document.getElementById("div2");
     container3 = document.getElementById("div3");
@@ -131,11 +133,15 @@ function formarEnfermedad(indice, id, nivel){
     temp.id = '#' + id;
     temp.indice = indice;
     temp.dom = document.getElementById(id);
-    objetivosAnim.push(temp);
+    objetivosAnim.push(temp);    
+    var x;
+    var y;
+    x = anchoContainer/2;
+    y = altoContainer/2;
     if(sintomas[1]==undefined){               
         sintomas.push(indice);        
         if(cont==0){            
-            TweenMax.to(temp.id, 1, {left:279, top:615, scale:0.7});
+            TweenMax.to(temp.id, 1, {left:x, top:y, scale:0.7});
             cont++;
         }else if(cont==1){
             TweenMax.to(temp.id, 1, {left:266, top:515, scale:0.7});

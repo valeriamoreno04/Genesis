@@ -114,11 +114,15 @@ section{
     background-image: linear-gradient(#000013, #201033);
 }
 #btnHelpBack{
+    position: absolute;
+    top: 8%;
+    left: 11%;
+    /*     
     position: relative;
     margin-left: 80px;
     margin-right: auto;
     display: block;
-    margin-top: -1189px;
+    margin-top: -1189px; */
    
 }
 
@@ -293,7 +297,7 @@ section{
 }
 
 #imgVictory{
-    margin-left: 43px;
+    margin-left: 125px;
 }
 
 #imgTryAgain{
@@ -334,8 +338,11 @@ section{
 }
 
 #btnNextLevel{
-    margin-left: -450px;
-    margin-bottom: 50px;
+    position: absolute;
+    top: 47%;
+    left: 31%;
+    /* margin-left: -450px;
+    margin-bottom: 50px; */
 }
 
 #ModalVictory{
